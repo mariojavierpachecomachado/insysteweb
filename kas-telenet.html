@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Estratégica | Kaspersky Next EDR Optimum</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wooktj3dts");
+</script>
+<style>
+  :root { color-scheme: light; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --orange: #FF6132; --pink: #FF4575; --purple: #8451EE;
+    --navy: #112E50; --navy-light: #1a3d68;
+    --dark: #1E120D; --gray: #E6E6E6; --gray-light: #F7F7F7;
+    --text: #2d2d2d; --text-light: #666; --white: #ffffff;
+    --grad: linear-gradient(135deg, #FF6132 0%, #FF4575 100%);
+    --grad-navy: linear-gradient(135deg, #112E50 0%, #1a3d68 100%);
+  }
+  body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--text); line-height: 1.6; }
+
+  /* HEADER */
+  .header {
+    background: #ffffff;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    border-bottom: 3px solid #FF6132;
+  }
+  .header-logos { display: flex; align-items: center; gap: 32px; }
+  .header-innsyste-logo { height: 96px; width: auto; }
+  .header-divider { width: 1px; height: 52px; background: var(--gray); }
+  .header-partner { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .header-partner-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); }
+  .header-telenet { height: 44px; width: auto; max-width: 200px; }
+  .header-meta { text-align: right; }
+  .header-meta .label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); }
+  .header-meta .title { font-size: 13px; font-weight: 700; color: var(--navy); }
+
+  /* HERO */
+  .hero { background: #fff; padding: 60px 48px 50px; border-bottom: 1px solid var(--gray); }
+  .hero-badge { display: inline-block; background: var(--grad); color: white; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 18px; }
+  .hero h1 { font-size: 38px; font-weight: 900; color: var(--navy); line-height: 1.15; max-width: 720px; margin-bottom: 14px; }
+  .hero h1 span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 15px; color: var(--text-light); max-width: 620px; margin-bottom: 36px; }
+  .hero-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+  .stat-card { background: var(--gray-light); border-radius: 12px; padding: 18px 24px; border-left: 4px solid var(--orange); min-width: 140px; }
+  .stat-num { font-size: 30px; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+  .stat-label { font-size: 11px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  /* TABS */
+  .tabs { position: sticky; top: 105px; z-index: 90; background: white; display: flex; border-bottom: 2px solid var(--gray); padding: 0 48px; }
+  .tab-btn { padding: 16px 28px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: var(--text-light); background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .tab-btn:hover { color: var(--navy); }
+  .tab-btn.active { color: var(--navy); border-bottom-color: var(--orange); }
+
+  /* SECTIONS */
+  .section { display: none; padding: 0 0 80px; }
+  .section.active { display: block; }
+
+  /* SEC HEADER */
+  .sec-header { background: var(--grad-navy); color: white; padding: 44px 48px; }
+  .sec-header .sec-num { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
+  .sec-header h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+  .sec-header p { font-size: 14px; opacity: 0.8; max-width: 650px; }
+
+  /* SCOPE BANNER */
+  .scope-banner { background: linear-gradient(135deg, rgba(17,46,80,0.05), rgba(132,81,238,0.07)); border: 1px solid rgba(132,81,238,0.25); border-radius: 12px; padding: 18px 24px; margin: 28px 0 0; display: flex; gap: 14px; align-items: flex-start; }
+  .scope-icon { font-size: 22px; flex-shrink: 0; }
+  .scope-title { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .scope-text { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+  .content-block { padding: 44px 48px; border-bottom: 1px solid var(--gray); }
+  .content-block:last-child { border-bottom: none; }
+  .block-title { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+  .block-h { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 18px; }
+  .block-text { font-size: 14px; color: var(--text-light); max-width: 750px; margin-bottom: 22px; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 22px; }
+  .card { background: var(--gray-light); border-radius: 14px; padding: 24px; border-top: 4px solid var(--gray); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .card.a1 { border-top-color: var(--orange); }
+  .card.a2 { border-top-color: var(--pink); }
+  .card.a3 { border-top-color: var(--purple); }
+  .card.a4 { border-top-color: var(--navy); }
+  .card-icon { font-size: 28px; margin-bottom: 10px; }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .card-text { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 22px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* VALUE BOX */
+  .value-box { background: var(--gray-light); border-radius: 14px; padding: 24px; }
+  .value-box h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+  .value-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .value-box ul li { font-size: 13px; color: var(--text-light); padding-left: 18px; position: relative; }
+  .value-box ul li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--grad); }
+
+  /* CALLOUT */
+  .callout { background: linear-gradient(135deg, rgba(255,97,50,0.07), rgba(255,69,117,0.07)); border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; padding: 16px 22px; margin: 18px 0; font-size: 14px; color: var(--navy); font-weight: 600; }
+  .callout.info { background: linear-gradient(135deg, rgba(17,46,80,0.05), rgba(132,81,238,0.07)); border-left-color: var(--purple); }
+  .callout.warning { background: linear-gradient(135deg, rgba(255,97,50,0.05), rgba(255,69,117,0.05)); border-left-color: var(--pink); }
+
+  /* EDUCATION GRID */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 22px; }
+  .edu-card { background: var(--gray-light); border-radius: 14px; padding: 22px; text-align: center; border-bottom: 4px solid transparent; transition: all 0.2s; }
+  .edu-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .edu-card.e1 { border-bottom-color: var(--orange); }
+  .edu-card.e2 { border-bottom-color: var(--pink); }
+  .edu-card.e3 { border-bottom-color: var(--purple); }
+  .edu-card.e4 { border-bottom-color: var(--navy); }
+  .edu-card.e5 { border-bottom-color: #38a169; }
+  .edu-icon { font-size: 36px; margin-bottom: 10px; }
+  .edu-name { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .edu-freq { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; background: var(--grad); color: white; margin-bottom: 8px; }
+  .edu-desc { font-size: 12px; color: var(--text-light); }
+
+  /* CHANNELS */
+  .channels { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+  .channel-item { display: flex; align-items: flex-start; gap: 14px; background: var(--gray-light); border-radius: 12px; padding: 18px 22px; }
+  .ch-icon { font-size: 26px; flex-shrink: 0; }
+  .ch-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .ch-desc { font-size: 12px; color: var(--text-light); }
+  .ch-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .ch-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: rgba(17,46,80,0.1); color: var(--navy); }
+
+  /* PROJECTION */
+  .projection { margin-top: 24px; background: var(--gray-light); border-radius: 14px; padding: 24px; }
+  .proj-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .proj-row:last-child { margin-bottom: 0; }
+  .proj-month { font-size: 12px; font-weight: 700; color: var(--navy); width: 65px; flex-shrink: 0; }
+  .proj-bar-wrap { flex: 1; background: var(--gray); border-radius: 4px; height: 20px; overflow: hidden; }
+  .proj-bar { height: 100%; background: var(--grad); border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+  .proj-total { font-size: 12px; font-weight: 700; color: var(--orange); width: 56px; flex-shrink: 0; text-align: right; }
+  .proj-cum { font-size: 11px; color: var(--text-light); width: 90px; flex-shrink: 0; text-align: right; }
+
+  /* TIMELINE */
+  .timeline { margin-top: 28px; display: flex; flex-direction: column; }
+  .tl-item { display: flex; gap: 20px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--grad); flex-shrink: 0; margin-top: 4px; z-index: 1; }
+  .tl-line { width: 2px; flex: 1; background: var(--gray); min-height: 20px; }
+  .tl-content { padding-bottom: 26px; flex: 1; }
+  .tl-phase { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 3px; }
+  .tl-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .tl-meta { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .tl-tag { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 16px; background: var(--grad); color: white; }
+  .tl-body { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+  .tl-body ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+  .tl-body ul li { padding-left: 14px; position: relative; }
+  .tl-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; }
+
+  /* KPI GRID */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 22px; }
+  .kpi-card { background: var(--gray-light); border-radius: 12px; padding: 20px; text-align: center; }
+  .kpi-icon { font-size: 26px; margin-bottom: 7px; }
+  .kpi-name { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .kpi-desc { font-size: 12px; color: var(--text-light); }
+
+  /* PROCESS */
+  .process { display: flex; flex-direction: column; margin-top: 22px; max-width: 680px; }
+  .step { display: flex; gap: 18px; align-items: flex-start; }
+  .step-left { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
+  .step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--grad); color: white; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-connector { width: 2px; flex: 1; min-height: 18px; background: var(--gray); }
+  .step-content { padding-bottom: 22px; flex: 1; }
+  .step-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; padding-top: 7px; }
+  .step-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+  .step-owner { display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 600; padding: 2px 10px; border-radius: 12px; background: var(--navy); color: white; }
+
+  /* TEAM */
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-top: 22px; }
+  .team-card { background: var(--gray-light); border-radius: 14px; padding: 22px; border-top: 4px solid var(--navy); }
+  .team-role { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 5px; }
+  .team-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+  .team-tasks { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .team-tasks li { font-size: 12px; color: var(--text-light); padding-left: 12px; position: relative; }
+  .team-tasks li::before { content: '·'; position: absolute; left: 0; color: var(--orange); font-weight: 900; font-size: 16px; line-height: 1; top: 0; }
+
+  /* SLA TABLE */
+  .sla-table { width: 100%; border-collapse: collapse; margin-top: 22px; border-radius: 12px; overflow: hidden; }
+  .sla-table th { background: var(--navy); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px 18px; text-align: left; }
+  .sla-table td { padding: 12px 18px; font-size: 13px; color: var(--text); border-bottom: 1px solid var(--gray); }
+  .sla-table tr:nth-child(even) td { background: var(--gray-light); }
+  .p-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; font-size: 11px; font-weight: 800; color: white; }
+  .p1 { background: #e53e3e; } .p2 { background: #dd6b20; } .p3 { background: #d69e2e; } .p4 { background: #38a169; }
+
+  /* TOOLS */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 22px; }
+  .tool-card { background: var(--gray-light); border-radius: 12px; padding: 20px; text-align: center; }
+  .tool-icon { font-size: 32px; margin-bottom: 8px; }
+  .tool-name { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+  .tool-use { font-size: 11px; color: var(--text-light); }
+
+  /* ESCALATION */
+  .escalation { display: flex; gap: 0; margin-top: 22px; flex-wrap: wrap; }
+  .esc-step { flex: 1; min-width: 150px; text-align: center; position: relative; }
+  .esc-step:not(:last-child)::after { content: '→'; position: absolute; right: -12px; top: 28px; font-size: 18px; color: var(--orange); font-weight: 900; }
+  .esc-box { background: var(--gray-light); border-radius: 12px; padding: 18px 14px; margin: 0 8px; border-top: 4px solid var(--navy); }
+  .esc-level { font-size: 10px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+  .esc-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .esc-desc { font-size: 11px; color: var(--text-light); }
+
+  /* NEXT STEPS */
+  .next-steps { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .ns-item { display: flex; align-items: center; gap: 14px; background: var(--gray-light); border-radius: 12px; padding: 16px 22px; }
+  .ns-num { width: 34px; height: 34px; background: var(--grad); border-radius: 50%; color: white; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ns-text { font-size: 13px; color: var(--text); font-weight: 500; }
+
+  /* SERVICE SCOPE TABLE */
+  .scope-table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 12px; overflow: hidden; }
+  .scope-table th { background: var(--navy); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px 18px; text-align: left; }
+  .scope-table td { padding: 12px 18px; font-size: 13px; border-bottom: 1px solid var(--gray); vertical-align: top; }
+  .scope-table tr:nth-child(even) td { background: var(--gray-light); }
+  .inc { color: #38a169; font-weight: 700; }
+  .excl { color: #e53e3e; font-weight: 700; }
+  .addit { color: #dd6b20; font-weight: 700; }
+  .badge-inc { display: inline-block; padding: 2px 10px; border-radius: 12px; background: rgba(56,161,105,0.12); color: #38a169; font-size: 11px; font-weight: 700; }
+  .badge-excl { display: inline-block; padding: 2px 10px; border-radius: 12px; background: rgba(229,62,62,0.1); color: #e53e3e; font-size: 11px; font-weight: 700; }
+  .badge-addit { display: inline-block; padding: 2px 10px; border-radius: 12px; background: rgba(221,107,32,0.12); color: #dd6b20; font-size: 11px; font-weight: 700; }
+
+  /* SCALABLE TEAM */
+  .scale-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 22px; }
+  .scale-card { background: var(--gray-light); border-radius: 14px; padding: 22px; border-left: 4px solid var(--orange); }
+  .scale-phase { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+  .scale-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+  .scale-roles { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .scale-roles li { font-size: 12px; color: var(--text-light); padding-left: 14px; position: relative; }
+  .scale-roles li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; }
+
+  /* FOOTER */
+  .footer { background: var(--navy); color: white; padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+  .footer-text { font-size: 12px; opacity: 0.7; }
+  .footer-conf { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logos">
+    <img class="header-innsyste-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDkAAAQ5CAYAAADIjtQUAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nOzdP3YbV9rg4be/0zk12ADZKyj2CoROJhWxAtLxBFYnk5pOv8TyClSKJgSdTtLQCkysoKn8Oxhxkgk9QV1YMC1S/FNVt/Diec7hcbst4V4JRRD1w61bf/ntt98CAAAAYN/9R+0JAAAAAPRB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAA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AABSEDkAAACAFEQOAAAAIAWRAwAAAEhB5AAAAABSEDkAAACAFEQOAAAA/n87diADAAAAMMjf+h5fYQQLkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACxIDgAAAGBBcgAAAAALkgMAAABYkBwAAADAguQAAAAAFiQHAAAAsCA5AAAAgAXJAQAAACwEoc6TBSQS9DcAAAAASUVORK5CYII=" alt="INNSYSTE">
+    <div class="header-divider"></div>
+    <div class="header-partner">
+      <span class="header-partner-label">Aliado Estratégico</span>
+      <img class="header-telenet" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMjUwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4gICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwzLjU1MjcxZS0xNSwtNC44MzQ2NikiPiAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC42NzE5MzYsMCwwLDAuNjcxOTM2LDIxLjk0MjMsNC44MDM4MikiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDguMzY3LDAuMDQ2TDEyLjMxOCwwLjg1OUwxNS42ODgsMS43ODlMMTguNTk0LDIuODM1TDIwLjY4NiwzLjc2NUwyMy4zNTgsNS4yNzVMMjUuNDUsNi42N0wyNy4zMSw4LjA2NEwyOC41ODgsOS4xMUwzMC4zMzEsMTAuNzM3TDMxLjI2MSwxMS42NjdMMzIuMDc0LDEyLjU5N0wzMy4zNTMsMTQuMTA3TDM0Ljc0NywxNi4wODNMMzYuMTQyLDE4LjI5MUwzNy41MzYsMjAuOTY0TDM4LjU4MiwyMy4yODhMMzkuODYsMjcuMTIzTDQwLjU1OCwzMC4yNjFMNDAuOTA2LDMyLjQ2OUw0MS4xMzksMzUuNDlMNDEuMTM5LDM3LjkzMUw0MC45MDYsNDEuNDE3TDQwLjQ0MSw0NC4yMDZMMzkuNzQ0LDQ3LjExMUwzOC41ODIsNTAuNDgxTDM3LjMwNCw1My4zODdMMzYuMjU4LDU1LjM2MkwzNC45NzksNTcuNDU0TDMzLjcwMSw1OS4xOTdMMzIuNTM5LDYwLjcwOEwzMS4xNDUsNjIuMzM1TDI5LjUxOCw2My45NjJMMjguMjM5LDY1LjAwOEwyNy4xOTMsNjUuOTM3TDI1LjIxOCw2Ny4zMzJMMjMuNDc1LDY4LjQ5NEwyMC45MTgsNjkuODg5TDE4LjQ3OCw3MS4wNTFMMTUuOTIxLDcxLjk4TDEzLjAxNiw3Mi43OTRMOS40MTMsNzMuNDkxTDcuNDM4LDczLjcyNEw1LjY5NCw3My44NEwyLjMyNCw3My44NEwtMS4xNjIsNzMuNDkxTC00LjMsNzIuOTFMLTcuNDM4LDcxLjk4TC0xMC40NTksNzAuODE4TC0xMy4zNjQsNjkuNDI0TC0xNS42ODgsNjguMDI5TC0xNy42NjQsNjYuNjM1TC0xOS41MjMsNjUuMTI0TC0yMS4wMzQsNjMuNzI5TC0yMy4yNDIsNjEuNTIxTC0yNC4yODgsNjAuMjQzTC0yNS40NSw1OC44NDlMLTI2Ljg0NSw1Ni43NTdMLTI3Ljg5MSw1NS4wMTRMLTI5LjI4NSw1Mi4zNDFMLTMwLjU2Myw0OS4yMDNMLTMxLjcyNiw0NS4xMzZMLTMyLjMwNyw0MS45OThMLTMyLjY1NSwzOC42MjhMLTMyLjY1NSwzNS4wMjVMLTMyLjE5LDMxLjE5TC0zMS40OTMsMjcuODJMLTMwLjU2MywyNC42ODNMLTI5LjUxOCwyMi4xMjZMLTI4LjEyMywxOS4yMjFMLTI2LjI2NCwxNi4xOTlMLTI0LjYzNywxMy45OTFMLTIzLjU5MSwxMi43MTNMLTIyLjU0NSwxMS41NTFMLTIwLjMzNyw5LjM0M0wtMTkuMDU5LDguMjk3TC0xNy4wODMsNi43ODZMLTE1LjM0LDUuNjI0TC0xMy41OTcsNC41NzhMLTExLjM4OSwzLjQxNkwtOC42LDIuMjU0TC02LjE1OSwxLjQ0TC0yLjQ0LDAuNTExTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgPC9nPiAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC42NzE5MzYsMCwwLDAuNjcxOTM2LDIzLjE5MTYsMTMuNjI3NikiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDMuNDg2LDAuMDQ2TDcuMjA1LDAuMTYyTDEwLjgwOCwwLjUxMUwxNC40MSwxLjA5MkwxNy4zMTUsMS43ODlMMjAuNDUzLDIuNzE5TDIzLjQ3NSwzLjg4MUwyNi4wMzEsNS4wNDNMMjguNzA0LDYuNTU0TDMxLjI2MSw4LjI5N0wzMi41MzksOS4zNDNMMzQuMTY2LDEwLjczN0wzNS40NDQsMTIuMDE2TDM1LjY3NywxMi41OTdMMzQuNTE1LDEzLjUyNkwzMy4yMzYsMTQuNTcyTDMxLjg0MiwxNS43MzRMMzAuMDk5LDE3LjEyOUwyOS41MTgsMTcuMDEzTDI3Ljg5MSwxNS4zODZMMjYuMjY0LDE0LjEwN0wyNC41MjEsMTIuODI5TDIyLjMxMywxMS41NTFMMjAuNTY5LDEwLjYyMUwxNy42NjQsOS40NTlMMTQuNzU5LDguNTI5TDExLjE1Niw3LjcxNkw3LjkwMiw3LjI1MUw1LjkyNyw3LjAxOUw2LjA0MywxMS4yMDJMNy4wODksMTEuNTUxTDExLjg1NCwxMi40OEwxNC4yOTQsMTMuMTc4TDE2LjczNCwxNC4xMDdMMTkuNDA3LDE1LjUwMkwyMS4wMzQsMTYuNTQ4TDIyLjE5NiwxNy40NzhMMjMuNzA3LDE4LjY0TDI1LjQ1LDIwLjE1TDI1LjMzNCwyMC43MzFMMjQuMTcyLDIxLjc3N0wyMy4yNDIsMjIuNTkxTDIxLjYxNSwyMy45ODVMMjEuMDM0LDI0LjY4M0wyMC41NjksMjQuNDVMMTguOTQyLDIzLjA1NkwxNy4xOTksMjEuNjYxTDE1LjQ1NiwyMC42MTVMMTIuNzgzLDE5LjMzN0wxMC4zNDMsMTguNTIzTDcuNzg2LDE4LjA1OUw2LjA0MywxNy44MjZMNi4wNDMsMjMuNjM3TDEwLjkyNCwyNC43OTlMMTMuMjQ4LDI1LjYxMkwxNC42NDMsMjYuMTkzTDE2LjczNCwyNy4zNTVMMTguMjQ1LDI4LjUxOEwxOS40MDcsMjkuNTYzTDIwLjMzNywzMC40OTNMMjEuNDk5LDMyLjEyTDIyLjQyOSwzMy45NzlMMjMuMDEsMzUuODM5TDIzLjEyNiwzNy42OThMMjIuNzc3LDQwLjEzOUwyMi4xOTYsNDEuODgyTDIxLjI2Nyw0My42MjVMMjAuMTA0LDQ1LjI1MkwxOS4xNzUsNDYuMTgyTDE3LjU0OCw0Ny4zNDRMMTUuNjg4LDQ4LjUwNkwxMy40OCw0OS41NTJMMTAuOTI0LDUwLjM2NUw4LjQ4Myw1MC45NDZMNS42OTQsNTEuMjk1TDMuODM1LDUxLjQxMUwwLjU4MSw1MS40MTFMLTIuNDQsNTEuMTc5TC00Ljk5Nyw1MC43MTRMLTcuNDM4LDUwLjAxN0wtOS4yOTcsNDkuMzE5TC0xMS4xNTYsNDguMzlMLTEyLjg5OSw0Ny4zNDRMLTEzLjEzMiw0Ny4xMTFMLTEzLjAxNiw0Ni41M0wtMTIuMjAyLDQ1LjYwMUwtMTAuNTc1LDQzLjg1N0wtOS43NjIsNDIuOTI4TC04LjcxNiw0MS42NDlMLTguMjUxLDQxLjE4NUwtNy43ODYsNDEuNDE3TC02LjE1OSw0Mi41NzlMLTQuMyw0My41MDlMLTEuNTExLDQ0LjQzOEwtMS4zOTUsNDQuNDM4TC0xLjM5NSwzMC4zNzdMLTMuMzcsMzAuOTU4TC01LjM0NiwzMS43NzFMLTYuNTA4LDMyLjQ2OUwtNy41NTQsMzMuMTY2TC04LjEzNSwzMy4wNUwtOC43MTYsMzIuNDY5TC05Ljk5NCwzMS4wNzRMLTEwLjgwOCwzMC4xNDVMLTEyLjIwMiwyOC42MzRMLTEyLjY2NywyNy45MzdMLTEyLjQzNSwyNy40NzJMLTExLjI3MiwyNi43NzRMLTkuMTgxLDI1Ljg0NUwtNi42MjQsMjQuOTE1TC0xLjUxMSwyMy43NTNMLTEuMjc4LDIzLjc1M0wtMS4zOTUsMjEuNzc3TC0xLjI3OCwxNy44MjZMLTQuOTk3LDE4LjQwN0wtNy43ODYsMTkuMjIxTC0xMC40NTksMjAuMzgzTC0xMi4zMTgsMjEuNTQ1TC0xMy44MjksMjIuNzA3TC0xNC45OTEsMjMuNzUzTC0xNS41NzIsMjQuMzM0TC0xNS44MDUsMjQuNjgzTC0xNi4zODYsMjQuNDVMLTE4LjAxMywyMy4wNTZMLTE5LjE3NSwyMi4xMjZMLTIwLjgwMiwyMC43MzFMLTIwLjkxOCwyMC4yNjdMLTE5LjUyMywxOC45ODhMLTE2LjYxOCwxNi42NjRMLTE0Ljk5MSwxNS42MThMLTEyLjg5OSwxNC40NTZMLTEwLjkyNCwxMy42NDNMLTguNDgzLDEyLjgyOUwtNS42OTQsMTIuMTMyTC0zLjAyMSwxMS42NjdMLTEuNTExLDExLjQzNUwtMS4yNzgsNy4zNjdMLTEuMTYyLDcuMDE5TC00LjA2Nyw3LjM2N0wtNi45NzMsNy44MzJMLTEwLjExLDguNTI5TC0xMy4xMzIsOS40NTlMLTE1LjY4OCwxMC41MDVMLTE3LjU0OCwxMS40MzVMLTE5LjE3NSwxMi4zNjRMLTIxLjE1LDEzLjc1OUwtMjIuMzEzLDE0LjY4OEwtMjQuMTcyLDE2LjE5OUwtMjQuOTg1LDE3LjI0NUwtMjUuNTY2LDE3LjAxM0wtMjYuNjEyLDE2LjE5OUwtMjguMzU1LDE0LjgwNUwtMzEuMTQ1LDEyLjcxM0wtMzEuMTQ1LDEyLjI0OEwtMjkuMjg1LDEwLjM4OUwtMjcuNjU4LDkuMTFMLTI2LjE0Nyw3Ljk0OEwtMjQuMDU2LDYuNTU0TC0yMi4xOTYsNS41MDhMLTIwLjMzNyw0LjU3OEwtMTcuNzgsMy40MTZMLTE0Ljg3NSwyLjM3TC0xMS45NywxLjU1N0wtOC4wMTksMC43NDNMLTUuNTc4LDAuMzk1TC0yLjkwNSwwLjE2MkwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDI1NCwyNTQsMjU0KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgIDwvZz4gICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuODMzMzU4LDAsMCwwLjgzMzM1OCwtMC4xNjA2OTgsLTkuOTU3ODcpIj4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE5MC4wMTYsMzQuMTkxMykiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0Nkw0LjQxNiwwLjA0Nkw1LjQ2MiwwLjI3OEw2LjYyNCwwLjk3Nkw3LjMyMSwxLjc4OUw3LjU1NCwyLjYwM0w3LjU1NCwxMi4xMzJMNy4yMDUsMTMuNTI2TDYuMjc1LDE0LjIyNEw1LjU3OCwxNC40NTZMNzEuNTg2LDE0LjU3MkwxMTAuMTY4LDE0LjU3MkwxMTAuMTY4LDE1LjYxOEwxMDEuNjg1LDE1LjczNEwtMTI3LjgzMiwxNS43MzRMLTEyNy44MzIsMTQuNTcyTDMuODM1LDE0LjQ1Nkw0LjE4NCwxMS44OTlMLTIuNDQsMTEuODk5TC00LjA2NywxMS43ODNMLTQuNzY1LDExLjQzNUwtNS41NzgsMTAuNjIxTC02LjA0Myw5LjgwOEwtNi4xNTksOS4yMjdMLTYuMTU5LDIuNjAzTC01LjgxMSwxLjY3M0wtNS4xMTMsMC44NTlMLTQuMTg0LDAuMjc4TC0zLjM3LDAuMTYyTDAsMC4wNDZaTS0yLjA5MiwzLjA2N0wtMi41NTcsMy41MzJMLTIuNzg5LDUuOTczTC0yLjc4OSw3LjEzNUwtMi42NzMsOC4yOTdMLTIuMzI0LDguNzYyTC0xLjg1OSw4Ljg3OEwzLjEzOCw4Ljg3OEwzLjcxOSw4LjY0NkwzLjk1MSw4LjI5N0w0LjE4NCw1Ljk3M0w0LjA2NywzLjY0OEwzLjgzNSwzLjNMMi40NCwzLjA2N0wtMi4wOTIsMy4wNjdaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDI1OC40NjQsMzQuMTkxMykiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwxMC41NzUsMC4wNDZMMTEuNzM3LDAuMjc4TDEyLjg5OSwwLjk3NkwxMy41OTcsMS43ODlMMTMuODI5LDMuMDY3TDEzLjgyOSw4LjUyOUwxMy41OTcsMTAuMjcyTDEzLjEzMiwxMC44NTRMMTIuMzE4LDExLjMxOEwxMS44NTQsMTEuNzgzTDIuMDkyLDExLjc4M0wxLjA0NiwxMS4yMDJMMC40NjUsMTAuNTA1TDAuMTE2LDkuNDU5TDAsOC4xODFMMCw2LjY3TDAuMTE2LDUuMjc1TDAuNDY1LDQuNTc4TDAuOTMsNC40NjJMMy4yNTQsNC40NjJMMTAuNDU5LDQuNTc4TDEwLjQ1OSwzLjE4NEwwLjU4MSwzLjA2N0wtMC4xMTYsMi44MzVMLTAuMTE2LDEuNDRMMCwwLjA0NlpNMy4zNyw3LjQ4M0wzLjM3LDguMjk3TDMuNDg2LDguODc4TDUuNTc4LDguOTk0TDcuMzIxLDguOTk0TDEwLjM0Myw4Ljg3OEwxMC41NzUsOC42NDZMMTAuNTc1LDcuODMyTDEwLjQ1OSw3LjQ4M0wzLjM3LDcuNDgzWiIgc3R5bGU9ImZpbGw6cmdiKDAsNDAsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwxNDAuMjc4LDM0LjE5MTMpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMi4zMjQsMC4wNDZMNS4yMjksMC4xNjJMNi4yNzUsMC4zOTVMNi45NzMsMC44NTlMNy43ODYsMS43ODlMOC4wMTksMi42MDNMOC4wMTksNy4wMTlMNy43ODYsNy4yNTFMNi4yNzUsNy40ODNMLTIuNDQsNy40ODNMLTIuMjA4LDguNzYyTC0xLjA0Niw4Ljg3OEw4LjAxOSw4Ljg3OEw4LjEzNSwxMS43ODNMOC4wMTksMTEuODk5TC0yLjQ0LDExLjg5OUwtMy43MTksMTEuNzgzTC00LjUzMiwxMS4zMThMLTUuMzQ2LDEwLjI3MkwtNS42OTQsOS4xMUwtNS42OTQsMi4yNTRMLTQuOTk3LDEuMjA4TC00LjE4NCwwLjUxMUwtMy4xMzgsMC4xNjJMMCwwLjA0NlpNLTIuMjA4LDIuOTUxTC0yLjIwOCw0LjQ2MkwtMi4wOTIsNC41NzhMNC42NDgsNC41NzhMNC43NjUsNC40NjJMNC43NjUsMy4zTDQuNjQ4LDMuMDY3TDMuMjU0LDIuOTUxTC0yLjIwOCwyLjk1MVoiIHN0eWxlPSJmaWxsOnJnYigxLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsODYuMTIzMywzNC4zMDc1KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDguMzY3LDAuMDQ2TDkuNDEzLDAuMzk1TDEwLjExLDAuODU5TDEwLjgwOCwxLjc4OUwxMC45MjQsMi4wMjFMMTEuMDQsMy4wNjdMMTEuMDQsNi45MDJMMTAuNjkxLDcuMTM1TDEwLjExLDcuMjUxTDYuOTczLDcuMzY3TDAuNjk3LDcuMzY3TDAuNTgxLDguNzYyTDExLjA0LDguNzYyTDExLjE1NiwxMS41NTFMMTAuOTI0LDExLjc4M0wwLjQ2NSwxMS43ODNMLTEuMDQ2LDExLjU1MUwtMS45NzYsMTAuNzM3TC0yLjU1Nyw5LjgwOEwtMi43ODksOC41MjlMLTIuNzg5LDIuNjAzTC0yLjQ0LDEuNjczTC0xLjM5NSwwLjUxMUwtMC42OTcsMC4xNjJMMCwwLjA0NlpNMC42OTcsMi44MzVMMC41ODEsMy4wNjdMMC42OTcsNC40NjJMNy41NTQsNC40NjJMNy43ODYsMy44ODFMNy43ODYsMy4xODRMNy42NywyLjk1MUw1LjY5NCwyLjgzNUwwLjY5NywyLjgzNVoiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjEzLjI1OCwzNC4xOTEzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDkuMDY0LDAuMDQ2TDEwLjY5MSwwLjE2MkwxMS44NTQsMC42MjdMMTIuNDM1LDEuMDkyTDEzLjAxNiwxLjkwNUwxMy4xMzIsMi4zN0wxMy4yNDgsNC4zNDZMMTMuMjQ4LDYuNzg2TDEzLjAxNiw5LjkyNEwxMi42NjcsMTAuNjIxTDExLjk3LDExLjIwMkwxMS4zODksMTEuNjY3TDExLjA0LDExLjc4M0w4Ljk0OCwxMS44OTlMNC44ODEsMTEuODk5TDEuNTExLDExLjc4M0wwLjQ2NSwxMS4yMDJMLTAuMTE2LDEwLjUwNUwtMC40NjUsOS42OTFMLTAuNTgxLDcuODMyTC0wLjU4MSw1Ljk3M0wtMC4zNDksNS4wNDNMMCw0LjU3OEw5Ljc2Miw0LjQ2Mkw5Ljg3OCwzLjA2N0wtMC4zNDksMy4wNjdMLTAuNDY1LDIuOTUxTC0wLjU4MSwwLjM5NUwtMC40NjUsMC4xNjJMMCwwLjA0NlpNMi45MDUsNy40ODNMMi43ODksNy42TDIuNzg5LDguNTI5TDIuOTA1LDguODc4TDMuMzcsOC45OTRMOC4xMzUsOC45OTRMOS43NjIsOC44NzhMOS44NzgsOC43NjJMOS44NzgsNy42TDkuNzYyLDcuNDgzTDIuOTA1LDcuNDgzWiIgc3R5bGU9ImZpbGw6cmdiKDAsNDAsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwxMTEuMjI1LDM0LjE5MTMpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMi40NCwwLjA0NkwzLjk1MSwwLjE2Mkw0Ljg4MSwwLjYyN0w1LjU3OCwxLjIwOEw2LjE1OSwyLjM3TDYuMjc1LDIuOTUxTDYuMjc1LDUuMzkyTDYuMTU5LDcuMDE5TDYuMDQzLDcuMjUxTDUuNjk0LDcuMzY3TDMuOTUxLDcuNDgzTC00LjE4NCw3LjQ4M0wtNC4wNjcsOC44NzhMNi4xNTksOC44NzhMNi4yNzUsOC45OTRMNi4zOTIsMTEuNzgzTDYuMjc1LDExLjg5OUwtMy45NTEsMTEuODk5TC01LjgxMSwxMS42NjdMLTYuNTA4LDExLjA4NkwtNy4yMDUsOS45MjRMLTcuNDM4LDkuMzQzTC03LjQzOCwyLjYwM0wtNy4yMDUsMS43ODlMLTYuNzQsMS4wOTJMLTUuOTI3LDAuNTExTC01LjIyOSwwLjI3OEwtNC40MTYsMC4xNjJMMCwwLjA0NlpNLTMuOTUxLDIuOTUxTC00LjA2NywzLjQxNkwtMy45NTEsNC40NjJMLTMuODM1LDQuNTc4TDIuOTA1LDQuNTc4TDMuMDIxLDMuNzY1TDIuOTA1LDMuMDY3TDIuNTU3LDIuOTUxTC0zLjk1MSwyLjk1MVoiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjQyLjQyNywzNC4xOTEzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDkuNDEzLDAuMDQ2TDkuNTI5LDAuMTYyTDkuNDEzLDMuMDY3TC0wLjkzLDMuMTg0TC0xLjA0NiwzLjc2NUwtMC45Myw0LjQ2Mkw4LjQ4Myw0LjU3OEw5LjE4MSw0LjkyN0w5LjQxMyw1LjUwOEw5LjQxMyw5LjM0M0w5LjA2NCwxMC4zODlMOC4zNjcsMTEuMjAyTDcuNTU0LDExLjc4M0w1LjkyNywxMS44OTlMLTQuMTg0LDExLjg5OUwtNC40MTYsMTEuNjY3TC00LjMsOS4xMUwtNC4xODQsOC44NzhMMi4yMDgsOC44NzhMNi4wNDMsOC43NjJMNi4xNTksNy40ODNMLTIuNjczLDcuNDgzTC0zLjgzNSw3LjM2N0wtNC4xODQsNi45MDJMLTQuMyw1Ljg1NkwtNC4zLDIuNjAzTC0zLjk1MSwxLjY3M0wtMy4xMzgsMC43NDNMLTIuMjA4LDAuMjc4TC0xLjg1OSwwLjE2MkwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDAsNDAsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyODMuNjgyLDM0LjE5MTMpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMOC44MzIsMC4wNDZMOS4wNjQsMC4xNjJMOS4wNjQsMi45NTFMOC45NDgsMy4wNjdMLTEuMjc4LDMuMTg0TC0xLjM5NSwzLjNMLTEuMzk1LDQuMzQ2TC0wLjkzLDQuNDYyTDguNDgzLDQuNTc4TDguNzE2LDQuNjk0TDguOTQ4LDUuODU2TDguOTQ4LDguNjQ2TDguNzE2LDEwLjE1Nkw4LjI1MSwxMC44NTRMNy4zMjEsMTEuNjY3TDYuOTczLDExLjc4M0w0LjUzMiwxMS44OTlMLTQuNjQ4LDExLjg5OUwtNC43NjUsMTEuNzgzTC00Ljc2NSw5LjExTC00LjY0OCw4Ljg3OEwwLjY5Nyw4Ljg3OEw1LjM0Niw4Ljc2Mkw1LjU3OCw4LjY0Nkw1LjY5NCw3LjQ4M0wtMS43NDMsNy40ODNMLTMuOTUxLDcuMzY3TC00LjUzMiw3LjEzNUwtNC43NjUsNi41NTRMLTQuNzY1LDIuNDg2TC00LjQxNiwxLjU1N0wtMy40ODYsMC42MjdMLTIuMjA4LDAuMTYyTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE2My40MDQsMzQuMTkxMykiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0Nkw5Ljc2MiwwLjA0NkwxMS41MDUsMC4xNjJMMTIuNTUxLDAuNzQzTDEzLjM2NCwxLjU1N0wxMy43MTMsMi4zN0wxMy44MjksMy40MTZMMTMuODI5LDkuMTFMMTMuNTk3LDEwLjA0TDEzLjEzMiwxMC43MzdMMTEuOTcsMTEuNzgzTDEwLjIyNywxMS44OTlMMC4zNDksMTEuODk5TDAsMTEuNzgzTC0wLjExNiwxMS4zMThMLTAuMTE2LDIuMDIxTDAsMC4wNDZaTTMuNjAzLDIuOTUxTDMuNDg2LDMuMDY3TDMuMzcsNi43ODZMMy4zNyw4Ljg3OEw5LjY0Niw4Ljg3OEwxMC4xMSw4LjY0NkwxMC4zNDMsNi40MzdMMTAuMzQzLDQuOTI3TDEwLjIyNywzLjQxNkw5Ljk5NCwzLjE4NEw4Ljk0OCwzLjA2N0wzLjYwMywyLjk1MVoiIHN0eWxlPSJmaWxsOnJnYigyLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTI1LjYzNSwzNC4xOTEzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDQuMTg0LDAuMDQ2TDUuMzQ2LDAuMjc4TDYuMjc1LDAuOTc2TDYuOTczLDEuNzg5TDcuMjA1LDIuMjU0TDcuMzIxLDMuM0w3LjQzOCwxMS43ODNMNy4wODksMTEuODk5TDMuOTUxLDExLjg5OUwzLjgzNSwxMS43ODNMMy43MTksNC4yMjlMMy42MDMsMy40MTZMMy40ODYsMy4zTDIuNjczLDMuMTg0TC0yLjQ0LDMuMTg0TC0yLjc4OSwzLjNMLTIuOTA1LDMuOTk3TC0zLjAyMSwxMS43ODNMLTMuMjU0LDExLjg5OUwtNi4zOTIsMTEuODk5TC02LjUwOCwxMS43ODNMLTYuNTA4LDQuNjk0TC02LjM5MiwyLjYwM0wtNi4wNDMsMS42NzNMLTUuMTEzLDAuNjI3TC00LjQxNiwwLjI3OEwtMy45NTEsMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsNjguODA3OSwzNC4xOTEzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDEyLjg5OSwwLjA0NkwxMy4wMTYsMC4xNjJMMTMuMDE2LDIuOTUxTDEyLjc4MywzLjA2N0w3Ljc4NiwzLjA2N0w3Ljc4NiwxMS43ODNMNy4yMDUsMTEuODk5TDQuNDE2LDExLjg5OUw0LjMsMTEuNjY3TDQuMywzLjA2N0wtMC41ODEsMy4wNjdMLTAuOTMsMi44MzVMLTAuOTMsMS40NEwtMC44MTMsMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjA0LjMxLDMxLjI4NikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwzLjI1NCwwLjA0NkwzLjM3LDAuMTYyTDMuMzcsMi45NTFMNi44NTYsMi45NTFMNi44NTYsNS44NTZMNi42MjQsNS45NzNMMy4zNyw1Ljk3M0wzLjQ4NiwxMC45N0wzLjYwMywxMS42NjdMNi41MDgsMTEuNzgzTDYuODU2LDEyLjAxNkw2Ljg1NiwxNC41NzJMNi4xNTksMTQuODA1TDEuOTc2LDE0LjY4OEwxLjM5NSwxNC4zNEwwLjQ2NSwxMy41MjZMMCwxMi41OTdMLTAuMTE2LDEwLjM4OUwtMC4xMTYsMC41MTFMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTQ5LjkyMywzMS4yODYpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMy4xMzgsMC4xNjJMMy40ODYsMC4zOTVMMy40ODYsMi45NTFMNi42MjQsMi45NTFMNi44NTYsMy4wNjdMNi44NTYsNS44NTZMNi43NCw1Ljk3M0wzLjYwMyw1Ljk3M0wzLjYwMywxMC44NTRMMy44MzUsMTEuNTUxTDQuMTg0LDExLjY2N0w2Ljc0LDExLjg5OUw2Ljg1NiwxMi4wMTZMNi45NzMsMTMuNTI2TDYuOTczLDE0LjU3Mkw2LjI3NSwxNC44MDVMNC40MTYsMTQuODA1TDIuMDkyLDE0LjY4OEwxLjUxMSwxNC40NTZMMC45MywxMy44NzVMMC40NjUsMTMuMjk0TDAuMTE2LDEyLjQ4TDAsOS45MjRMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjI4LjEzMywzMS4yODYpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMy4yNTQsMC4wNDZMMy4zNywwLjE2MkwzLjM3LDE0LjY4OEwzLjAyMSwxNC44MDVMMC4xMTYsMTQuODA1TC0wLjExNiwxNC40NTZMLTAuMTE2LDAuNTExTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMiw0MSwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDk4LjY3NDEsMzEuMjg2KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDIuNTU3LDAuMDQ2TDMuNDg2LDAuMjc4TDMuNjAzLDExLjY2N0wzLjYwMywxNC42ODhMMy4xMzgsMTQuODA1TDAuMjMyLDE0LjgwNUwwLjExNiwxNC42ODhMMCw2LjA4OUwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDAsNDAsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyMDAuMDEsMzQuMTkxMykiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwyLjQ0LDAuMDQ2TDIuNTU3LDAuMTYyTDIuNjczLDAuOTc2TDIuNjczLDExLjc4M0wxLjc0MywxMS44OTlMLTAuNTgxLDExLjg5OUwtMC44MTMsMTEuNTUxTC0wLjgxMywwLjM5NUwtMC42OTcsMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTQ5LjIyNiw1My44MzEpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMC42OTcsMC4wNDZMMC44MTMsMC43NDNMLTAuNDY1LDQuMjI5TC0yLjMyNCw4LjY0NkwtMi42NzMsOC45OTRMLTMuNzE5LDkuMTFMLTQuNDE2LDguMjk3TC01LjM0Niw2LjA4OUwtNi43NCwyLjEzOEwtNy4zMjEsMS4wOTJMLTcuNDM4LDAuOTc2TC0xMC4yMjcsMS43ODlMLTExLjA0LDIuMjU0TC0xMS4yNzIsMy40MTZMLTExLjM4OSw0LjU3OEwtMTEuNTA1LDguODc4TC0xMS44NTQsOC45OTRMLTEyLjY2Nyw4Ljk5NEwtMTIuODk5LDguNTI5TC0xMi44OTksMC4zOTVMLTEyLjMxOCwwLjI3OEwtMTEuNjIxLDAuNjI3TC0xMS4wNCwwLjk3NkwtOS44NzgsMC4yNzhMLTcuOTAyLDAuMjc4TC03LjU1NCwwLjUxMUwtNy40MzgsMC4yNzhMLTYuODU2LDAuMTYyTC02LjA0MywwLjUxMUwtNS4zNDYsMS42NzNMLTQuNjQ4LDMuNTMyTC0zLjcxOSw2LjY3TC0zLjM3LDcuMTM1TC0yLjQ0LDUuMTU5TC0wLjkzLDEuMzI0TC0wLjIzMiwwLjI3OEwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDIsNDEsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSw5Mi4yODI1LDUxLjE1ODEpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMC45MywwLjE2MkwxLjA0NiwwLjI3OEwxLjE2Miw3LjQ4M0wxLjM5NSw4Ljk5NEwxLjc0Myw5LjgwOEwzLjEzOCwxMC4zODlMNC44ODEsMTAuMzg5TDUuODExLDkuOTI0TDYuMzkyLDguODc4TDYuNjI0LDcuMTM1TDYuNzQsMC43NDNMNi44NTYsMC4xNjJMOC4xMzUsMC4xNjJMOC4zNjcsMC4zOTVMOC4zNjcsNy4zNjdMOC4xMzUsOC44NzhMNy42NywxMC4wNEw2Ljk3MywxMC45N0w2LjE1OSwxMS40MzVMNS40NjIsMTEuNjY3TDQuMywxMS43ODNMMy4xMzgsMTEuNzgzTDEuODU5LDExLjU1MUwwLjkzLDExLjA4NkwwLjIzMiwxMC4yNzJMLTAuMjMyLDkuMjI3TC0wLjQ2NSw4LjE4MUwtMC41ODEsNy4wMTlMLTAuNTgxLDIuNzE5TC0wLjQ2NSwwLjM5NUwtMC4zNDksMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTc5LjkwNiwzNC4xOTEzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDEuNzQzLDAuMDQ2TDIuMzI0LDAuMjc4TDIuNDQsMTEuNjY3TDEuNjI3LDExLjg5OUwtMC42OTcsMTEuODk5TC0xLjA0NiwxMS42NjdMLTEuMDQ2LDAuMTYyTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE4Ny42OTIsNTMuOTQ3MikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwxLjA0NiwwLjA0NkwyLjIwOCwwLjM5NUwzLjEzOCwxLjIwOEwzLjcxOSwyLjAyMUw0LjA2NywzLjE4NEw0LjA2Nyw1LjYyNEwzLjYwMyw3LjEzNUwyLjMyNCw4LjUyOUwxLjUxMSw4Ljg3OEwwLjgxMyw4Ljk5NEwtMC4xMTYsOC45OTRMLTEuNTExLDguNTI5TC0yLjIwOCw4LjA2NEwtMi4yMDgsMTIuMTMyTC0zLjYwMywxMi4xMzJMLTMuNzE5LDkuNTc1TC0zLjcxOSwyLjYwM0wtMy42MDMsMC4yNzhMLTMuNDg2LDAuMTYyTC0yLjU1NywwLjI3OEwtMi4yMDgsMC44NTlMLTEuNjI3LDAuNjI3TC0wLjY5NywwLjE2MkwwLDAuMDQ2Wk0tMC40NjUsMS4yMDhMLTEuMzk1LDEuNzg5TC0xLjc0MywyLjEzOEwtMi4wOTIsMy4zTC0yLjIwOCw1LjE1OUwtMS45NzYsNi4zMjFMLTEuNTExLDcuMDE5TC0wLjY5Nyw3LjcxNkwwLDcuOTQ4TDAuOTMsNy44MzJMMS44NTksNy4xMzVMMi40NCw2LjIwNUwyLjY3Myw1LjE1OUwyLjY3MywzLjg4MUwyLjMyNCwyLjQ4NkwxLjc0MywxLjY3M0wwLjkzLDEuMjA4TC0wLjQ2NSwxLjIwOFoiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjQ2LjM3OCw1MC44MDk1KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDEuMzk1LDAuMDQ2TDEuMzk1LDExLjU1MUwxLjA0NiwxMi4wMTZMMC4yMzIsMTEuODk5TDAsMTEuNDM1TC0xLjM5NSwxMi4wMTZMLTEuOTc2LDEyLjEzMkwtMy42MDMsMTIuMTMyTC00Ljc2NSwxMS41NTFMLTUuNDYyLDEwLjczN0wtNi4xNTksOS4zNDNMLTYuMjc1LDguNjQ2TC02LjI3NSw2Ljc4NkwtNi4wNDMsNS43NEwtNS4zNDYsNC40NjJMLTQuNzY1LDMuNzY1TC0zLjgzNSwzLjE4NEwtMi4wOTIsMy4xODRMLTAuNDY1LDMuNzY1TC0wLjExNiwzLjk5N0wtMC4xMTYsMC4yNzhMMCwwLjA0NlpNLTMuMTM4LDQuMjI5TC00LjA2Nyw0LjkyN0wtNC43NjUsNi4zMjFMLTQuODgxLDYuOTAyTC00Ljg4MSw4LjI5N0wtNC42NDgsOS4zNDNMLTQuMDY3LDEwLjI3MkwtMy4yNTQsMTAuODU0TC0yLjkwNSwxMC45N0wtMS44NTksMTAuOTdMLTAuODEzLDEwLjI3MkwtMC4yMzIsOS4zNDNMMCw4LjE4MUwwLDYuNzg2TC0wLjM0OSw1Ljc0TC0wLjgxMyw1LjA0M0wtMS43NDMsNC4zNDZMLTEuOTc2LDQuMjI5TC0zLjEzOCw0LjIyOVoiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjEyLjQ0NSw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDEuNjI3LDAuMDQ2TDIuNzg5LDAuMjc4TDMuNDg2LDAuNzQzTDQuMTg0LDEuNzg5TDQuNDE2LDIuNjAzTDQuNTMyLDMuNTMyTDQuNTMyLDguMjk3TDQuMTg0LDguODc4TDMuNDg2LDguNjQ2TDMuMDIxLDguNDEzTDIuNDQsOC41MjlMMC45Myw4Ljk5NEwtMC44MTMsOC45OTRMLTEuNzQzLDguNTI5TC0yLjQ0LDcuNkwtMi43ODksNi43ODZMLTIuOTA1LDUuOTczTC0yLjQ0LDQuODExTC0xLjUxMSwzLjk5N0wtMC4zNDksMy41MzJMMC4yMzIsMy40MTZMMi45MDUsMy4zTDIuNjczLDIuMDIxTDIuMDkyLDEuNDRMMS4xNjIsMS4yMDhMLTAuNTgxLDEuMzI0TC0xLjg1OSwxLjc4OUwtMi4yMDgsMS45MDVMLTEuOTc2LDAuODU5TC0xLjUxMSwwLjM5NUwtMC45MywwLjE2MkwwLDAuMDQ2Wk0wLjY5Nyw0LjQ2MkwtMC40NjUsNC42OTRMLTEuMjc4LDUuMTU5TC0xLjM5NSw1LjUwOEwtMS4zOTUsNi42N0wtMC45Myw3LjM2N0wtMC4yMzIsNy44MzJMMS4xNjIsNy44MzJMMi4yMDgsNy4yNTFMMi43ODksNi42N0wyLjkwNSw2LjMyMUwyLjkwNSw0LjQ2MkwwLjY5Nyw0LjQ2MloiIHN0eWxlPSJmaWxsOnJnYigxLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTI5LjAwNSw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDIuMzI0LDAuMDQ2TDMuMzcsMC41MTFMNC4wNjcsMS4wOTJMNC42NDgsMi4wMjFMNC45OTcsMy4xODRMNC45OTcsNC42OTRMNC44ODEsNC45MjdMLTEuMzk1LDQuOTI3TC0xLjE2Miw2LjA4OUwtMC42OTcsNi45MDJMLTAuNjk3LDcuMTM1TC0wLjExNiw3LjM2N0wwLjY5Nyw3LjcxNkwyLjQ0LDcuNzE2TDMuODM1LDcuMjUxTDQuNDE2LDcuMDE5TDQuNzY1LDcuMDE5TDQuNjQ4LDcuODMyTDMuOTUxLDguNjQ2TDMuMzcsOC44NzhMMi42NzMsOC45OTRMMC4xMTYsOC45OTRMLTAuOTMsOC42NDZMLTEuOTc2LDcuNzE2TC0yLjc4OSw2LjA4OUwtMy4wMjEsNC44MTFMLTIuOTA1LDMuNDE2TC0yLjQ0LDIuMTM4TC0xLjk3NiwxLjQ0TC0xLjM5NSwwLjg1OUwtMC4zNDksMC4xNjJMMCwwLjA0NlpNMC40NjUsMS4wOTJMLTAuNDY1LDEuNTU3TC0xLjE2MiwyLjQ4NkwtMS4yNzgsMy42NDhMLTEuMDQ2LDMuODgxTC0wLjQ2NSwzLjk5N0wyLjA5MiwzLjk5N0wzLjM3LDMuODgxTDMuNjAzLDMuNDE2TDMuMTM4LDIuMTM4TDIuNjczLDEuNTU3TDEuNzQzLDEuMDkyTDAuNDY1LDEuMDkyWiIgc3R5bGU9ImZpbGw6cmdiKDEsNDEsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwxOTYuNTI0LDUzLjk0NzIpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMS41MTEsMC4wNDZMMi42NzMsMC4yNzhMMy42MDMsMS4wOTJMNC4xODQsMi4zN0w0LjQxNiw0LjQ2Mkw0LjQxNiw3LjAxOUw0LjMsOC41MjlMMy45NTEsOC44NzhMMy4xMzgsOC43NjJMMi45MDUsOC4yOTdMMy4wMjEsOC4wNjRMMS42MjcsOC43NjJMMC42OTcsOC45OTRMLTAuOTMsOC45OTRMLTEuNzQzLDguNjQ2TC0yLjQ0LDcuODMyTC0yLjkwNSw2LjkwMkwtMy4wMjEsNS42MjRMLTIuNDQsNC40NjJMLTEuNzQzLDMuOTk3TC0wLjIzMiwzLjUzMkwwLjU4MSwzLjQxNkwyLjc4OSwzLjQxNkwyLjU1NywyLjI1NEwyLjIwOCwxLjY3M0wxLjUxMSwxLjMyNEwwLjkzLDEuMjA4TDAsMS4yMDhMLTEuMTYyLDEuNDRMLTEuNzQzLDEuNzg5TC0yLjA5MiwxLjc4OUwtMi4zMjQsMC45NzZMLTEuOTc2LDAuMzk1TC0xLjE2MiwwLjE2MkwwLDAuMDQ2Wk0yLjQ0LDQuMzQ2TC0wLjExNiw0LjU3OEwtMS4yNzgsNC45MjdMLTEuNjI3LDUuNTA4TC0xLjYyNyw2LjMyMUwtMS4yNzgsNy4yNTFMLTAuNDY1LDcuODMyTDAuODEzLDcuODMyTDEuOTc2LDcuMjUxTDIuNjczLDYuNTU0TDIuNzg5LDYuMjA1TDIuNzg5LDQuNDYyTDIuNDQsNC4zNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MSwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE3MS43NzEsNTMuOTQ3MikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwxLjk3NiwwLjA0NkwzLjI1NCwwLjUxMUw0LjMsMS40NEw0Ljg4MSwyLjYwM0w0Ljk5NywzLjA2N0w0Ljk5Nyw1LjYyNEw0LjY0OCw2LjkwMkwzLjgzNSw3Ljk0OEwyLjkwNSw4LjY0NkwxLjg1OSw4Ljk5NEwtMC4xMTYsOC45OTRMLTEuMjc4LDguNDEzTC0yLjA5Miw3LjQ4M0wtMi42NzMsNi4zMjFMLTIuOTA1LDUuMzkyTC0yLjkwNSwzLjc2NUwtMi40NCwyLjI1NEwtMS43NDMsMS4wOTJMLTAuOTMsMC4zOTVMMCwwLjA0NlpNMC41ODEsMS4wOTJMLTAuMzQ5LDEuNTU3TC0wLjgxMywyLjEzOEwtMS4yNzgsMy4xODRMLTEuMzk1LDMuNjQ4TC0xLjM5NSw1LjUwOEwtMC44MTMsNi45MDJMMCw3LjZMMC41ODEsNy44MzJMMS41MTEsNy44MzJMMi40NCw3LjM2N0wzLjEzOCw2LjU1NEwzLjQ4Niw1LjUwOEwzLjQ4NiwzLjQxNkwzLjAyMSwyLjI1NEwyLjU1NywxLjY3M0wxLjYyNywxLjA5MkwwLjU4MSwxLjA5MloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjMzLjM2Myw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDIuMDkyLDAuMDQ2TDMuMTM4LDAuNTExTDMuOTUxLDEuMDkyTDQuNjQ4LDIuMTM4TDQuOTk3LDMuNDE2TDQuOTk3LDUuMjc1TDQuNzY1LDYuNDM3TDMuOTUxLDcuNzE2TDMuMDIxLDguNTI5TDEuNzQzLDguOTk0TDAuMzQ5LDkuMTFMLTAuNTgxLDguODc4TC0xLjUxMSw4LjI5N0wtMi4yMDgsNy4zNjdMLTIuNjczLDYuNDM3TC0zLjAyMSw0LjgxMUwtMy4wMjEsMy43NjVMLTIuNDQsMi4wMjFMLTEuNzQzLDEuMDkyTC0wLjkzLDAuMzk1TDAsMC4wNDZaTTAuNDY1LDEuMDkyTC0wLjQ2NSwxLjU1N0wtMS4xNjIsMi40ODZMLTEuMzk1LDMuMTg0TC0xLjUxMSw0LjY5NEwtMS4yNzgsNi4wODlMLTAuNTgxLDcuMTM1TDAuMjMyLDcuNzE2TDAuNTgxLDcuODMyTDEuMzk1LDcuODMyTDIuNTU3LDcuMjUxTDMuMjU0LDYuMzIxTDMuNDg2LDUuNjI0TDMuNDg2LDMuNTMyTDMuMDIxLDIuMzdMMi4yMDgsMS40NEwxLjM5NSwxLjA5MkwwLjQ2NSwxLjA5MloiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMjUzLjAwMiw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDEuODU5LDAuMDQ2TDMuMDIxLDAuMzk1TDQuMDY3LDEuMjA4TDQuNjQ4LDIuMTM4TDQuOTk3LDMuNzY1TDQuOTk3LDQuOTI3TDQuNzY1LDYuMzIxTDQuMTg0LDcuNDgzTDMuNjAzLDguMTgxTDIuNjczLDguNzYyTDEuOTc2LDguOTk0TDAuNDY1LDkuMTFMLTAuNTgxLDguODc4TC0xLjI3OCw4LjQxM0wtMi4wOTIsNy42TC0yLjY3Myw2LjMyMUwtMi45MDUsNS41MDhMLTIuOTA1LDMuNTMyTC0yLjQ0LDIuMTM4TC0xLjc0MywxLjA5MkwtMC44MTMsMC4yNzhMMCwwLjA0NlpNMC41ODEsMS4wOTJMLTAuNTgxLDEuNjczTC0xLjA0NiwyLjM3TC0xLjM5NSwzLjUzMkwtMS4zOTUsNS42MjRMLTAuOTMsNi45MDJMMCw3LjZMMC40NjUsNy44MzJMMS41MTEsNy44MzJMMi40NCw3LjM2N0wzLjEzOCw2LjQzN0wzLjQ4Niw1LjA0M0wzLjQ4NiwzLjUzMkwzLjEzOCwyLjQ4NkwyLjIwOCwxLjQ0TDEuMzk1LDEuMDkyTDAuNTgxLDEuMDkyWiIgc3R5bGU9ImZpbGw6cmdiKDIsNDEsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwxMDMuNDM5LDU0LjA2MzQpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMS4wNDYsMC4yNzhMMS44NTksMC42MjdMMy4xMzgsMC4wNDZMNS4yMjksMC4wNDZMNS45MjcsMC4zOTVMNi41MDgsMC45NzZMNy4wODksMi4xMzhMNy4yMDUsMi44MzVMNy4yMDUsOC41MjlMNi43NCw4Ljc2Mkw2LjA0Myw4Ljc2Mkw1LjgxMSw4LjI5N0w1LjY5NCwyLjk1MUw1LjM0NiwxLjkwNUw0Ljc2NSwxLjMyNEw0LjUzMiwxLjIwOEwzLjEzOCwxLjIwOEwyLjMyNCwxLjY3M0wxLjc0MywyLjM3TDEuNTExLDMuOTk3TDEuMzk1LDguNjQ2TDAuMTE2LDguNjQ2TDAsOC41MjlMLTAuMTE2LDcuNkwtMC4xMTYsMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTIwLjE3Myw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDIuNTU3LDAuMDQ2TDMuNjAzLDAuMzk1TDMuODM1LDAuOTc2TDMuODM1LDEuNzg5TDMuMTM4LDEuNTU3TDEuNjI3LDEuMDkyTDAuNDY1LDEuMDkyTC0wLjQ2NSwxLjU1N0wtMC44MTMsMi4xMzhMLTAuODEzLDIuOTUxTC0wLjIzMiwzLjQxNkwxLjI3OCwzLjg4MUwyLjkwNSw0LjM0NkwzLjgzNSw0LjkyN0w0LjE4NCw1LjUwOEw0LjE4NCw2LjkwMkwzLjgzNSw3LjZMMy4xMzgsOC40MTNMMi4zMjQsOC44NzhMMS44NTksOC45OTRMMC4yMzIsOC45OTRMLTEuMzk1LDguNzYyTC0yLjMyNCw4LjI5N0wtMi41NTcsNy44MzJMLTIuNTU3LDcuMjUxTC0yLjMyNCw3LjEzNUwtMC4yMzIsNy43MTZMMS4zOTUsNy44MzJMMi4zMjQsNy4zNjdMMi42NzMsNi41NTRMMi42NzMsNS44NTZMMi4wOTIsNS41MDhMLTAuNDY1LDQuODExTC0xLjYyNyw0LjIyOUwtMi4wOTIsMy42NDhMLTIuMzI0LDIuOTUxTC0yLjIwOCwxLjc4OUwtMS42MjcsMC44NTlMLTAuNTgxLDAuMTYyTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDI2MS43MTgsNTMuOTQ3MikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwyLjQ0LDAuMDQ2TDMuNDg2LDAuMjc4TDQuMTg0LDAuNzQzTDQuNDE2LDEuNjczTDMuODM1LDEuNTU3TDEuODU5LDEuMDkyTDAuNTgxLDEuMDkyTC0wLjExNiwxLjQ0TC0wLjQ2NSwyLjAyMUwtMC40NjUsMy4wNjdMMC4yMzIsMy41MzJMMy4wMjEsNC4yMjlMNC4xODQsNC45MjdMNC40MTYsNS4zOTJMNC40MTYsNy4xMzVMMy43MTksOC4xODFMMi45MDUsOC43NjJMMS43NDMsOC45OTRMMC4xMTYsOC45OTRMLTEuMjc4LDguNzYyTC0xLjk3Niw4LjI5N0wtMi4yMDgsNy45NDhMLTIuMjA4LDcuMzY3TC0xLjg1OSw3LjI1MUwwLjM0OSw3LjgzMkwxLjk3Niw3LjgzMkwyLjU1Nyw3LjQ4M0wyLjkwNSw2LjY3TDIuOTA1LDUuOTczTDIuNDQsNS41MDhMMC45Myw1LjA0M0wtMC42OTcsNC41NzhMLTEuMjc4LDQuMjI5TC0xLjc0MywzLjc2NUwtMS45NzYsMy4wNjdMLTEuOTc2LDIuMjU0TC0xLjUxMSwxLjA5MkwtMC41ODEsMC4yNzhMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigyLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTU5LjIyLDUzLjk0NzIpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMi4zMjQsMC4wNDZMMy4xMzgsMC4zOTVMMy43MTksMS41NTdMMy43MTksMS43ODlMMy4wMjEsMS42NzNMMS45NzYsMS4zMjRMMC42OTcsMS4yMDhMLTAuNDY1LDEuNTU3TC0xLjA0NiwyLjEzOEwtMS42MjcsMy4xODRMLTEuNzQzLDMuNjQ4TC0xLjc0Myw1LjUwOEwtMS4yNzgsNi41NTRMLTEuMDQ2LDcuMTM1TC0wLjQ2NSw3LjM2N0wwLjM0OSw3LjcxNkwxLjc0Myw3LjcxNkwzLjAyMSw3LjI1MUwzLjM3LDcuMTM1TDMuNDg2LDcuNDgzTDMuMjU0LDguMjk3TDIuNzg5LDguNzYyTDEuNzQzLDguOTk0TC0wLjIzMiw4Ljk5NEwtMS4yNzgsOC42NDZMLTIuNDQsNy42TC0zLjI1NCw1Ljk3M0wtMy4zNyw1LjUwOEwtMy4zNywzLjY0OEwtMi45MDUsMi4yNTRMLTEuOTc2LDAuOTc2TC0wLjkzLDAuMjc4TDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MSwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDIyNS4xMTIsNTEuNjIzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDAuNjk3LDAuMDQ2TDEuMDQ2LDAuMjc4TDEuMjc4LDIuMzdMMy4zNywyLjQ4NkwzLjk1MSwyLjgzNUwzLjk1MSwzLjY0OEwzLjAyMSwzLjc2NUwxLjM5NSwzLjY0OEwxLjI3OCwzLjg4MUwxLjI3OCw4Ljk5NEwxLjUxMSw5LjY5MUwyLjIwOCw5LjkyNEwzLjgzNSw5LjkyNEw0LjE4NCwxMC4zODlMNC4wNjcsMTAuOTdMMy40ODYsMTEuMjAyTDIuMDkyLDExLjIwMkwwLjY5NywxMC44NTRMMC4xMTYsMTAuMTU2TC0wLjExNiw5LjU3NUwtMC4zNDksNy4yNTFMLTAuMzQ5LDMuNzY1TC0xLjA0NiwzLjUzMkwtMS4zOTUsMy4xODRMLTEuNTExLDIuNzE5TC0wLjIzMiwyLjM3TC0wLjExNiwwLjI3OEwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDIsNDEsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyMDMuNzI5LDU0LjA2MzQpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMS4wNDYsMC4wNDZMMS41MTEsMC4zOTVMMS43NDMsMC44NTlMMi41NTcsMC43NDNMMi43ODksMC4xNjJMMy4xMzgsMC4wNDZMNS4yMjksMC4wNDZMNS4xMTMsMC43NDNMNC43NjUsMC45NzZMMy4zNywxLjMyNEwyLjY3MywxLjY3M0wxLjk3NiwyLjI1NEwxLjYyNywzLjQxNkwxLjUxMSw0LjIyOUwxLjM5NSw3LjM2N0wxLjI3OCw4Ljc2MkwwLjIzMiw4LjY0NkwwLDguNDEzTC0wLjExNiwyLjI1NEwtMC4xMTYsMC4yNzhMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYig0LDQzLDE4Nik7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTUyLjU5Niw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDAuNjk3LDAuMDQ2TDAuOTMsMC4xNjJMMC45Myw4Ljc2MkwwLjgxMyw4Ljg3OEwtMC4yMzIsOC44NzhMLTAuNDY1LDguMTgxTC0wLjQ2NSwwLjg1OUwtMC4yMzIsMC4yNzhMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigwLDQwLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTY1LjYxMiw1My45NDcyKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDAuOTMsMC4wNDZMMS4wNDYsMC43NDNMMC45Myw4Ljc2MkwwLjIzMiw4Ljk5NEwtMC4yMzIsOC44NzhMLTAuMzQ5LDguNjQ2TC0wLjQ2NSw2LjQzN0wtMC40NjUsMS41NTdMLTAuMzQ5LDAuMzk1TDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MSwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDI1My40NjcsNDMuMTM5NikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwzLjQ4NiwwLjA0NkwzLjYwMywwLjc0M0wzLjYwMywyLjYwM0wzLjQ4NiwyLjgzNUwwLjExNiwyLjgzNUwwLDIuNzE5TDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDI5NC42MDYsNDMuMTM5NikiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwwLjA0NkwyLjkwNSwwLjA0NkwzLjM3LDAuMTYyTDMuMzcsMi43MTlMMy4yNTQsMi44MzVMMCwyLjgzNUwtMC4xMTYsMi43MTlMLTAuMTE2LDAuMjc4TDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDI3My45Miw0My4xMzk2KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDMuMTM4LDAuMDQ2TDMuMzcsMC4xNjJMMy4zNywyLjgzNUwwLDIuODM1TDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMCw0MCwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE5OS40MjksMzEuMjg2KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDMuMDIxLDAuMDQ2TDMuMTM4LDAuMTYyTDMuMTM4LDEuNDRMMS4yNzgsMS41NTdMMCwxLjU1N0wtMC4yMzIsMS4zMjRMLTAuMjMyLDAuNTExTDAsMC4wNDZaIiBzdHlsZT0iZmlsbDpyZ2IoMSw0MSwxODUpO2ZpbGwtcnVsZTpub256ZXJvOyI+PC9wYXRoPiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDE4MS4xODQsMzEuMjg2KSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDAuODEzLDAuMDQ2TDEuMTYyLDAuMzk1TDEuMTYyLDEuMjA4TDEuMDQ2LDEuNDRMLTIuMjA4LDEuNDRMLTIuNTU3LDEuMDkyTC0yLjU1NywwLjM5NUwtMS45NzYsMC4xNjJMMCwwLjA0NloiIHN0eWxlPSJmaWxsOnJnYigxLDQxLDE4NSk7ZmlsbC1ydWxlOm5vbnplcm87Ij48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMTY1LjcyOCw1MC42OTMzKSI+ICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDAuMDQ2TDAuODEzLDAuMzk1TDAuOTMsMC42MjdMMC45MywxLjU1N0wwLjM0OSwyLjAyMUwtMC4yMzIsMS45MDVMLTAuNDY1LDEuNTU3TC0wLjQ2NSwwLjUxMUwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDMsNDIsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwxNTIuNTk2LDUwLjgwOTUpIj4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMC42OTcsMC4xNjJMMS4wNDYsMC44NTlMMC45MywxLjU1N0wwLjQ2NSwxLjkwNUwtMC4xMTYsMS45MDVMLTAuNDY1LDEuMjA4TC0wLjM0OSwwLjM5NUwwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDYsNDUsMTg2KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjY3MTkzNiwwLDAsMC42NzE5MzYsMjcuMjUyMSwzNC4wMDgxKSI+ICAgICAgICAgICAgPHBhdGggZD0iTTAsMC4wNDZMMC45MywwLjE2MkwyLjY3MywwLjc0M0w0LjY0OCwxLjY3M0w1LjgxMSwyLjYwM0w2LjYyNCwzLjQxNkw3LjQzOCw0LjU3OEw4LjAxOSw1Ljg1Nkw4LjI1MSw2LjY3TDguMjUxLDcuODMyTDcuNzg2LDkuMTFMNy4wODksMTAuMjcyTDYuMjc1LDExLjMxOEw1LjExMywxMi4yNDhMMy4yNTQsMTMuMTc4TDAuODEzLDEzLjk5MUwtMC4xMTYsMTQuMTA3TC0wLjExNiwwLjYyN0wwLDAuMDQ2WiIgc3R5bGU9ImZpbGw6cmdiKDAsNDAsMTg1KTtmaWxsLXJ1bGU6bm9uemVybzsiPjwvcGF0aD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==" alt="TeleNet Digital s.a.s.">
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="label">Propuesta Estratégica · Mayo 2026</div>
+    <div class="title">Kaspersky Next EDR Optimum</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Presentación Confidencial — TeleNet Digital</div>
+  <h1>Estrategia de Go-to-Market y Plan de Despliegue<br><span>Kaspersky Next EDR Optimum</span></h1>
+  <p class="hero-sub">Una propuesta integral de INNSYSTE para monetizar la base de clientes de TeleNet Digital con ciberseguridad de nivel empresarial — incluyendo educación continua, concientización y soporte especializado.</p>
+  <div class="hero-stats">
+    <div class="stat-card"><div class="stat-num">20.000</div><div class="stat-label">Licencias meta en 12 meses</div></div>
+    <div class="stat-card"><div class="stat-num">40.000</div><div class="stat-label">Clientes de TeleNet Digital</div></div>
+    <div class="stat-card"><div class="stat-num">50%</div><div class="stat-label">Penetración objetivo</div></div>
+    <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">Meses de ejecución</div></div>
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('gtm', this)">📈 Estrategia Go-to-Market</button>
+  <button class="tab-btn" onclick="showTab('edu', this)">🎓 Educación y Concientización</button>
+  <button class="tab-btn" onclick="showTab('scope', this)">🛡️ Alcance del Servicio</button>
+  <button class="tab-btn" onclick="showTab('deploy', this)">🛠️ Despliegue y Soporte</button>
+</div>
+
+<!-- =============================== GTM =============================== -->
+<div id="gtm" class="section active">
+  <div class="sec-header">
+    <div class="sec-num">Sección 01</div>
+    <h2>Estrategia Go-to-Market</h2>
+    <p>Cómo llevar Kaspersky Next EDR Optimum a los 20.000 clientes de TeleNet Digital en 12 meses, con una estrategia multicanal y programas de educación transversales.</p>
+  </div>
+
+  <!-- OPORTUNIDAD -->
+  <div class="content-block">
+    <div class="block-title">01 · Oportunidad de Mercado</div>
+    <div class="block-h">¿Por qué ahora? ¿Por qué con TeleNet Digital?</div>
+    <div class="block-text">El mercado colombiano de ciberseguridad para pymes está en crecimiento acelerado. Los ciberataques en LATAM aumentaron más del 60% en los últimos dos años, pero la mayoría de las empresas pequeñas aún no tienen protección endpoint adecuada. TeleNet Digital tiene acceso privilegiado a este mercado desatendido a través de su base de 40.000 clientes activos en Cundinamarca.</div>
+    <div class="cards">
+      <div class="card a1"><div class="card-icon">🏢</div><div class="card-title">Base instalada con confianza</div><div class="card-text">40.000 clientes ya pagan a TeleNet Digital mensualmente. La factura de internet es un canal de distribución de altísima confianza y mínimo costo de adquisición.</div></div>
+      <div class="card a2"><div class="card-icon">🎯</div><div class="card-title">Segmento B2B desatendido</div><div class="card-text">Las pymes bogotanas con conectividad empresarial raramente tienen presupuesto para soluciones EDR. Un add-on accesible en su factura cambia la ecuación completamente.</div></div>
+      <div class="card a3"><div class="card-icon">🔒</div><div class="card-title">Diferenciación competitiva</div><div class="card-text">TeleNet Digital se posiciona como el único ISP en Cundinamarca que ofrece EDR bundleado — internet + seguridad empresarial en una sola factura.</div></div>
+      <div class="card a4"><div class="card-icon">🎓</div><div class="card-title">Educación como diferenciador</div><div class="card-text">INNSYSTE aporta una estrategia de concientización continua con webinars, infografías y campañas que generan demanda orgánica y fidelizan al cliente.</div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTO -->
+  <div class="content-block">
+    <div class="block-title">02 · El Producto</div>
+    <div class="block-h">Kaspersky Next EDR Optimum — ¿Qué entregamos?</div>
+    <div class="callout info">🛡️ <strong>Línea base incluida:</strong> Cada licencia se entrega con una configuración de línea base de ciberseguridad definida por INNSYSTE. Configuraciones personalizadas o ajustes adicionales requieren la contratación de un servicio de <strong>bolsa de horas de soporte de ciberseguridad</strong> por separado.</div>
+    <div class="two-col">
+      <div class="value-box">
+        <h4>🛡️ Qué protege la línea base</h4>
+        <ul>
+          <li>Windows, macOS, Linux, iOS y Android</li>
+          <li>Ransomware, malware avanzado y APTs</li>
+          <li>Amenazas de día cero y exploits</li>
+          <li>Ataques de phishing y suplantación</li>
+          <li>Ataques sin archivo (fileless attacks)</li>
+        </ul>
+      </div>
+      <div class="value-box">
+        <h4>⚡ Qué hace diferente al EDR</h4>
+        <ul>
+          <li>Detección Y respuesta (no solo alertas)</li>
+          <li>Análisis forense de incidentes</li>
+          <li>Aislamiento automático de endpoints</li>
+          <li>Consola centralizada en la nube</li>
+          <li>Sin necesidad de analista de seguridad dedicado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px;">💼 <strong>Licenciamiento:</strong> Una licencia por dispositivo. El cliente compra el número exacto que necesita. Facturado mensualmente en la misma factura de internet de TeleNet Digital.</div>
+  </div>
+
+  <!-- PROPUESTA DE VALOR -->
+  <div class="content-block">
+    <div class="block-title">03 · Propuesta de Valor</div>
+    <div class="block-h">Lo que gana cada actor en el ecosistema</div>
+    <div class="two-col">
+      <div class="value-box">
+        <h4>📡 Para TeleNet Digital</h4>
+        <ul>
+          <li>Nuevo stream de ingresos recurrentes sin inversión técnica propia</li>
+          <li>Diferenciación competitiva real en mercado comoditizado</li>
+          <li>Mayor stickiness y menor churn de clientes</li>
+          <li>Posicionamiento como partner de transformación digital</li>
+          <li>INNSYSTE gestiona todo: despliegue, soporte y educación</li>
+        </ul>
+      </div>
+      <div class="value-box">
+        <h4>🏢 Para el cliente final (Pyme)</h4>
+        <ul>
+          <li>Seguridad de nivel enterprise a precio accesible</li>
+          <li>Factura única: internet + seguridad (simplicidad)</li>
+          <li>Capacitación y concientización continua incluida</li>
+          <li>Soporte en español, horario laboral colombiano</li>
+          <li>Proveedor de confianza: la misma empresa de su internet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEGMENTACIÓN -->
+  <div class="content-block">
+    <div class="block-title">04 · Segmentación y Targeting</div>
+    <div class="block-h">A quién le vendemos primero</div>
+    <div class="cards">
+      <div class="card a1" style="border-top-width:6px;"><div class="card-icon">🏆</div><div class="card-title">Primario — Pymes B2B (70%)</div><div class="card-text">Empresas con 5 a 100 dispositivos. Sector servicios, comercio, salud, educación y retail en Bogotá y Cundinamarca. Alto dolor de ciberseguridad, bajo presupuesto histórico para TI.</div></div>
+      <div class="card a3"><div class="card-icon">🏠</div><div class="card-title">Secundario — B2C / Home Office (30%)</div><div class="card-text">Freelancers, profesionales independientes y teletrabajadores. Oferta simplificada: 1-3 licencias por usuario. Excelente segmento para webinars de concientización.</div></div>
+      <div class="card a2"><div class="card-icon">⚡</div><div class="card-title">Quick wins — Base existente TeleNet Digital</div><div class="card-text">Atacar primero la base instalada de TeleNet Digital. Costo de adquisición mínimo. Canal: email + SMS + WhatsApp + llamada directa + fuerza comercial.</div></div>
+    </div>
+  </div>
+
+  <!-- CANALES -->
+  <div class="content-block">
+    <div class="block-title">05 · Canales de Venta y Activación</div>
+    <div class="block-h">Estrategia multicanal para llegar a los 20.000</div>
+    <div class="channels">
+      <div class="channel-item">
+        <div class="ch-icon">💬</div>
+        <div>
+          <div class="ch-title">Canal 1 — Campañas Digitales a Base de Datos</div>
+          <div class="ch-desc">Campañas segmentadas de Email, SMS y WhatsApp a los 40.000 clientes activos de TeleNet Digital. Mensajes personalizados por segmento (B2B vs. B2C). Oferta de lanzamiento con descuento por los primeros 3 meses. INNSYSTE diseña la campaña; TeleNet Digital ejecuta el envío.</div>
+          <div class="ch-tags"><span class="ch-tag">📧 Email</span><span class="ch-tag">📱 SMS</span><span class="ch-tag">💬 WhatsApp</span></div>
+        </div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-icon">👥</div>
+        <div>
+          <div class="ch-title">Canal 2 — Fuerza Comercial de TeleNet Digital</div>
+          <div class="ch-desc">Los asesores de TeleNet Digital incorporan Kaspersky EDR en su pitch de venta y renovación. INNSYSTE provee materiales, scripts y training. Incentivo por licencia adicional vendida.</div>
+          <div class="ch-tags"><span class="ch-tag">🎓 Training INNSYSTE</span><span class="ch-tag">📄 Kit de venta</span></div>
+        </div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-icon">📞</div>
+        <div>
+          <div class="ch-title">Canal 3 — Call Center TeleNet Digital</div>
+          <div class="ch-desc">Campaña de llamadas salientes a segmento B2B prioritario. Script corto de 3 minutos enfocado en el riesgo y la conveniencia. INNSYSTE provee el script, objeciones frecuentes y capacitación al equipo de call center.</div>
+          <div class="ch-tags"><span class="ch-tag">📞 Outbound</span><span class="ch-tag">B2B Priority</span></div>
+        </div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-icon">💻</div>
+        <div>
+          <div class="ch-title">Canal 4 — Portal / App de Autogestión TeleNet Digital</div>
+          <div class="ch-desc">El cliente puede agregar el add-on directamente desde la plataforma de TeleNet Digital. Proceso de contratación en menos de 3 minutos. Facturación integrada en la misma factura de internet.</div>
+          <div class="ch-tags"><span class="ch-tag">🖥️ Self-service</span><span class="ch-tag">Factura única</span></div>
+        </div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-icon">🎓</div>
+        <div>
+          <div class="ch-title">Canal 5 — Webinars y Eventos de Concientización</div>
+          <div class="ch-desc">INNSYSTE realiza webinars mensuales gratuitos para los clientes de TeleNet Digital. Temas de ciberseguridad práctica para pymes. Al final de cada sesión, llamado a la acción para contratar la solución. Generan demanda orgánica y posicionan a TeleNet Digital como referente.</div>
+          <div class="ch-tags"><span class="ch-tag">🎯 Demanda orgánica</span><span class="ch-tag">Monthly</span><span class="ch-tag">Experts INNSYSTE</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRONOGRAMA -->
+  <div class="content-block">
+    <div class="block-title">06 · Cronograma y Proyección</div>
+    <div class="block-h">Plan de ejecución en 12 meses</div>
+    <div class="projection">
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:14px;">Proyección de Licencias por Mes</div>
+      <div class="proj-row"><div class="proj-month">Mes 1</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:1%;min-width:50px;">Setup</div></div><div class="proj-total">0</div><div class="proj-cum">Acum: 0</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 2</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:3%;">500</div></div><div class="proj-total">500</div><div class="proj-cum">Acum: 500</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 3</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:6%;">1.000</div></div><div class="proj-total">1.000</div><div class="proj-cum">Acum: 1.500</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 4</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:9%;">1.500</div></div><div class="proj-total">1.500</div><div class="proj-cum">Acum: 3.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 5</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 5.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 6</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 7.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 7</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 9.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 8</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 11.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 9</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 13.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 10</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:12%;">2.000</div></div><div class="proj-total">2.000</div><div class="proj-cum">Acum: 15.000</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 11</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:15%;">2.500</div></div><div class="proj-total">2.500</div><div class="proj-cum">Acum: 17.500</div></div>
+      <div class="proj-row"><div class="proj-month">Mes 12</div><div class="proj-bar-wrap"><div class="proj-bar" style="width:15%;">2.500</div></div><div class="proj-total">2.500</div><div class="proj-cum">Acum: <strong>20.000</strong></div></div>
+    </div>
+    <div class="timeline" style="margin-top:32px;">
+      <div class="tl-item"><div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-phase">Fase 1 · Mes 1</div><div class="tl-title">Kick-off y Preparación</div><div class="tl-meta"><span class="tl-tag">0 Licencias</span><span class="tl-tag" style="background:var(--navy)">Setup</span></div><div class="tl-body"><ul><li>Configuración de Kaspersky Security Center Cloud Console</li><li>Integración con sistemas de billing de TeleNet Digital</li><li>Training de la fuerza comercial y call center de TeleNet Digital</li><li>Producción de materiales de marketing (one-pager, landing page)</li><li>Diseño del calendario de webinars y campañas de concientización</li><li>Configuración de HubSpot y GLPI para el proyecto</li></ul></div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-phase">Fase 2 · Meses 2–4</div><div class="tl-title">Lanzamiento y Escalamiento Inicial</div><div class="tl-meta"><span class="tl-tag">Meta: 3.000</span><span class="tl-tag" style="background:var(--navy)">Lanzamiento</span></div><div class="tl-body"><ul><li>Primera campaña Email/SMS/WhatsApp a base completa de TeleNet Digital</li><li>Activación de fuerza comercial con incentivos por licencia</li><li>Primer webinar mensual de INNSYSTE para clientes TeleNet Digital</li><li>Publicación de primeras infografías y materiales educativos</li><li>Análisis semanal de métricas y ajuste de campañas</li></ul></div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-phase">Fase 3 · Meses 5–10</div><div class="tl-title">Aceleración y Ritmo de Crucero</div><div class="tl-meta"><span class="tl-tag">Meta: 12.000</span><span class="tl-tag" style="background:var(--navy)">Escala</span></div><div class="tl-body"><ul><li>2.000 licencias nuevas/mes como ritmo sostenido</li><li>Webinars mensuales con temas específicos por industria</li><li>Re-campañas a no convertidos con nuevos mensajes</li><li>Referidos: cliente satisfecho recomienda a otras empresas</li><li>Revisión trimestral de estrategia con TeleNet Digital</li></ul></div></div></div>
+      <div class="tl-item"><div class="tl-left"><div class="tl-dot"></div></div><div class="tl-content" style="padding-bottom:0;"><div class="tl-phase">Fase 4 · Meses 11–12</div><div class="tl-title">Sprint Final y Cierre de Meta</div><div class="tl-meta"><span class="tl-tag">Meta: 5.000</span><span class="tl-tag" style="background:var(--navy)">Cierre</span></div><div class="tl-body"><ul><li>Campaña de urgencia: "últimas semanas del precio de lanzamiento"</li><li>Webinar especial de cierre: balance de amenazas del año</li><li>Contacto personalizado a prospectos no convertidos</li><li>Evaluación de resultados y negociación del año 2</li></ul></div></div></div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="content-block">
+    <div class="block-title">07 · Indicadores de Éxito</div>
+    <div class="block-h">KPIs del programa</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-icon">📊</div><div class="kpi-name">Licencias / mes</div><div class="kpi-desc">Nuevas licencias vendidas y activadas cada mes</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🎯</div><div class="kpi-name">Tasa de conversión</div><div class="kpi-desc">% contactados → compradores. Meta: ≥5% digital, ≥25% comercial</div></div>
+      <div class="kpi-card"><div class="kpi-icon">⚙️</div><div class="kpi-name">Tasa de activación</div><div class="kpi-desc">% licencias compradas instaladas en primeros 7 días</div></div>
+      <div class="kpi-card"><div class="kpi-icon">📉</div><div class="kpi-name">Churn mensual</div><div class="kpi-desc">% clientes que cancelan. Meta: &lt;3% mensual</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🎓</div><div class="kpi-name">Asistencia webinars</div><div class="kpi-desc">Número de participantes por sesión. Meta: ≥50/webinar</div></div>
+      <div class="kpi-card"><div class="kpi-icon">😊</div><div class="kpi-name">NPS</div><div class="kpi-desc">Net Promoter Score trimestral. Meta: ≥40</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== EDUCACIÓN =============================== -->
+<div id="edu" class="section">
+  <div class="sec-header">
+    <div class="sec-num">Sección 02</div>
+    <h2>Estrategia de Educación y Concientización</h2>
+    <p>INNSYSTE aporta un programa transversal de educación en ciberseguridad que genera demanda orgánica, fideliza clientes y posiciona a TeleNet Digital como referente en seguridad digital en Colombia.</p>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">01 · Por qué la educación es parte de la estrategia</div>
+    <div class="block-h">El cliente que entiende el riesgo, compra y no cancela</div>
+    <div class="block-text">La mayor barrera de entrada para que una pyme adopte ciberseguridad no es el precio — es la falta de consciencia del riesgo. Un cliente educado compra más fácil, activa más rápido, y cancela menos. Por eso INNSYSTE incorpora la educación como eje transversal a toda la estrategia de go-to-market de TeleNet Digital.</div>
+    <div class="callout info">🎓 Todos los programas de educación son impartidos por <strong>expertos de INNSYSTE</strong> en ciberseguridad — no por personal genérico. Esto garantiza calidad técnica y credibilidad ante el cliente final.</div>
+    <div class="edu-grid">
+      <div class="edu-card e1"><div class="edu-icon">🖥️</div><div class="edu-name">Webinars en Vivo</div><span class="edu-freq">Mensual</span><div class="edu-desc">Sesiones online de 60 min con expertos INNSYSTE. Temas prácticos de ciberseguridad para pymes. Incluye Q&A en vivo y grabación disponible.</div></div>
+      <div class="edu-card e2"><div class="edu-icon">📊</div><div class="edu-name">Infografías</div><span class="edu-freq">Quincenal</span><div class="edu-desc">Contenido visual sobre amenazas actuales, estadísticas y buenas prácticas. Distribuidas por Email, WhatsApp y redes sociales de TeleNet Digital.</div></div>
+      <div class="edu-card e3"><div class="edu-icon">📧</div><div class="edu-name">Newsletter de Seguridad</div><span class="edu-freq">Mensual</span><div class="edu-desc">Boletín mensual con las principales amenazas del mes, casos reales y recomendaciones. Enviado por TeleNet Digital a toda su base de clientes.</div></div>
+      <div class="edu-card e4"><div class="edu-icon">📱</div><div class="edu-name">Campañas de Concientización</div><span class="edu-freq">Trimestral</span><div class="edu-desc">Campañas temáticas de awareness: "Mes del ransomware", "Phishing: aprende a identificarlo". Incluye Email, SMS, WhatsApp y contenido para redes sociales.</div></div>
+      <div class="edu-card e5"><div class="edu-icon">📄</div><div class="edu-name">Guías y Whitepapers</div><span class="edu-freq">Trimestral</span><div class="edu-desc">Documentos descargables: "Guía de ciberseguridad para pymes", "10 amenazas que debes conocer". Generan leads y posicionan a TeleNet Digital como experto.</div></div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">02 · Calendario de Webinars — Año 1</div>
+    <div class="block-h">Temario propuesto por INNSYSTE</div>
+    <div class="block-text">Cada webinar está diseñado para generar consciencia del riesgo y terminar con un llamado a la acción claro hacia la contratación del servicio.</div>
+    <div class="cards">
+      <div class="card a1"><div class="card-icon">🚨</div><div class="card-title">Mes 2 · Lanzamiento</div><div class="card-text"><strong>"El costo real de un ciberataque para tu empresa"</strong> — Casos reales en Colombia. Cómo el EDR protege sin necesitar un equipo de TI.</div></div>
+      <div class="card a2"><div class="card-icon">🎣</div><div class="card-title">Mes 3 · Phishing</div><div class="card-text"><strong>"Tu mayor enemigo llega por email"</strong> — Phishing, BEC y spear phishing en Colombia. Simulación en vivo de un ataque real.</div></div>
+      <div class="card a3"><div class="card-icon">🔐</div><div class="card-title">Mes 4 · Ransomware</div><div class="card-text"><strong>"Ransomware: cómo evitar pagar el rescate"</strong> — Cómo funciona, qué hace el EDR, casos de recuperación. Demo de Kaspersky en vivo.</div></div>
+      <div class="card a4"><div class="card-icon">🏠</div><div class="card-title">Mes 5 · Home Office</div><div class="card-text"><strong>"Teletrabajo seguro: protege tu empresa desde casa"</strong> — Para el segmento B2C/freelancer. Dispositivos personales en redes de trabajo.</div></div>
+      <div class="card a1"><div class="card-icon">⚖️</div><div class="card-title">Mes 6 · Cumplimiento</div><div class="card-text"><strong>"Ciberseguridad y cumplimiento legal en Colombia"</strong> — Ley 1581, obligaciones de protección de datos. Cómo el EDR ayuda al cumplimiento.</div></div>
+      <div class="card a2"><div class="card-icon">🤖</div><div class="card-title">Mes 8 · IA y Amenazas</div><div class="card-text"><strong>"IA al servicio del cibercrimen"</strong> — Cómo los atacantes usan IA. Cómo Kaspersky usa IA para defenderse. El futuro de la ciberseguridad.</div></div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">03 · Infografías y Materiales</div>
+    <div class="block-h">Contenido visual para canales digitales de TeleNet Digital</div>
+    <div class="block-text">INNSYSTE produce materiales gráficos listos para ser publicados por TeleNet Digital en sus canales: correo, WhatsApp Business, redes sociales y portal web.</div>
+    <div class="two-col">
+      <div class="value-box">
+        <h4>📊 Tipos de infografías</h4>
+        <ul>
+          <li>"Las 5 amenazas más comunes para pymes en Colombia"</li>
+          <li>"¿Cuánto cuesta un ciberataque? Estadísticas LATAM"</li>
+          <li>"Antivirus vs. EDR: ¿Cuál necesitas?"</li>
+          <li>"10 señales de que tu empresa fue hackeada"</li>
+          <li>"Checklist de ciberseguridad para tu equipo"</li>
+          <li>"Phishing: aprende a identificarlo en 30 segundos"</li>
+        </ul>
+      </div>
+      <div class="value-box">
+        <h4>📱 Canales de distribución</h4>
+        <ul>
+          <li>Email mensual a base de clientes TeleNet Digital</li>
+          <li>WhatsApp Business de TeleNet Digital</li>
+          <li>Redes sociales de TeleNet Digital (LinkedIn, Instagram)</li>
+          <li>Portal web de TeleNet Digital (sección seguridad)</li>
+          <li>Presentaciones de fuerza comercial</li>
+          <li>Pantallas en oficinas / puntos de atención TeleNet Digital</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">04 · Cómo la educación impulsa las ventas</div>
+    <div class="block-h">El ciclo virtuoso de concientización → adopción</div>
+    <div class="callout warning">🔄 <strong>Ciclo propuesto:</strong> Infografía/Newsletter (consciencia del riesgo) → Webinar (profundización y confianza) → Campaña Email/WhatsApp (llamado a la acción) → Contratación → Onboarding → Cliente satisfecho y educado → Referido</div>
+    <div class="cards">
+      <div class="card a1"><div class="card-icon">📈</div><div class="card-title">Generación de demanda orgánica</div><div class="card-text">Los webinars y contenidos generan interés sin costo de pauta. Los asistentes al webinar convierten a tasa 3-5x mayor que los contactados en frío.</div></div>
+      <div class="card a2"><div class="card-icon">🔒</div><div class="card-title">Reducción de churn</div><div class="card-text">Un cliente que entiende el valor de la solución cancela menos. La educación continua refuerza la percepción de valor mes a mes.</div></div>
+      <div class="card a3"><div class="card-icon">🗣️</div><div class="card-title">Referidos orgánicos</div><div class="card-text">Clientes educados recomiendan la solución a su red. Los webinars son compartidos y viralizados entre empresas del mismo sector.</div></div>
+      <div class="card a4"><div class="card-icon">🏆</div><div class="card-title">Posicionamiento de TeleNet Digital</div><div class="card-text">TeleNet Digital se convierte en el referente de ciberseguridad para pymes en Cundinamarca, no solo en proveedor de internet.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== ALCANCE =============================== -->
+<div id="scope" class="section">
+  <div class="sec-header">
+    <div class="sec-num">Sección 03</div>
+    <h2>Alcance del Servicio</h2>
+    <p>Claridad total sobre qué incluye el servicio base de Kaspersky Next EDR Optimum, qué servicios adicionales están disponibles y cómo se contratan.</p>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">01 · Qué incluye el servicio base</div>
+    <div class="block-h">El servicio estándar: lo que recibe cada cliente con su licencia</div>
+    <div class="callout info">ℹ️ El servicio base incluye la plataforma Kaspersky Next EDR Optimum con una <strong>línea base de ciberseguridad definida por INNSYSTE</strong>. Esta configuración estándar cubre los controles de seguridad recomendados para pymes y es suficiente para la gran mayoría de los clientes.</div>
+    <table class="scope-table">
+      <thead><tr><th>Servicio</th><th>Incluido</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Licencia Kaspersky Next EDR Optimum</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>1 licencia por dispositivo. Windows, macOS, Linux, iOS, Android.</td></tr>
+        <tr><td><strong>Línea base de ciberseguridad INNSYSTE</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>Configuración estándar de políticas de seguridad recomendada para pymes. Definida y aplicada por INNSYSTE en el onboarding.</td></tr>
+        <tr><td><strong>Instalación remota y onboarding</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>Provisión de licencias, guía de instalación y verificación de activación. 100% remoto.</td></tr>
+        <tr><td><strong>Soporte técnico Kaspersky</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>Atención de tickets y soporte telefónico para problemas del producto Kaspersky. L-V 8am–5pm.</td></tr>
+        <tr><td><strong>Monitoreo de alertas en KSC</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>INNSYSTE monitorea las alertas críticas de la consola de administración centralizada.</td></tr>
+        <tr><td><strong>Webinars y materiales educativos</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>Acceso a webinars mensuales, infografías y newsletter de seguridad de INNSYSTE.</td></tr>
+        <tr><td><strong>Actualizaciones automáticas de Kaspersky</strong></td><td><span class="badge-inc">✓ Incluido</span></td><td>El producto se actualiza automáticamente a través de Kaspersky Security Network.</td></tr>
+        <tr><td><strong>Configuraciones personalizadas</strong></td><td><span class="badge-addit">+ Adicional</span></td><td>Políticas de seguridad customizadas según la industria o necesidad específica del cliente. Requiere bolsa de horas.</td></tr>
+        <tr><td><strong>Atención a incidentes de seguridad</strong></td><td><span class="badge-addit">+ Adicional</span></td><td>Respuesta activa a incidentes, análisis forense, contención y remediación. Servicio independiente.</td></tr>
+        <tr><td><strong>Operaciones de ciberseguridad (SOC)</strong></td><td><span class="badge-excl">✗ No incluido</span></td><td>Monitoreo 24/7, threat hunting, correlación de eventos. Servicio separado contratado individualmente.</td></tr>
+        <tr><td><strong>Hardening y auditorías de seguridad</strong></td><td><span class="badge-excl">✗ No incluido</span></td><td>Revisiones de configuración, pentesting, auditorías de cumplimiento. Servicio por proyecto.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">02 · Servicios Adicionales disponibles</div>
+    <div class="block-h">INNSYSTE puede acompañar al cliente en toda su madurez de seguridad</div>
+    <div class="block-text">Los servicios adicionales se venden por separado y se contratan directamente entre el cliente final e INNSYSTE (o a través de TeleNet Digital). Son independientes de la licencia de Kaspersky.</div>
+    <div class="cards">
+      <div class="card a1"><div class="card-icon">⏰</div><div class="card-title">Bolsa de Horas de Ciberseguridad</div><div class="card-text">Para clientes que requieren configuraciones personalizadas de Kaspersky, ajuste de políticas avanzadas, o asistencia técnica extendida más allá de la línea base.</div></div>
+      <div class="card a2"><div class="card-icon">🚨</div><div class="card-title">Atención a Incidentes</div><div class="card-text">Respuesta activa cuando se detecta una amenaza real: análisis forense, contención, erradicación y recuperación. Disponible como servicio bajo demanda o retainer.</div></div>
+      <div class="card a3"><div class="card-icon">🧭</div><div class="card-title">Plan de Adopción de Seguridad</div><div class="card-text">Acompañamiento para llevar al cliente desde una postura básica a una madurez de seguridad avanzada. Incluye evaluación, hoja de ruta y ejecución por fases.</div></div>
+      <div class="card a4"><div class="card-icon">🔍</div><div class="card-title">SOC como Servicio</div><div class="card-text">Monitoreo 24/7 de eventos de seguridad, threat hunting y correlación. Ideal para empresas con mayor criticidad de activos digitales.</div></div>
+      <div class="card a1"><div class="card-icon">🛡️</div><div class="card-title">Auditorías y Hardening</div><div class="card-text">Revisión de la postura de seguridad, pruebas de penetración, hardening de sistemas y cumplimiento con marcos como ISO 27001 o NIST.</div></div>
+      <div class="card a2"><div class="card-icon">📋</div><div class="card-title">Consultoría de Cumplimiento</div><div class="card-text">Apoyo para cumplimiento con Ley 1581 (protección de datos), sector financiero o requerimientos específicos de la industria del cliente.</div></div>
+    </div>
+    <div class="callout" style="margin-top:22px;">💡 <strong>Oportunidad comercial:</strong> Los clientes de TeleNet Digital que adoptan Kaspersky EDR son el mejor punto de entrada para ofrecer servicios adicionales de INNSYSTE. A medida que el cliente madura su visión de seguridad, la conversación sobre servicios adicionales se da de forma natural.</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-title">03 · Modelo comercial de servicios adicionales</div>
+    <div class="block-h">¿Cómo se venden los servicios adicionales?</div>
+    <div class="two-col">
+      <div class="value-box">
+        <h4>📋 Modalidades de contratación</h4>
+        <ul>
+          <li><strong>Bolsa de horas:</strong> paquetes de 10, 20 o 40 horas prepagadas de soporte técnico</li>
+          <li><strong>Proyecto puntual:</strong> cotización por alcance definido (auditoría, hardening, etc.)</li>
+          <li><strong>Retainer mensual:</strong> horas garantizadas por mes para respuesta a incidentes</li>
+          <li><strong>SOC as a Service:</strong> suscripción mensual con cobertura 24/7</li>
+        </ul>
+      </div>
+      <div class="value-box">
+        <h4>🤝 Proceso de venta adicional</h4>
+        <ul>
+          <li>El cliente contacta a TeleNet Digital o directamente a INNSYSTE</li>
+          <li>INNSYSTE realiza una evaluación inicial sin costo</li>
+          <li>Se presenta una propuesta técnica y comercial</li>
+          <li>El contrato se firma entre el cliente final e INNSYSTE</li>
+          <li>TeleNet Digital puede recibir un margen de referido si aplica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== DESPLIEGUE =============================== -->
+<div id="deploy" class="section">
+  <div class="sec-header">
+    <div class="sec-num">Sección 04</div>
+    <h2>Plan de Despliegue y Soporte</h2>
+    <p>Cómo INNSYSTE gestiona la instalación remota, el onboarding y el soporte técnico de las 20.000 licencias de Kaspersky Next EDR Optimum para los clientes de TeleNet Digital.</p>
+  </div>
+
+  <!-- ONBOARDING -->
+  <div class="content-block">
+    <div class="block-title">01 · Proceso de Onboarding</div>
+    <div class="block-h">Del "sí" del cliente a la licencia activa — 100% remoto</div>
+    <div class="process">
+      <div class="step"><div class="step-left"><div class="step-num">1</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Cliente acepta el add-on</div><div class="step-desc">El cliente elige agregar Kaspersky EDR a su factura de internet a través del portal web, app, call center o fuerza comercial de TeleNet Digital. Selecciona el número de dispositivos.</div><span class="step-owner">TeleNet Digital</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">2</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">TeleNet Digital notifica a INNSYSTE</div><div class="step-desc">Reporte diario de nuevos clientes (nombre, empresa, email, cantidad de dispositivos). Puede automatizarse vía API o enviarse como CSV en D+1.</div><span class="step-owner">TeleNet Digital → INNSYSTE</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">3</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Creación del cliente en HubSpot</div><div class="step-desc">INNSYSTE registra al nuevo cliente en HubSpot CRM con sus datos, número de licencias y fecha de inicio. Activa el flujo de bienvenida automatizado.</div><span class="step-owner">INNSYSTE</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">4</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Provisión y configuración de línea base</div><div class="step-desc">El técnico asigna las licencias en Kaspersky Security Center y aplica la línea base de ciberseguridad estándar de INNSYSTE. Se genera el paquete de instalación para el cliente.</div><span class="step-owner">INNSYSTE — Técnico</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">5</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Email de bienvenida + instrucciones</div><div class="step-desc">El cliente recibe: link de descarga, guía de instalación en español con screenshots, credenciales de acceso al portal, y acceso al próximo webinar de INNSYSTE.</div><span class="step-owner">INNSYSTE — Automatizado</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">6</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Cliente instala el agente (self-service)</div><div class="step-desc">El cliente instala el agente de Kaspersky en sus dispositivos siguiendo la guía. La instalación toma menos de 10 minutos por dispositivo. Si hay dificultades, abre un ticket.</div><span class="step-owner">Cliente final</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">7</div><div class="step-connector"></div></div><div class="step-content"><div class="step-title">Verificación de activación por INNSYSTE</div><div class="step-desc">A las 24-48h, el técnico verifica en la consola que todos los dispositivos están activos con la línea base aplicada. Si falta alguno, contacto proactivo al cliente.</div><span class="step-owner">INNSYSTE — Técnico</span></div></div>
+      <div class="step"><div class="step-left"><div class="step-num">8</div></div><div class="step-content" style="padding-bottom:0;"><div class="step-title">✅ Cliente activo y protegido</div><div class="step-desc">El cliente entra al ciclo de monitoreo, soporte y educación continua. Recibe los webinars mensuales e infografías de INNSYSTE como parte del servicio.</div><span class="step-owner">INNSYSTE — Monitoreo + Educación</span></div></div>
+    </div>
+  </div>
+
+  <!-- EQUIPO -->
+  <div class="content-block">
+    <div class="block-title">02 · Estructura del Equipo</div>
+    <div class="block-h">Modelo escalable según las necesidades del servicio</div>
+    <div class="block-text">El equipo de INNSYSTE para este proyecto se dimensiona de forma escalable en función del volumen de licencias activas, la demanda de soporte y el crecimiento del programa. Se parte de un núcleo mínimo viable y se escala de acuerdo al ritmo real del proyecto.</div>
+    <div class="callout info">📈 <strong>Escalabilidad garantizada:</strong> INNSYSTE no limita el proyecto a un número fijo de personas. El equipo crece con la demanda, asegurando que la calidad del servicio se mantenga sin importar el volumen alcanzado.</div>
+    <div class="scale-grid">
+      <div class="scale-card"><div class="scale-phase">Fase 1 · Meses 1–3</div><div class="scale-name">Equipo Base (MVP)</div><ul class="scale-roles"><li>1 Administrador Kaspersky Security Center</li><li>1 Técnico de soporte e implementación</li><li>1 Ejecutivo comercial de cuentas</li><li>1 Especialista en educación y webinars</li></ul></div>
+      <div class="scale-card" style="border-left-color:var(--pink);"><div class="scale-phase">Fase 2 · Meses 4–7</div><div class="scale-name">Equipo Crecimiento</div><ul class="scale-roles"><li>+ 1–2 Técnicos de soporte adicionales</li><li>+ 1 Ejecutivo comercial junior</li><li>+ 1 Coordinador de onboarding masivo</li><li>Ajuste según volumen de tickets</li></ul></div>
+      <div class="scale-card" style="border-left-color:var(--purple);"><div class="scale-phase">Fase 3 · Meses 8–12</div><div class="scale-name">Equipo Escala Plena</div><ul class="scale-roles"><li>Dimensionamiento según licencias activas</li><li>Posible incorporación de turno extendido</li><li>Especialistas por verticales de industria</li><li>Revisión trimestral de capacidad</li></ul></div>
+      <div class="scale-card" style="border-left-color:var(--navy);"><div class="scale-phase">Permanente</div><div class="scale-name">Funciones Transversales</div><ul class="scale-roles"><li>Expertos de ciberseguridad para webinars</li><li>Producción de materiales educativos</li><li>Gerente de cuenta TeleNet Digital</li><li>Reporte de KPIs y métricas</li></ul></div>
+    </div>
+    <div class="callout" style="margin-top:20px;">⚡ <strong>Benchmark de capacidad:</strong> En condiciones normales, 1 técnico puede gestionar entre 30–50 activaciones/día. El equipo base soporta hasta ~1.000 licencias/mes; se escala proporcionalmente a partir de ese punto.</div>
+  </div>
+
+  <!-- SOPORTE -->
+  <div class="content-block">
+    <div class="block-title">03 · Modelo de Soporte</div>
+    <div class="block-h">Soporte técnico de Kaspersky — Alcance y SLAs</div>
+    <div class="callout warning">⚠️ <strong>Alcance del soporte incluido:</strong> El soporte cubre exclusivamente el producto Kaspersky Next EDR Optimum. No incluye operaciones de ciberseguridad, SOC, atención activa a incidentes, ni servicios de seguridad gestionada. Estos servicios están disponibles como <strong>contratación adicional</strong> con INNSYSTE.</div>
+    <div class="two-col" style="margin-top:22px;">
+      <div class="value-box">
+        <h4>📅 Horario y Canales</h4>
+        <ul>
+          <li><strong>Lunes a Viernes, 8:00 AM – 5:00 PM</strong></li>
+          <li>Canal principal: Tickets vía GLPI</li>
+          <li>Canal secundario: Teléfono directo al equipo</li>
+          <li>Fuera de horario: grabación + ticket automático</li>
+          <li>Incidentes P1: contacto de emergencia disponible</li>
+        </ul>
+      </div>
+      <div class="value-box">
+        <h4>⚙️ Herramientas de Soporte</h4>
+        <ul>
+          <li><strong>GLPI:</strong> registro, seguimiento y escalamiento de tickets</li>
+          <li><strong>Jira:</strong> gestión de incidencias técnicas internas</li>
+          <li><strong>HubSpot:</strong> historial del cliente y alertas de churn</li>
+          <li><strong>KSC Console:</strong> diagnóstico remoto del endpoint</li>
+          <li><strong>Email / Teléfono:</strong> comunicación directa con cliente</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <div class="block-h" style="font-size:18px;margin-bottom:4px;">Acuerdos de Nivel de Servicio (SLA)</div>
+    </div>
+    <table class="sla-table">
+      <thead><tr><th>Prioridad</th><th>Descripción</th><th>Ejemplo</th><th>Respuesta</th><th>Resolución</th></tr></thead>
+      <tbody>
+        <tr><td><span class="p-badge p1">P1</span></td><td><strong>Crítico</strong> — Sistema completamente inoperable</td><td>Todos los endpoints sin protección</td><td>4 horas</td><td>8 horas</td></tr>
+        <tr><td><span class="p-badge p2">P2</span></td><td><strong>Alto</strong> — Impacto significativo en operación</td><td>Amenaza activa detectada no contenida</td><td>8 horas</td><td>24 horas</td></tr>
+        <tr><td><span class="p-badge p3">P3</span></td><td><strong>Medio</strong> — Funcionalidad degradada</td><td>Agente desconectado en 1–2 dispositivos</td><td>24 horas</td><td>48 horas</td></tr>
+        <tr><td><span class="p-badge p4">P4</span></td><td><strong>Bajo</strong> — Consultas y solicitudes generales</td><td>Agregar dispositivos, dudas de uso</td><td>48 horas</td><td>5 días hábiles</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ESCALAMIENTO -->
+  <div class="content-block">
+    <div class="block-title">04 · Modelo de Escalamiento</div>
+    <div class="block-h">Jerarquía de soporte técnico</div>
+    <div class="escalation">
+      <div class="esc-step"><div class="esc-box"><div class="esc-level">Nivel 1</div><div class="esc-name">Técnico INNSYSTE</div><div class="esc-desc">Primera línea. Diagnóstico remoto y resolución de incidencias comunes vía KSC y tickets GLPI.</div></div></div>
+      <div class="esc-step"><div class="esc-box"><div class="esc-level">Nivel 2</div><div class="esc-name">Técnico Senior INNSYSTE</div><div class="esc-desc">Casos complejos. Análisis avanzado de configuraciones, políticas y troubleshooting profundo.</div></div></div>
+      <div class="esc-step"><div class="esc-box"><div class="esc-level">Nivel 3</div><div class="esc-name">Soporte Kaspersky LATAM</div><div class="esc-desc">Escalamiento al fabricante para errores de producto, bugs o amenazas no clasificadas.</div></div></div>
+    </div>
+  </div>
+
+  <!-- HERRAMIENTAS -->
+  <div class="content-block">
+    <div class="block-title">05 · Stack Tecnológico</div>
+    <div class="block-h">Herramientas que INNSYSTE utiliza en la operación</div>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-icon">🔶</div><div class="tool-name">HubSpot CRM</div><div class="tool-use">Gestión de clientes, pipeline comercial y automatizaciones de email</div></div>
+      <div class="tool-card"><div class="tool-icon">📋</div><div class="tool-name">GLPI</div><div class="tool-use">Mesa de ayuda, gestión de tickets e historial de incidencias</div></div>
+      <div class="tool-card"><div class="tool-icon">🔷</div><div class="tool-name">Jira</div><div class="tool-use">Gestión de proyectos e incidencias técnicas internas</div></div>
+      <div class="tool-card"><div class="tool-icon">🛡️</div><div class="tool-name">Kaspersky SC</div><div class="tool-use">Consola central de administración, monitoreo y políticas</div></div>
+    </div>
+  </div>
+
+  <!-- FACTURACIÓN -->
+  <div class="content-block">
+    <div class="block-title">06 · Modelo de Facturación</div>
+    <div class="block-h">¿Cómo fluye el dinero?</div>
+    <div class="cards">
+      <div class="card a1"><div class="card-icon">🛍️</div><div class="card-title">TeleNet Digital → Cliente final</div><div class="card-text">TeleNet Digital factura directamente al cliente el valor de las licencias Kaspersky + su margen, en la misma factura de internet. Un solo recibo para el cliente.</div></div>
+      <div class="card a2"><div class="card-icon">📅</div><div class="card-title">Corte mensual de licencias</div><div class="card-text">Al cierre de cada mes, INNSYSTE reporta a TeleNet Digital el volumen total de licencias activas vendidas. La facturación entre TeleNet Digital e INNSYSTE se hace sobre ese volumen.</div></div>
+      <div class="card a3"><div class="card-icon">💰</div><div class="card-title">Márgenes en cascada</div><div class="card-text">Kaspersky → precio competitivo a INNSYSTE → INNSYSTE agrega valor al portafolio de TeleNet → TeleNet Digital agrega su margen → precio al cliente final.</div></div>
+      <div class="card a4"><div class="card-icon">📈</div><div class="card-title">Sin riesgo para TeleNet Digital</div><div class="card-text">TeleNet Digital no compra licencias por adelantado. Solo paga por lo que vendió. Sin mínimos mensuales. Sin penalidades. Modelo 100% alineado a resultados.</div></div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASOS -->
+  <div class="content-block">
+    <div class="block-title">07 · Próximos Pasos</div>
+    <div class="block-h">¿Qué necesitamos para arrancar?</div>
+    <div class="next-steps">
+      <div class="ns-item"><div class="ns-num">1</div><div class="ns-text"><strong>Firma del acuerdo de partnership</strong> entre TeleNet Digital, INNSYSTE y Kaspersky. Definición de condiciones comerciales finales.</div></div>
+      <div class="ns-item"><div class="ns-num">2</div><div class="ns-text"><strong>Kick-off técnico con IT de TeleNet Digital</strong> para definir mecanismo de reporte de nuevos clientes (API o CSV) y el flujo de facturación integrada.</div></div>
+      <div class="ns-item"><div class="ns-num">3</div><div class="ns-text"><strong>Configuración del Security Center</strong>: INNSYSTE prepara la consola de Kaspersky, la línea base de seguridad y las políticas estándar para los primeros clientes piloto.</div></div>
+      <div class="ns-item"><div class="ns-num">4</div><div class="ns-text"><strong>Training a la fuerza comercial y call center de TeleNet Digital</strong>: sesión de 2 horas con materiales, scripts y kit de ventas.</div></div>
+      <div class="ns-item"><div class="ns-num">5</div><div class="ns-text"><strong>Piloto con 50–100 clientes B2B</strong> para validar el proceso de onboarding completo antes del lanzamiento masivo. Primer webinar de INNSYSTE.</div></div>
+      <div class="ns-item"><div class="ns-num">6</div><div class="ns-text"><strong>Lanzamiento oficial</strong> con campaña Email/SMS/WhatsApp a base completa de TeleNet Digital. Inicio del cronograma según proyección de 12 meses.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">© 2026 INNSYSTE · mario@innsyste.com</div>
+  <div class="footer-conf">Confidencial — INNSYSTE / Telenet</div>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</b
