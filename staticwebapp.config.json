@@ -1,6 +1,7 @@
 {
   "routes": [
     { "route": "/inntime",     "rewrite": "/inntime.html"     },
+    { "route": "/innseal",     "rewrite": "/innseal.html"     },
     { "route": "/rittal",      "rewrite": "/rittal.html"      },
     { "route": "/kas-telenet", "rewrite": "/kas-telenet.html" }
   ],

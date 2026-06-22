@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Innseal — Análisis competitivo 2026 de plataformas de seguridad de código. Por qué Innseal, de INNSYSTE, ofrece la mayor relación valor / inversión del mercado." />
+  <meta name="theme-color" content="#112e50" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <title>Innseal — Análisis Competitivo 2026 | INNSYSTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wooktj3dts");
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-50:   #EEF2F7;
+      --navy-100:  #D6DFEC;
+      --navy-500:  #2a5685;
+      --navy-600:  #112e50;
+      --navy-700:  #0d2440;
+      --navy-900:  #091a30;
+      --accent:    #ff4575;
+      --green:     #10B981;
+      --green-bg:  #DCFCE7;
+      --green-dark:#065F46;
+      --red:       #DC2626;
+      --red-bg:    #FEE2E2;
+      --amber:     #F59E0B;
+      --amber-bg:  #FEF3C7;
+      --slate-50:  #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0F172A;
+    }
+
+    body { font-family:'Montserrat',sans-serif; background:#ECF0F6; color:var(--slate-900); font-size:14px; line-height:1.5; }
+
+    /* ── Header ── */
+    .page-header {
+      background: linear-gradient(150deg, var(--navy-900) 0%, var(--navy-600) 60%, #ff4575 100%);
+      color:#fff; padding:60px 40px 52px; text-align:center;
+    }
+    .logo { font-size:30px; font-weight:800; letter-spacing:-.5px; margin-bottom:6px; }
+    .logo span { font-weight:300; color:var(--navy-100); }
+    .tagline { font-size:11px; color:rgba(255,255,255,.5); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:36px; }
+    .page-title { font-size:38px; font-weight:700; margin-bottom:14px; line-height:1.15; }
+    .page-subtitle { font-size:16px; color:var(--navy-100); max-width:640px; margin:0 auto 32px; }
+    .header-pills { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+    .header-pill { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; font-size:12px; font-weight:600; padding:6px 16px; border-radius:999px; }
+
+    /* ── Container ── */
+    .container { max-width:1380px; margin:0 auto; padding:44px 20px 80px; }
+
+    /* ── Pricing hero ── */
+    .pricing-hero {
+      background:var(--navy-600); border-radius:16px; padding:36px 40px;
+      color:#fff; display:flex; align-items:center; justify-content:space-between;
+      gap:32px; margin-bottom:32px; flex-wrap:wrap;
+    }
+    .pricing-hero-left h2 { font-size:13px; text-transform:uppercase; letter-spacing:1.5px; color:var(--navy-100); margin-bottom:8px; font-weight:600; }
+    .cop-price { font-size:44px; font-weight:800; letter-spacing:-1.5px; line-height:1; font-family:'Montserrat',sans-serif; }
+    .cop-unit  { font-size:17px; color:var(--navy-100); margin-top:6px; }
+    .cop-year  { font-size:13px; color:rgba(255,255,255,.55); margin-top:6px; }
+    .pricing-conversions { display:flex; gap:16px; flex-wrap:wrap; }
+    .conv-card {
+      background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15);
+      border-radius:10px; padding:14px 20px; text-align:center; min-width:148px;
+    }
+    .conv-card .conv-label { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,.55); margin-bottom:6px; }
+    .conv-card .conv-val   { font-size:21px; font-weight:700; font-family:'Montserrat',sans-serif; }
+    .conv-card .conv-sub   { font-size:10.5px; color:rgba(255,255,255,.5); margin-top:3px; }
+    .pricing-hero-right {
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+      border-radius:12px; padding:16px 20px; font-size:12.5px; color:rgba(255,255,255,.8); max-width:280px;
+    }
+    .pricing-hero-right strong { color:#fff; }
+
+    /* ── Diff cards ── */
+    .diff-banner { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-bottom:32px; }
+    .diff-card { background:#fff; border-radius:12px; border:2px solid var(--navy-600); padding:18px 16px; display:flex; align-items:flex-start; gap:12px; box-shadow:0 2px 10px rgba(15,42,66,.07); }
+    .diff-icon { width:38px; height:38px; background:var(--navy-50); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:19px; }
+    .diff-title { font-size:11px; font-weight:700; color:var(--navy-600); margin-bottom:4px; text-transform:uppercase; letter-spacing:.6px; }
+    .diff-desc  { font-size:12px; color:var(--slate-600); line-height:1.5; }
+
+    /* ── Section label ── */
+    .section-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--slate-400); margin-bottom:12px; }
+
+    /* ── Feature table ── */
+    .table-wrap { overflow-x:auto; border-radius:14px; box-shadow:0 4px 24px rgba(15,42,66,.10); border:1px solid var(--slate-200); background:#fff; margin-bottom:36px; }
+    table { width:100%; border-collapse:collapse; font-size:12.5px; }
+    thead th { padding:0; vertical-align:bottom; border-bottom:2px solid var(--slate-200); }
+    .th-inner { padding:16px 10px 14px; text-align:center; font-size:11px; font-weight:600; color:var(--slate-500); }
+    .th-inner.us { background:var(--navy-700); color:#fff; }
+    .th-inner.us .vname { font-size:13px; font-weight:800; color:#fff; display:block; }
+    .th-inner.us .vsub  { font-size:9.5px; color:var(--navy-100); font-weight:400; display:block; margin-top:3px; }
+    .vname { font-size:12px; font-weight:700; color:var(--slate-700); display:block; }
+    .vsub  { font-size:9.5px; color:var(--slate-400); display:block; margin-top:2px; }
+    .col-us { background:#EEF3F8; }
+    .feature-group td { background:var(--slate-100); padding:9px 16px; font-size:10.5px; font-weight:700; color:var(--slate-500); text-transform:uppercase; letter-spacing:1.2px; border-top:2px solid var(--slate-200); border-bottom:1px solid var(--slate-200); }
+    .feature-group td.col-us { background:#D8E2EF; color:var(--navy-700); }
+    tbody tr td { padding:11px 10px; border-bottom:1px solid var(--slate-100); vertical-align:middle; text-align:center; }
+    tbody tr td:first-child { text-align:left; font-weight:500; color:var(--slate-700); padding-left:18px; min-width:210px; }
+    tbody tr:last-child td { border-bottom:none; }
+    tbody tr:hover td { background:var(--slate-50); }
+    tbody tr:hover td.col-us { background:#dce8f2; }
+    .yes { color:var(--green); font-weight:700; font-size:17px; }
+    .no  { color:var(--red);   font-weight:700; font-size:17px; }
+    .chip { display:inline-block; padding:2px 8px; border-radius:999px; font-size:10.5px; font-weight:600; white-space:nowrap; }
+    .chip-green { background:var(--green-bg); color:var(--green-dark); }
+    .chip-red   { background:var(--red-bg);   color:var(--red); }
+    .chip-amber { background:var(--amber-bg); color:#92400E; }
+    .chip-slate { background:var(--slate-100);color:var(--slate-500); }
+    .badge-only { display:inline-flex; align-items:center; background:var(--accent); color:#fff; font-size:9px; font-weight:700; padding:2px 7px; border-radius:999px; text-transform:uppercase; letter-spacing:.4px; margin-left:5px; vertical-align:middle; }
+
+    /* ── Pricing comparison table ── */
+    .ptable-wrap { background:#fff; border-radius:14px; border:1px solid var(--slate-200); box-shadow:0 4px 24px rgba(15,42,66,.10); overflow:hidden; margin-bottom:36px; }
+
+    .pt-header {
+      display:grid;
+      grid-template-columns: 200px repeat(8, 1fr);
+      background:var(--slate-900);
+      color:#fff;
+    }
+    .pth { padding:14px 8px; font-size:11px; font-weight:700; text-align:center; border-right:1px solid rgba(255,255,255,.08); }
+    .pth:first-child { text-align:left; padding-left:16px; font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--slate-400); }
+    .pth.us { background:var(--navy-600); }
+    .pth .pth-sub { font-size:9px; font-weight:400; color:rgba(255,255,255,.45); display:block; margin-top:2px; }
+
+    .pt-row { display:grid; grid-template-columns: 200px repeat(8, 1fr); border-bottom:1px solid var(--slate-100); }
+    .pt-row:last-child { border-bottom:none; }
+
+    .ptd {
+      padding:13px 8px; text-align:center;
+      font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:500;
+      color:var(--slate-700); border-right:1px solid var(--slate-100);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+    }
+    .ptd:first-child {
+      font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600;
+      color:var(--slate-600); text-align:left; align-items:flex-start; padding-left:16px;
+    }
+    .ptd.us { background:var(--navy-50); }
+    .pt-row.highlight .ptd { background:var(--slate-50); }
+    .pt-row.highlight .ptd.us { background:#D8E2EF; }
+
+    .pm { font-size:15px; font-weight:700; color:var(--slate-900); display:block; }
+    .ptd.us .pm { color:var(--navy-700); font-size:16px; }
+    .pt-row.highlight .ptd.us .pm { font-size:17px; color:var(--navy-700); }
+    .pt-row.highlight .ptd:not(.us) .pm { font-size:15px; }
+    .ps { font-size:10px; color:var(--slate-400); display:block; font-family:'Montserrat',sans-serif; font-weight:400; }
+    .pt-row-lbl { font-weight:700; color:var(--slate-800); display:block; }
+    .pt-row-sub { font-size:10px; font-weight:400; color:var(--slate-400); display:block; margin-top:2px; }
+
+    /* ── AI section ── */
+    .ai-card { background:linear-gradient(135deg,#F0F7FF 0%,#EEF3F8 100%); border:1px solid var(--navy-100); border-radius:12px; padding:24px; margin-bottom:32px; }
+    .ai-card h3 { font-size:14px; font-weight:700; color:var(--navy-600); margin-bottom:14px; }
+    .ai-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+    .ai-item { background:#fff; border-radius:8px; padding:14px 16px; border:1px solid var(--slate-200); }
+    .ai-item .ai-label { font-size:11px; font-weight:700; color:var(--slate-500); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+    .ai-item .ai-val { font-size:12.5px; color:var(--slate-800); }
+    .ai-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:10px; font-weight:700; }
+    .ai-yes { background:var(--green-bg); color:var(--green-dark); }
+    .ai-partial { background:var(--amber-bg); color:#92400E; }
+    .ai-no { background:var(--red-bg); color:var(--red); }
+    .ai-star { background:var(--accent); color:#fff; }
+
+    /* ── Summary ── */
+    .summary-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:32px; }
+    @media(max-width:720px){ .summary-grid{grid-template-columns:1fr;} }
+    .summary-card { background:#fff; border-radius:12px; padding:22px 20px; border:1px solid var(--slate-200); box-shadow:0 2px 8px rgba(15,42,66,.06); }
+    .summary-card h3 { font-size:14px; font-weight:700; color:var(--navy-600); margin-bottom:14px; }
+    .summary-card ul { list-style:none; }
+    .summary-card ul li { padding:8px 0; border-bottom:1px solid var(--slate-100); font-size:12.5px; color:var(--slate-700); display:flex; align-items:flex-start; gap:10px; }
+    .summary-card ul li:last-child { border-bottom:none; }
+    .li-icon { flex-shrink:0; font-size:14px; margin-top:1px; }
+
+    /* ── CTA ── */
+    .cta-block { background:linear-gradient(135deg,var(--navy-900) 0%,var(--navy-600) 100%); border-radius:16px; padding:48px 40px; text-align:center; color:#fff; }
+    .cta-block h2 { font-size:30px; font-weight:700; margin-bottom:12px; }
+    .cta-block p  { color:var(--navy-100); font-size:15px; max-width:560px; margin:0 auto 28px; }
+    .cta-btn { display:inline-block; background:#fff; color:var(--navy-700); font-weight:700; font-size:14px; padding:13px 32px; border-radius:8px; text-decoration:none; margin:0 6px 8px; }
+    .cta-btn.outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.4); }
+
+    .foot { text-align:center; margin-top:36px; font-size:11px; color:var(--slate-400); line-height:1.8; }
+    .note { background:var(--amber-bg); border-left:4px solid var(--amber); border-radius:6px; padding:11px 14px; font-size:11.5px; color:#78350F; margin-bottom:22px; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="page-header">
+
+  <!-- Innsyste company logo -->
+  <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:18px;flex-wrap:wrap;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="72 452 930 148" style="height:36px;color:#fff;" role="img" aria-label="Innsyste">
+      <rect fill="#ff4575" x="90.13" y="468.98" width="28.49" height="28.99" transform="translate(587.84 379.1) rotate(90)"/>
+      <rect fill="currentColor" x="90.39" y="526.19" width="85.66" height="28.71" transform="translate(673.77 407.32) rotate(90)"/>
+      <path fill="currentColor" d="M155.57,469.23h-7.98v28.49h11.54c7.6,0,14.93,2.93,20.32,8.28.04.04.08.08.13.13,5.57,5.57,8.36,12.3,8.36,20.18v57.07h28.54v-57.07c0-7.58-1.45-14.86-4.35-21.85-2.9-6.98-7.02-13.15-12.37-18.5-5.35-5.35-11.52-9.47-18.5-12.37-4.48-1.86-8.25-2.76-10.33-3.19-.65-.13-2.86-.58-5.85-.89-3.83-.4-7.08-.39-9.5-.28Z"/>
+      <rect fill="currentColor" x="258.96" y="463.54" width="3.29" height="125.45"/>
+      <path fill="currentColor" d="M304.9,475.2c0-.88.27-1.65.81-2.28.54-.64,1.35-.96,2.43-.96h21.66c.74,0,1.52.29,2.36.88.83.59,1.25,1.38,1.25,2.36v102.93c0,2.16-1.2,3.24-3.61,3.24h-21.66c-2.16,0-3.24-1.08-3.24-3.24v-102.93Z"/>
+      <path fill="currentColor" d="M356.03,489.12c.64-.54,1.31-.88,2.03-1.03.71-.15,1.39-.22,2.03-.22h11.13c.88,0,1.65.16,2.28.48.64.32,1.18.75,1.62,1.29.44.54.8,1.15,1.07,1.84.27.69.53,1.39.77,2.13l1.55,6.47c.74-1.52,1.93-3.09,3.57-4.7,1.64-1.62,3.68-3.09,6.12-4.41,2.43-1.32,5.24-2.41,8.44-3.27,3.19-.86,6.75-1.29,10.68-1.29,5.6,0,10.6,1.08,14.99,3.23,4.4,2.15,8.13,5.09,11.2,8.82,3.07,3.72,5.4,8.07,7,13.05,1.6,4.98,2.39,10.29,2.39,15.94v48.26c0,1.87-.41,3.28-1.22,4.24-.81.96-2.1,1.44-3.87,1.44h-17.02c-2.11,0-3.56-.36-4.35-1.07-.79-.71-1.18-2.1-1.18-4.16v-47.97c0-2.11-.48-4.11-1.44-6-.96-1.89-2.22-3.56-3.79-5.01-1.57-1.45-3.35-2.59-5.34-3.43-1.99-.83-4.02-1.25-6.08-1.25-1.77,0-3.57.39-5.42,1.18-1.84.79-3.54,1.88-5.08,3.28-1.55,1.4-2.85,3.05-3.91,4.94-1.06,1.89-1.66,3.94-1.8,6.15v47.89c0,.84-.16,1.67-.48,2.5-.32.84-.8,1.47-1.44,1.92-.64.39-1.24.66-1.81.81-.56.15-1.22.22-1.95.22h-16.65c-2.11,0-3.64-.52-4.57-1.55-.93-1.03-1.4-2.41-1.4-4.13v-82.4c0-.93.21-1.79.63-2.57.42-.78.99-1.4,1.73-1.84l-.44.22Z"/>
+      <path fill="currentColor" d="M462.5,489.12c.64-.54,1.31-.88,2.03-1.03.71-.15,1.39-.22,2.03-.22h11.13c.88,0,1.65.16,2.28.48.64.32,1.18.75,1.62,1.29.44.54.8,1.15,1.07,1.84.27.69.53,1.39.77,2.13l1.55,6.47c.74-1.52,1.93-3.09,3.57-4.7,1.64-1.62,3.68-3.09,6.12-4.41,2.43-1.32,5.24-2.41,8.44-3.27,3.19-.86,6.75-1.29,10.68-1.29,5.6,0,10.6,1.08,14.99,3.23,4.4,2.15,8.13,5.09,11.2,8.82,3.07,3.72,5.4,8.07,7,13.05,1.6,4.98,2.39,10.29,2.39,15.94v48.26c0,1.87-.41,3.28-1.22,4.24-.81.96-2.1,1.44-3.87,1.44h-17.02c-2.11,0-3.56-.36-4.35-1.07-.79-.71-1.18-2.1-1.18-4.16v-47.97c0-2.11-.48-4.11-1.44-6-.96-1.89-2.22-3.56-3.79-5.01-1.57-1.45-3.35-2.59-5.34-3.43-1.99-.83-4.02-1.25-6.08-1.25-1.77,0-3.57.39-5.42,1.18-1.84.79-3.54,1.88-5.08,3.28-1.55,1.4-2.85,3.05-3.91,4.94-1.06,1.89-1.66,3.94-1.8,6.15v47.89c0,.84-.16,1.67-.48,2.5-.32.84-.8,1.47-1.44,1.92-.64.39-1.24.66-1.81.81-.56.15-1.22.22-1.95.22h-16.65c-2.11,0-3.64-.52-4.57-1.55-.93-1.03-1.4-2.41-1.4-4.13v-82.4c0-.93.21-1.79.63-2.57.42-.78.99-1.4,1.73-1.84l-.44.22Z"/>
+      <path fill="currentColor" d="M581.05,552.27c1.33,1.33,2.76,2.44,4.31,3.35,1.55.91,3.03,1.65,4.46,2.21,1.42.56,2.68.97,3.76,1.22,1.08.25,1.82.37,2.21.37.93,0,2.12-.04,3.57-.11,1.45-.07,2.84-.29,4.16-.66,1.33-.37,2.47-.97,3.43-1.81.96-.84,1.44-2.01,1.44-3.54,0-1.38-.27-2.47-.81-3.28-.54-.81-1.33-1.5-2.36-2.06-1.03-.56-2.3-1.07-3.79-1.51-1.5-.44-3.18-.96-5.05-1.55-5.89-1.57-10.76-3.46-14.59-5.67-3.83-2.21-6.87-4.68-9.1-7.4-2.24-2.73-3.79-5.66-4.68-8.8-.88-3.14-1.33-6.46-1.33-9.95,0-4.08.81-7.78,2.43-11.13,1.62-3.34,3.93-6.2,6.93-8.58,3-2.38,6.58-4.22,10.76-5.53,4.17-1.3,8.82-1.95,13.93-1.95,3.09,0,5.99.26,8.69.77,2.7.52,5.28,1.33,7.74,2.43,2.46,1.11,4.85,2.53,7.18,4.27,2.33,1.74,4.65,3.82,6.96,6.23.83.98,1.26,1.9,1.29,2.76.02.86-.53,1.78-1.66,2.76-1.92,1.57-3.75,3.12-5.49,4.64-1.74,1.52-3.55,3.22-5.42,5.08-.59.49-1.18.8-1.77.92-.59.12-1.15.11-1.69-.04-.54-.15-1.06-.39-1.55-.74-.49-.34-.93-.76-1.33-1.25-1.72-1.92-3.68-3.21-5.89-3.87-2.21-.66-4.27-.99-6.19-.99-2.41,0-4.32.42-5.75,1.25-1.43.84-2.09,2.11-1.99,3.83.1,1.28.58,2.27,1.44,2.98.86.71,1.92,1.29,3.17,1.73,1.25.44,2.58.8,3.98,1.07,1.4.27,2.69.58,3.87.92,4.42,1.43,8.47,2.97,12.16,4.64,3.68,1.67,6.88,3.72,9.58,6.15,2.7,2.43,4.8,5.34,6.3,8.73,1.5,3.39,2.25,7.52,2.25,12.38s-.97,9.21-2.91,13.04c-1.94,3.83-4.61,7.05-7.99,9.65-3.39,2.6-7.4,4.59-12.05,5.97-4.64,1.37-9.64,2.06-14.99,2.06-3.05,0-6.14-.27-9.28-.81-3.14-.54-6.19-1.41-9.14-2.62-2.95-1.2-5.75-2.75-8.4-4.64-2.65-1.89-5.01-4.19-7.07-6.89-.54-.69-.95-1.41-1.22-2.17-.27-.76-.39-1.51-.37-2.25.02-.74.17-1.41.44-2.03.27-.61.7-1.14,1.29-1.58l9.51-9.51c1.18-.98,2.22-1.33,3.13-1.03.91.3,2.07,1.13,3.5,2.51Z"/>
+      <path fill="currentColor" d="M645.15,494.87c-.79-1.96-.8-3.65-.04-5.05.76-1.4,2.44-2.1,5.05-2.1h18.2c1.23,0,2.23.38,3.02,1.14.79.76,1.37,1.71,1.77,2.84l20.85,59.31,20.41-59.31c.54-1.57,1.23-2.63,2.06-3.17.83-.54,1.99-.81,3.46-.81h18.94c1.37,0,2.46.18,3.24.55.79.37,1.34.86,1.66,1.47.32.61.43,1.3.33,2.06-.1.76-.29,1.51-.59,2.25-1.87,4.62-3.91,9.66-6.12,15.14-2.21,5.48-4.51,11.18-6.89,17.09-2.38,5.92-4.8,11.94-7.26,18.05-2.46,6.12-4.85,12.12-7.18,18.01-2.33,5.9-4.58,11.56-6.74,16.98-2.16,5.43-4.14,10.41-5.93,14.96-1.79,4.54-3.35,8.53-4.68,11.97-1.33,3.44-2.33,6.09-3.02,7.96l.22-.37c-.34,1.33-.96,2.39-1.84,3.21-.88.81-1.97,1.22-3.24,1.22h-17.02c-2.21,0-3.72-.43-4.53-1.29-.81-.86-1.22-2.12-1.22-3.79,0-.64.09-1.13.26-1.47.17-.34.31-.56.41-.66l11.57-30.06-35.15-86.13Z"/>
+      <path fill="currentColor" d="M769.38,552.27c1.33,1.33,2.76,2.44,4.31,3.35,1.55.91,3.03,1.65,4.46,2.21,1.42.56,2.68.97,3.76,1.22,1.08.25,1.82.37,2.21.37.93,0,2.12-.04,3.57-.11,1.45-.07,2.84-.29,4.16-.66,1.33-.37,2.47-.97,3.43-1.81.96-.84,1.44-2.01,1.44-3.54,0-1.38-.27-2.47-.81-3.28-.54-.81-1.33-1.5-2.36-2.06-1.03-.56-2.3-1.07-3.79-1.51-1.5-.44-3.18-.96-5.05-1.55-5.89-1.57-10.76-3.46-14.59-5.67-3.83-2.21-6.87-4.68-9.1-7.4-2.24-2.73-3.79-5.66-4.68-8.8-.88-3.14-1.33-6.46-1.33-9.95,0-4.08.81-7.78,2.43-11.13,1.62-3.34,3.93-6.2,6.93-8.58,3-2.38,6.58-4.22,10.76-5.53,4.17-1.3,8.82-1.95,13.93-1.95,3.09,0,5.99.26,8.69.77,2.7.52,5.28,1.33,7.74,2.43,2.46,1.11,4.85,2.53,7.18,4.27,2.33,1.74,4.65,3.82,6.96,6.23.83.98,1.26,1.9,1.29,2.76.02.86-.53,1.78-1.66,2.76-1.92,1.57-3.75,3.12-5.49,4.64-1.74,1.52-3.55,3.22-5.42,5.08-.59.49-1.18.8-1.77.92-.59.12-1.15.11-1.69-.04-.54-.15-1.06-.39-1.55-.74-.49-.34-.93-.76-1.33-1.25-1.72-1.92-3.68-3.21-5.89-3.87-2.21-.66-4.27-.99-6.19-.99-2.41,0-4.32.42-5.75,1.25-1.43.84-2.09,2.11-1.99,3.83.1,1.28.58,2.27,1.44,2.98.86.71,1.92,1.29,3.17,1.73,1.25.44,2.58.8,3.98,1.07,1.4.27,2.69.58,3.87.92,4.42,1.43,8.47,2.97,12.16,4.64,3.68,1.67,6.88,3.72,9.58,6.15,2.7,2.43,4.8,5.34,6.3,8.73,1.5,3.39,2.25,7.52,2.25,12.38s-.97,9.21-2.91,13.04c-1.94,3.83-4.61,7.05-7.99,9.65-3.39,2.6-7.4,4.59-12.05,5.97-4.64,1.37-9.64,2.06-14.99,2.06-3.05,0-6.14-.27-9.28-.81-3.14-.54-6.19-1.41-9.14-2.62-2.95-1.2-5.75-2.75-8.4-4.64-2.65-1.89-5.01-4.19-7.07-6.89-.54-.69-.95-1.41-1.22-2.17-.27-.76-.39-1.51-.37-2.25.02-.74.17-1.41.44-2.03.27-.61.7-1.14,1.29-1.58l9.51-9.51c1.18-.98,2.22-1.33,3.13-1.03.91.3,2.07,1.13,3.5,2.51Z"/>
+      <path fill="currentColor" d="M846.38,473.21c0-1.52.5-2.66,1.51-3.43,1.01-.76,2.44-1.49,4.31-2.17l16.73-5.82c.24-.05.48-.07.7-.07h.63c1.82,0,3.03.53,3.65,1.58.61,1.06.92,2.44.92,4.16l-.07,20.26h10.09c1.57,0,2.85.47,3.83,1.4.98.93,1.47,2.33,1.47,4.2v14.22c0,2.06-.49,3.57-1.47,4.53-.98.96-2.26,1.44-3.83,1.44h-10.09l.07,62.19c0,1.87-.54,3.28-1.62,4.24-1.08.96-2.58,1.44-4.49,1.44h-16.65c-3.78,0-5.67-1.89-5.67-5.67l-.07-62.19h-7.59c-3.78,0-5.67-1.99-5.67-5.97v-14.22c0-3.73,1.89-5.6,5.67-5.6h7.59l.07-14.52Z"/>
+      <path fill="currentColor" d="M979.59,570.17c-4.32,3.98-9.19,7.09-14.59,9.32-5.4,2.23-11.13,3.35-17.17,3.35-6.73,0-13.09-1.23-19.08-3.68-5.99-2.46-11.25-5.86-15.77-10.21-4.52-4.35-8.11-9.47-10.76-15.36-2.65-5.89-3.98-12.31-3.98-19.23,0-4.32.53-8.51,1.58-12.56,1.06-4.05,2.55-7.85,4.49-11.38,1.94-3.54,4.3-6.79,7.07-9.76,2.77-2.97,5.88-5.51,9.32-7.63,3.44-2.11,7.17-3.76,11.2-4.94,4.03-1.18,8.28-1.77,12.75-1.77,4.08,0,8.03.54,11.86,1.62,3.83,1.08,7.43,2.6,10.79,4.57,3.36,1.97,6.45,4.32,9.25,7.07,2.8,2.75,5.21,5.76,7.22,9.03,2.01,3.27,3.57,6.75,4.68,10.46,1.11,3.71,1.66,7.53,1.66,11.46,0,2.56-.04,4.64-.11,6.26-.07,1.62-.45,2.91-1.14,3.87-.69.96-1.83,1.62-3.43,1.99-1.6.37-3.94.55-7.04.55h-53.05c.49,3.14,1.49,5.77,2.98,7.88,1.5,2.11,3.23,3.79,5.19,5.05,1.96,1.25,4.05,2.15,6.26,2.69,2.21.54,4.3.81,6.26.81,1.77,0,3.58-.18,5.45-.55,1.87-.37,3.67-.86,5.42-1.47,1.74-.61,3.34-1.33,4.79-2.14,1.45-.81,2.62-1.66,3.5-2.54.79-.64,1.46-1.12,2.03-1.44.56-.32,1.17-.48,1.81-.48s1.29.22,1.95.66c.66.44,1.41,1.08,2.25,1.92l7.81,8.84c.54.64.88,1.22,1.03,1.73.15.52.22,1.04.22,1.59,0,.98-.27,1.83-.81,2.54-.54.71-1.18,1.34-1.92,1.88ZM944.15,508.8c-1.92,0-3.77.38-5.56,1.14-1.79.76-3.48,1.78-5.05,3.06-1.57,1.28-2.98,2.73-4.24,4.35-1.25,1.62-2.27,3.27-3.06,4.94h37.65c-1.03-1.92-2.15-3.68-3.35-5.31-1.2-1.62-2.58-3.04-4.13-4.27-1.55-1.23-3.32-2.19-5.3-2.87-1.99-.69-4.31-1.03-6.96-1.03Z"/>
+    </svg>
+    <div style="width:1px;height:36px;background:rgba(255,255,255,.2);"></div>
+    <!-- Innseal product logo -->
+    <svg viewBox="0 0 140 28" xmlns="http://www.w3.org/2000/svg" style="height:28px;" aria-label="Innseal" role="img">
+      <g transform="translate(0,2)">
+        <path d="M11 2L4 5v5c0 4.5 3 8.7 7 10 4-1.3 7-5.5 7-10V5L11 2z" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+        <polyline points="8,11 10,13 14,9" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="26" y="19" font-family="'Montserrat',sans-serif" font-size="15" font-weight="600" fill="white" letter-spacing="-0.3">Innseal</text>
+    </svg>
+  </div>
+
+  <div class="tagline">Enterprise Security Platform</div>
+  <h1 class="page-title">Análisis Competitivo 2026</h1>
+  <p class="page-subtitle">Por qué Innseal ofrece la mayor relación valor / inversión del mercado de seguridad de código en 2026.</p>
+  <div class="header-pills">
+    <span class="header-pill">SAST · SCA · IaC · Secrets · DAST</span>
+    <span class="header-pill">20+ Analizadores</span>
+    <span class="header-pill">ITSM Automático</span>
+    <span class="header-pill">Experto DevSecOps Incluido</span>
+    <span class="header-pill">IA de Remediación</span>
+    <span class="header-pill">SBOM + Alcanzabilidad</span>
+    <span class="header-pill">Compliance PDF · OWASP · ISO 27001</span>
+    <span class="header-pill">Licencias SPDX</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ══ Diff cards ══ -->
+  <div class="diff-banner">
+    <div class="diff-card">
+      <div class="diff-icon">🧑‍💻</div>
+      <div>
+        <div class="diff-title">Experto DevSecOps incluido</div>
+        <div class="diff-desc">Especialista disponible para guiar la remediación de cada hallazgo crítico. Ningún competidor lo incluye en el plan base.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🤖</div>
+      <div>
+        <div class="diff-title">IA de remediación</div>
+        <div class="diff-desc">Sugerencias de código correctivo generadas por IA, adjuntas automáticamente al ticket ITSM del desarrollador.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🎫</div>
+      <div>
+        <div class="diff-title">ITSM automático — cualquier plataforma</div>
+        <div class="diff-desc">Tickets creados automáticamente en Jira, ServiceNow, Monday, Asana u otro ITSM. Nueva integración lista en menos de 2 semanas.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">📦</div>
+      <div>
+        <div class="diff-title">Todo incluido, precio fijo</div>
+        <div class="diff-desc">SAST + SCA + IaC + Secrets + DAST en un solo plan. Sin costos por desarrollador, sin límite de líneas de código, sin sorpresas en la factura.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔭</div>
+      <div>
+        <div class="diff-title">SBOM + Alcanzabilidad real</div>
+        <div class="diff-desc">Analiza si una vulnerabilidad SCA es realmente ejecutable en el código (reachability). Reduce el ruido hasta un 70% vs. listas crudas de CVEs.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">📋</div>
+      <div>
+        <div class="diff-title">Informes de compliance listos</div>
+        <div class="diff-desc">Dashboard OWASP Top 10 + CWE Top 25 + informe PDF descargable para PCI-DSS v4.0 e ISO 27001:2022. Sin trabajo manual del equipo.</div>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">⚖️</div>
+      <div>
+        <div class="diff-title">Gestión de licencias SPDX</div>
+        <div class="diff-desc">Clasifica automáticamente las dependencias por categoría de licencia (50+ SPDX), detecta licencias prohibidas o restrictivas y exporta el inventario en CSV.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ Scanner Arsenal ══ -->
+  <div style="margin-bottom:32px;">
+    <div class="section-label">Arsenal de analizadores — cobertura sin paralelo en el mercado</div>
+
+    <!-- Headline stat -->
+    <div style="background:var(--navy-900);border-radius:16px;padding:24px 32px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:72px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;color:#ff4575;">20+</div>
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-top:4px;">analizadores de seguridad integrados</div>
+        <div style="font-size:12px;color:var(--navy-100);margin-top:6px;">Sin licencias adicionales · actualizados continuamente</div>
+      </div>
+    </div>
+
+    <!-- Competitor comparison bar -->
+    <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);padding:20px 24px;box-shadow:0 2px 8px rgba(15,42,66,.05);">
+      <div style="font-size:12px;font-weight:700;color:var(--slate-700);margin-bottom:14px;">Comparativo: número de motores de análisis distintos</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+
+        <!-- Innseal -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:130px;flex-shrink:0;font-size:11.5px;font-weight:700;color:var(--navy-600);">✦ Innseal</div>
+          <div style="flex:1;position:relative;height:20px;background:var(--navy-100);border-radius:4px;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--navy-600);border-radius:4px;display:flex;align-items:center;padding-left:10px;">
+              <span style="font-size:10px;font-weight:700;color:#fff;">20+ analizadores</span>
+            </div>
+          </div>
+          <div style="width:60px;flex-shrink:0;font-size:11.5px;font-weight:800;color:var(--navy-600);text-align:right;">25</div>
+        </div>
+
+        <!-- Checkmarx -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:130px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-600);">Checkmarx One</div>
+          <div style="flex:1;position:relative;height:18px;background:var(--slate-100);border-radius:4px;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:32%;background:var(--slate-400);border-radius:4px;display:flex;align-items:center;padding-left:8px;">
+              <span style="font-size:9.5px;font-weight:600;color:#fff;">~8 motores</span>
+            </div>
+          </div>
+          <div style="width:60px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-500);text-align:right;">~8</div>
+        </div>
+
+        <!-- Veracode -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:130px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-600);">Veracode</div>
+          <div style="flex:1;position:relative;height:18px;background:var(--slate-100);border-radius:4px;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:24%;background:var(--slate-400);border-radius:4px;display:flex;align-items:center;padding-left:8px;">
+              <span style="font-size:9.5px;font-weight:600;color:#fff;">~6</span>
+            </div>
+          </div>
+          <div style="width:60px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-500);text-align:right;">~6</div>
+        </div>
+
+        <!-- FluidAttacks -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:130px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-600);">FluidAttacks</div>
+          <div style="flex:1;position:relative;height:18px;background:var(--slate-100);border-radius:4px;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:24%;background:var(--slate-400);border-radius:4px;display:flex;align-items:center;padding-left:8px;">
+              <span style="font-size:9.5px;font-weight:600;color:#fff;">~6</span>
+            </div>
+          </div>
+          <div style="width:60px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-500);text-align:right;">~6</div>
+        </div>
+
+        <!-- Snyk -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:130px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-600);">Snyk</div>
+          <div style="flex:1;position:relative;height:18px;background:var(--slate-100);border-radius:4px;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:20%;background:var(--slate-400);border-radius:4px;display:flex;align-items:center;padding-left:8px;">
+              <span style="font-size:9.5px;font-weight:600;color:#fff;">~5</span>
+            </div>
+          </div>
+          <div style="width:60px;flex-shrink:0;font-size:11px;font-weight:600;color:var(--slate-500);text-align:right;">~5</div>
+        </div>
+
+      </div>
+      <div style="margin-top:12px;font-size:11px;color:var(--slate-400);line-height:1.6;">
+        Los competidores usan motores propietarios (1 por categoría) o un número reducido de OSS. Innseal orquesta <strong style="color:var(--slate-600);">múltiples analizadores especializados por lenguaje y tipo de riesgo</strong>, lo que reduce drásticamente los falsos negativos.
+      </div>
+    </div>
+  </div><!-- /scanner-arsenal -->
+
+  <!-- ══ Detection Coverage ══ -->
+  <div style="margin-bottom:32px;">
+    <div class="section-label">Cobertura de detección estimada por categoría — 2026</div>
+
+    <div style="background:#fff;border-radius:14px;border:1px solid var(--slate-200);box-shadow:0 4px 24px rgba(15,42,66,.07);overflow:hidden;margin-bottom:12px;">
+      <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+        <thead>
+          <tr style="background:var(--navy-700);">
+            <th style="padding:12px 18px;text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy-100);width:22%;">Categoría</th>
+            <th style="padding:12px 18px;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#6EE7B7;width:22%;">✦ Innseal</th>
+            <th style="padding:12px 18px;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy-100);width:18%;">Snyk / GitHub</th>
+            <th style="padding:12px 18px;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy-100);width:20%;">Checkmarx / Veracode</th>
+            <th style="padding:12px 18px;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--navy-100);width:18%;">Fluid Attacks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- SCA -->
+          <tr style="border-bottom:1px solid var(--slate-100);">
+            <td style="padding:13px 18px;">
+              <div style="font-weight:700;color:var(--slate-800);">SCA</div>
+              <div style="font-size:10.5px;color:var(--slate-400);margin-top:2px;">CVEs en dependencias</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border-radius:8px;padding:5px 12px;">
+                <span style="font-size:14px;font-weight:800;color:var(--green-dark);">90–95%</span>
+              </div>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:4px;">5 engines · múlt. bases de datos</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">70–85%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">1–2 engines</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">70–80%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">1 engine propietario</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">65–75%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Foco en SAST</div>
+            </td>
+          </tr>
+          <!-- IaC -->
+          <tr style="border-bottom:1px solid var(--slate-100);background:var(--slate-50);">
+            <td style="padding:13px 18px;">
+              <div style="font-weight:700;color:var(--slate-800);">IaC</div>
+              <div style="font-size:10.5px;color:var(--slate-400);margin-top:2px;">Misconfiguraciones de infra</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border-radius:8px;padding:5px 12px;">
+                <span style="font-size:14px;font-weight:800;color:var(--green-dark);">85–90%</span>
+              </div>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:4px;">checkov · kics · terrascan</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">60–70%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Snyk IaC (1 engine)</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">55–65%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Add-on limitado</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">50–60%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">No es foco principal</div>
+            </td>
+          </tr>
+          <!-- Secrets -->
+          <tr style="border-bottom:1px solid var(--slate-100);">
+            <td style="padding:13px 18px;">
+              <div style="font-weight:700;color:var(--slate-800);">Secret Scanning</div>
+              <div style="font-size:10.5px;color:var(--slate-400);margin-top:2px;">Credenciales en código</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border-radius:8px;padding:5px 12px;">
+                <span style="font-size:14px;font-weight:800;color:var(--green-dark);">85–90%</span>
+              </div>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:4px;">gitleaks · trufflehog</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">70–80%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">GitHub Secret Scanning</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">65–75%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Módulo adicional</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">65–75%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Incluido en SAST</div>
+            </td>
+          </tr>
+          <!-- SAST -->
+          <tr style="border-bottom:1px solid var(--slate-100);background:var(--slate-50);">
+            <td style="padding:13px 18px;">
+              <div style="font-weight:700;color:var(--slate-800);">SAST</div>
+              <div style="font-size:10.5px;color:var(--slate-400);margin-top:2px;">Vulnerabilidades en código fuente</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:#FEF3C7;border-radius:8px;padding:5px 12px;">
+                <span style="font-size:14px;font-weight:800;color:#78350F;">55–65%</span>
+              </div>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:4px;">7 engines · amplitud de lenguajes</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">40–55%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">1 engine (CodeQL / Snyk Code)</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">45–60%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">1 engine profundo (Java fuerte)</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">50–65%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">SAST + revisión manual</div>
+            </td>
+          </tr>
+          <!-- DAST -->
+          <tr style="border-bottom:1px solid var(--slate-100);">
+            <td style="padding:13px 18px;">
+              <div style="font-weight:700;color:var(--slate-800);">DAST</div>
+              <div style="font-size:10.5px;color:var(--slate-400);margin-top:2px;">Vulnerabilidades en runtime</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border-radius:8px;padding:5px 12px;">
+                <span style="font-size:14px;font-weight:800;color:var(--green-dark);">65–75%</span>
+              </div>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:4px;">ZAP · nuclei · dalfox · sqlmap · nikto</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--red);">No incluido</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Requiere producto separado</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">30–50%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Add-on de pago</div>
+            </td>
+            <td style="padding:13px 18px;text-align:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--slate-600);">35–50%</span>
+              <div style="font-size:9.5px;color:var(--slate-400);margin-top:2px;">Pentesting manual</div>
+            </td>
+          </tr>
+          <!-- TOTAL -->
+          <tr style="background:var(--navy-50);border-top:2px solid var(--navy-600);">
+            <td style="padding:14px 18px;">
+              <div style="font-size:13px;font-weight:800;color:var(--navy-700);">Global estimado</div>
+              <div style="font-size:10px;color:var(--slate-500);margin-top:2px;">Todas las categorías combinadas</div>
+            </td>
+            <td style="padding:14px 18px;text-align:center;">
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--navy-600);border-radius:8px;padding:6px 14px;">
+                <span style="font-size:16px;font-weight:800;color:#fff;">75–82%</span>
+              </div>
+            </td>
+            <td style="padding:14px 18px;text-align:center;">
+              <span style="font-size:14px;font-weight:700;color:var(--slate-600);">50–55%</span>
+            </td>
+            <td style="padding:14px 18px;text-align:center;">
+              <span style="font-size:14px;font-weight:700;color:var(--slate-600);">55–65%</span>
+            </td>
+            <td style="padding:14px 18px;text-align:center;">
+              <span style="font-size:14px;font-weight:700;color:var(--slate-600);">55–65%</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ceiling note -->
+    <div style="background:var(--slate-100);border-radius:10px;padding:13px 18px;font-size:11.5px;color:var(--slate-600);line-height:1.65;">
+      <strong style="color:var(--slate-700);">Techo estructural del mercado:</strong> el 10–15% restante corresponde a vulnerabilidades de lógica de negocio y contexto de runtime que <em>ninguna herramienta del mercado</em> detecta automáticamente — solo pentesting manual o revisión humana especializada.
+    </div>
+  </div><!-- /detection-coverage -->
+
+  <div class="note">
+    ℹ️ Fuentes: páginas oficiales de pricing, Gartner Peer Insights y documentación pública de cada proveedor (mayo 2026). Precios de competidores convertidos a COP con TRM de referencia $4.150 COP/USD. Los costos anuales para equipos de 30 desarrolladores son estimados calculados con las tarifas publicadas oficialmente.
+  </div>
+
+  <!-- ══ Problem stats banner ══ -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:28px;">
+    <div style="background:var(--navy-900);border-radius:12px;padding:18px 20px;color:#fff;text-align:center;">
+      <div style="font-size:42px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;color:#ff4575;">89%</div>
+      <div style="font-size:11px;color:var(--navy-100);margin-top:8px;line-height:1.5;">de los líderes reportan un <strong style="color:#fff;">aumento anual</strong> en incidentes de seguridad en sus aplicaciones</div>
+    </div>
+    <div style="background:var(--navy-900);border-radius:12px;padding:18px 20px;color:#fff;text-align:center;">
+      <div style="font-size:42px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;color:#ff4575;">80%</div>
+      <div style="font-size:11px;color:var(--navy-100);margin-top:8px;line-height:1.5;">citan la <strong style="color:#fff;">filtración de datos sensibles</strong> como su principal preocupación de seguridad</div>
+    </div>
+    <div style="background:var(--navy-900);border-radius:12px;padding:18px 20px;color:#fff;text-align:center;">
+      <div style="font-size:42px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;color:#F59E0B;">55%</div>
+      <div style="font-size:11px;color:var(--navy-100);margin-top:8px;line-height:1.5;">carecen de claridad sobre <strong style="color:#fff;">cómo se usa la IA</strong> en sus sistemas y cómo regularla</div>
+    </div>
+    <div style="background:linear-gradient(135deg,var(--red) 0%,#991B1B 100%);border-radius:12px;padding:18px 20px;color:#fff;text-align:center;border:2px solid #EF4444;">
+      <div style="font-size:42px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;color:#fff;">13%</div>
+      <div style="font-size:11px;color:#FCA5A5;margin-top:8px;line-height:1.5;">de las vulnerabilidades detectadas <strong style="color:#fff;">se remedian efectivamente</strong> sin acompañamiento experto</div>
+    </div>
+  </div>
+  <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:12px 18px;margin-bottom:28px;font-size:18.5px;color:#7F1D1D;line-height:1.65;">
+    <strong>La conclusión es clara:</strong> detectar vulnerabilidades es fácil — <strong>cerrarlas es el problema real</strong>. Sin un experto que acompañe la remediación y una metodología estructurada, el 87% de los hallazgos quedan abiertos. Innseal resuelve exactamente eso.
+  </div>
+
+  <!-- ══ FEATURE TABLE ══ -->
+  <div class="section-label">Comparativo de capacidades — 2026</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="min-width:210px"><div class="th-inner" style="text-align:left;padding-left:18px">Capacidad</div></th>
+          <th style="min-width:115px"><div class="th-inner us">
+            <span class="vname">✦ Innseal</span>
+            <span class="vsub">Precio fijo por org</span>
+          </div></th>
+          <th style="min-width:108px"><div class="th-inner">
+            <span class="vname">FluidAttacks</span>
+            <span class="vsub">Desde $7 mill. COP/mes</span>
+          </div></th>
+          <th style="min-width:108px"><div class="th-inner">
+            <span class="vname">Snyk</span>
+            <span class="vsub">Enterprise · ~$145.000 COP/dev/mes</span>
+          </div></th>
+          <th style="min-width:110px"><div class="th-inner">
+            <span class="vname">Checkmarx One</span>
+            <span class="vsub">Desde ~$103 mill. COP/año</span>
+          </div></th>
+          <th style="min-width:108px"><div class="th-inner">
+            <span class="vname">Veracode</span>
+            <span class="vsub">$207–415 mill. COP/año · SAST+DAST</span>
+          </div></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Scanners -->
+        <tr class="feature-group"><td colspan="6">Cobertura de escaneo — analizadores integrados</td></tr>
+        <tr>
+          <td><strong>Total analizadores</strong> <span class="badge-only">★ Diferenciador</span></td>
+          <td class="col-us" style="text-align:center;">
+            <span style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--navy-600);">20+</span>
+            <span style="font-size:9px;display:block;color:var(--navy-500);font-weight:600;">Sin licencias extra</span>
+          </td>
+          <td><span style="font-size:16px;font-weight:700;font-family:'Montserrat',sans-serif;color:#64748B;">~6</span><span style="font-size:9px;display:block;color:var(--slate-400);">mix propio + OSS</span></td>
+          <td><span style="font-size:16px;font-weight:700;font-family:'Montserrat',sans-serif;color:#64748B;">~5</span><span style="font-size:9px;display:block;color:var(--slate-400);">motores propietarios</span></td>
+          <td><span style="font-size:16px;font-weight:700;font-family:'Montserrat',sans-serif;color:#64748B;">~8</span><span style="font-size:9px;display:block;color:var(--slate-400);">motores propietarios</span></td>
+          <td><span style="font-size:16px;font-weight:700;font-family:'Montserrat',sans-serif;color:#64748B;">~6</span><span style="font-size:9px;display:block;color:var(--slate-400);">motores propietarios</span></td>
+        </tr>
+        <tr>
+          <td>SAST — motores por lenguaje</td>
+          <td class="col-us">
+            <span class="chip chip-green">7 motores</span>
+          </td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Fluid SAST propio</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Snyk Code</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">CxSAST</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Veracode SAST</span></td>
+        </tr>
+        <tr>
+          <td>SCA — análisis de dependencias</td>
+          <td class="col-us">
+            <span class="chip chip-green">5 motores</span>
+          </td>
+          <td><span class="chip chip-amber">~2 motores</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Snyk Open Source</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">CxSCA</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Veracode SCA</span></td>
+        </tr>
+        <tr>
+          <td>DAST — análisis dinámico</td>
+          <td class="col-us">
+            <span class="chip chip-green">6 motores</span>
+          </td>
+          <td><span class="chip chip-amber">~2 motores</span></td>
+          <td><span class="chip chip-red">Solo plan Ignite · 1 motor</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">CxDAST</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Veracode DAST</span></td>
+        </tr>
+        <tr>
+          <td>IaC Security (Terraform, Bicep, ARM, Kubernetes)</td>
+          <td class="col-us">
+            <span class="chip chip-green">3 motores</span>
+          </td>
+          <td><span class="chip chip-amber">1 motor</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">Snyk IaC</span></td>
+          <td><span class="chip chip-amber">1 motor</span><span style="display:block;font-size:9px;color:var(--slate-400);margin-top:2px;">KICS (adquirido)</span></td>
+          <td><span class="chip chip-amber">1 motor</span></td>
+        </tr>
+        <tr>
+          <td>Detección de secrets y credenciales</td>
+          <td class="col-us">
+            <span class="chip chip-green">2 motores</span>
+          </td>
+          <td><span class="chip chip-amber">1 motor</span></td>
+          <td><span class="chip chip-red">Solo en contenedores</span></td>
+          <td><span class="chip chip-green">✓ 1 motor</span></td>
+          <td><span class="chip chip-green">✓ 1 motor</span></td>
+        </tr>
+        <tr>
+          <td>Supply Chain + IA Security <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us">
+            <span class="chip chip-green">2 motores</span>
+          </td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="chip chip-amber">Parcial · Supply Chain solo</span></td>
+          <td><span class="no">✗</span></td>
+        </tr>
+        <tr>
+          <td>SBOM — inventario de dependencias por scan <span class="badge-only">★ Diferenciador</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Generado automáticamente</span></td>
+          <td><span class="chip chip-amber">~ Add-on</span></td>
+          <td><span class="chip chip-green">✓ Snyk SBOM</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+        </tr>
+        <tr>
+          <td>Alcanzabilidad SCA (reachability analysis) <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us">
+            <span class="chip chip-green">✓ grype · pip_audit · retire.js</span>
+          </td>
+          <td><span class="no">✗</span></td>
+          <td><span class="chip chip-amber">Solo JS/TS · plan Enterprise</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+        </tr>
+        <tr>
+          <td>Cobertura de lenguajes SAST <span class="badge-only">incl. Apex · Salesforce</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ 30+ lenguajes</span></td>
+          <td><span class="chip chip-green">✓ 20+ lenguajes</span></td>
+          <td><span class="chip chip-green">✓ 15+ lenguajes</span></td>
+          <td><span class="chip chip-green">✓ 30+ lenguajes</span></td>
+          <td><span class="chip chip-green">✓ 30+ lenguajes</span></td>
+        </tr>
+
+        <!-- Plataforma -->
+        <tr class="feature-group"><td colspan="6">Integraciones de plataforma — SCM y CI/CD</td></tr>
+        <tr>
+          <td>GitHub nativo</td>
+          <td class="col-us"><span class="chip chip-green">✓ Nativo</span></td>
+          <td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Azure DevOps nativo</td>
+          <td class="col-us"><span class="chip chip-green">✓ Nativo</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="chip chip-amber">Via API</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>GitLab</td>
+          <td class="col-us"><span class="chip chip-green">✓ Nativo</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>AWS CodeCommit</td>
+          <td class="col-us"><span class="chip chip-green">✓ Nativo · SSH</span></td>
+          <td><span class="chip chip-amber">~ Parcial</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Bitbucket / Bitbucket Pipelines</td>
+          <td class="col-us"><span class="chip chip-green">✓ Nativo</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>CI/CD agnóstico (Jenkins, TeamCity, CircleCI…)</td>
+          <td class="col-us"><span class="chip chip-green">✓ Via webhook</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Sin agentes en cliente — SSH + Webhook <span class="badge-only">★ Diferenciador</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ SSH + Webhook nativo</span></td>
+          <td><span class="chip chip-red">✗ Requiere CLI/agente en CI</span></td>
+          <td><span class="chip chip-red">✗ Requiere CLI en pipeline</span></td>
+          <td><span class="chip chip-amber">~ Agente o API según config</span></td>
+          <td><span class="chip chip-red">✗ Requiere pipeline plugin</span></td>
+        </tr>
+        <tr>
+          <td>Scan automático en cada PR / push</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td>
+        </tr>
+
+        <!-- ITSM -->
+        <tr class="feature-group"><td colspan="6">Integración ITSM <span class="badge-only">Diferenciador clave</span></td></tr>
+        <tr>
+          <td>Tickets automáticos en cualquier ITSM <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Jira · SN · cualquier otro</span></td>
+          <td><span class="chip chip-amber">Solo Jira · otros custom</span></td>
+          <td><span class="chip chip-amber">Solo Enterprise · custom</span></td>
+          <td><span class="chip chip-amber">Custom API · Enterprise</span></td>
+          <td><span class="chip chip-amber">Custom API · Enterprise</span></td>
+        </tr>
+        <tr>
+          <td>Nueva integración ITSM en &lt; 2 semanas <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Capacidad nativa</span></td>
+          <td><span class="chip chip-red">✗ Requiere contrato aparte</span></td>
+          <td><span class="chip chip-red">✗ Requiere contrato aparte</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+        </tr>
+        <tr>
+          <td>Sincronización bidireccional estado ticket</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="chip chip-amber">Parcial</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+        </tr>
+
+        <!-- IA -->
+        <tr class="feature-group"><td colspan="6">Inteligencia artificial y remediación</td></tr>
+        <tr>
+          <td>Sugerencias de código correctivo con IA</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="chip chip-green">✓ GenAI</span></td>
+          <td><span class="chip chip-amber">Limitado</span></td>
+          <td><span class="chip chip-green">✓ Checkmarx Assist</span></td>
+          <td><span class="chip chip-green">✓ Fix AI</span></td>
+        </tr>
+        <tr>
+          <td>IA adjunta automáticamente al ticket ITSM <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Automático</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+        </tr>
+        <tr>
+          <td>Priorización inteligente por riesgo real</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+
+        <!-- Experto -->
+        <tr class="feature-group"><td colspan="6">Soporte experto DevSecOps <span class="badge-only">Exclusivo Innseal</span></td></tr>
+        <tr>
+          <td>Experto DevSecOps dedicado incluido <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Siempre incluido</span></td>
+          <td><span class="chip chip-amber">Solo plan Advanced</span></td>
+          <td><span class="chip chip-red">✗ Servicios extra</span></td>
+          <td><span class="chip chip-red">✗ Servicios extra</span></td>
+          <td><span class="chip chip-red">✗ Servicios extra</span></td>
+        </tr>
+        <tr>
+          <td>Guía de remediación personalizada por hallazgo</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="chip chip-amber">Plan Advanced</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-amber">Enterprise $$</span></td>
+          <td><span class="chip chip-amber">Enterprise $$</span></td>
+        </tr>
+        <tr>
+          <td>Sesiones de revisión con especialista en seguridad</td>
+          <td class="col-us"><span class="chip chip-green">✓ Incluido</span></td>
+          <td><span class="chip chip-amber">Plan Advanced</span></td>
+          <td><span class="chip chip-red">✗</span></td>
+          <td><span class="chip chip-amber">$$ extra</span></td>
+          <td><span class="chip chip-amber">$$ extra</span></td>
+        </tr>
+        <tr>
+          <td>Formación en desarrollo seguro — OWASP Top 10 <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Workshops incluidos</span></td>
+          <td><span class="chip chip-amber">~ Plan Advanced</span></td>
+          <td><span class="chip chip-red">✗ No disponible</span></td>
+          <td><span class="chip chip-amber">$$ extra</span></td>
+          <td><span class="chip chip-amber">$$ extra</span></td>
+        </tr>
+
+        <!-- Compliance -->
+        <tr class="feature-group"><td colspan="6">Compliance y reportes <span class="badge-only">Diferenciador clave</span></td></tr>
+        <tr>
+          <td>Dashboard OWASP Top 10 + CWE Top 25 <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Clasificación automática</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="chip chip-amber">Parcial · sin CWE</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+          <td><span class="chip chip-amber">Enterprise</span></td>
+        </tr>
+        <tr>
+          <td>Informe PDF compliance (PCI-DSS v4.0 · ISO 27001:2022) <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ Descargable · 1 clic</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="chip chip-amber">$$ add-on</span></td>
+          <td><span class="chip chip-amber">$$ add-on</span></td>
+        </tr>
+        <tr>
+          <td>Gestión de licencias SPDX + exportación CSV <span class="badge-only">★ Solo nosotros</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ 50+ licencias · CSV nativo</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="chip chip-amber">Solo detección · sin clasificación</span></td>
+          <td><span class="chip chip-amber">Parcial</span></td>
+          <td><span class="no">✗</span></td>
+        </tr>
+        <tr>
+          <td>Recalcular clasificación OWASP/CWE retroactivamente</td>
+          <td class="col-us"><span class="chip chip-green">✓ 1 clic · histórico completo</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+        </tr>
+
+        <!-- Modelo -->
+        <tr class="feature-group"><td colspan="6">Modelo comercial</td></tr>
+        <tr>
+          <td>Costo predecible (precio fijo)</td>
+          <td class="col-us"><span class="chip chip-green">✓ Precio fijo por org</span></td>
+          <td><span class="chip chip-amber">Escala por autores</span></td>
+          <td><span class="chip chip-amber">Escala por dev</span></td>
+          <td><span class="chip chip-amber">Negociación anual</span></td>
+          <td><span class="chip chip-amber">Negociación anual</span></td>
+        </tr>
+        <tr>
+          <td>Sin límite de desarrolladores</td>
+          <td class="col-us"><span class="chip chip-green">✓ Ilimitado</span></td>
+          <td><span class="chip chip-red">✗ Cobra por autor</span></td>
+          <td><span class="chip chip-red">✗ Cobra por dev</span></td>
+          <td><span class="chip chip-red">✗ Cobra por dev</span></td>
+          <td><span class="chip chip-red">✗ Cobra por dev</span></td>
+        </tr>
+        <tr>
+          <td>Sin límite de líneas de código <span class="badge-only">★ Diferenciador</span></td>
+          <td class="col-us"><span class="chip chip-green">✓ LOC ilimitadas</span></td>
+          <td><span class="chip chip-green">✓ No cobra por LOC</span></td>
+          <td><span class="chip chip-green">✓ No cobra por LOC</span></td>
+          <td><span class="chip chip-amber">⚠ Límites según contrato</span></td>
+          <td><span class="chip chip-amber">⚠ Límites según contrato</span></td>
+        </tr>
+        <tr>
+          <td>Onboarding &lt; 60 segundos</td>
+          <td class="col-us"><span class="chip chip-green">✓ Auto-config</span></td>
+          <td><span class="chip chip-amber">Trial 21 días</span></td>
+          <td><span class="chip chip-amber">~15 min</span></td>
+          <td><span class="chip chip-red">Días</span></td>
+          <td><span class="chip chip-red">Días</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- [removed per-dev cards] -->
+  <div style="display:none;">
+
+    <div style="background:var(--navy-700);border-radius:12px;padding:16px 14px;color:#fff;position:relative;border:3px solid var(--navy-500);">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy-100);margin-bottom:6px;">✦ Innseal</div>
+      <div style="font-size:26px;font-weight:800;font-family:'Montserrat',sans-serif;line-height:1;letter-spacing:-1px;">$1.600.000</div>
+      <div style="font-size:10px;color:var(--navy-100);margin-top:5px;">COP/dev/mes</div>
+      <div style="margin-top:10px;font-size:10px;background:rgba(255,255,255,.12);border-radius:6px;padding:5px 8px;color:#fff;font-weight:600;">FIJO · TODO INCLUIDO<br>sin variables, sin sorpresas</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">FluidAttacks</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--amber);line-height:1;">$750.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · estimado</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--red-bg);border-radius:5px;padding:4px 7px;color:var(--red);font-weight:600;">⚠ ServiceNow no disponible<br>⚠ Precio no publicado</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">Snyk Team</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--amber);line-height:1;">$774.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · variable</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--amber-bg);border-radius:5px;padding:4px 7px;color:#78350F;font-weight:600;">Requiere gestionar consultor<br>+ desarrollar ITSM</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">Semgrep AppSec</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--amber);line-height:1;">$816.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · variable</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--amber-bg);border-radius:5px;padding:4px 7px;color:#78350F;font-weight:600;">Requiere gestionar consultor<br>+ desarrollar ITSM</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">SonarCloud</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--amber);line-height:1;">$851.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · variable</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--amber-bg);border-radius:5px;padding:4px 7px;color:#78350F;font-weight:600;">Solo SAST en base<br>SCA e IaC son extra</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">GitHub GHAS</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--red);line-height:1;">$985.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · variable</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--red-bg);border-radius:5px;padding:4px 7px;color:var(--red);font-weight:600;">Sin SCA nativo · Sin IaC<br>Solo GitHub.com</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">Veracode</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--red);line-height:1;">$991.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · estimado</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--red-bg);border-radius:5px;padding:4px 7px;color:var(--red);font-weight:600;">ITSM via API custom<br>Onboarding tarda semanas</div>
+    </div>
+
+    <div style="background:#fff;border-radius:12px;padding:14px 12px;border:1px solid var(--slate-200);">
+      <div style="font-size:10px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;">Checkmarx One</div>
+      <div style="font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--red);line-height:1;">$1.104.000</div>
+      <div style="font-size:10px;color:var(--slate-400);margin-top:4px;">COP/dev/mes · estimado</div>
+      <div style="margin-top:8px;font-size:10px;background:var(--red-bg);border-radius:5px;padding:4px 7px;color:var(--red);font-weight:600;">Precio más alto del mercado<br>Onboarding de semanas</div>
+    </div>
+
+  </div><!-- /cards -->
+
+  <!-- ══ M2DS Methodology ══ -->
+  <div style="margin-bottom:36px;">
+    <div class="section-label">Metodología M2DS by Innseal — lo que ningún competidor tiene</div>
+
+    <!-- Tagline -->
+    <div style="background:var(--navy-900);border-radius:14px;padding:20px 28px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:4px;">Modelo de Madurez en Desarrollo Seguro</div>
+        <div style="font-size:13px;color:var(--navy-100);">Un proceso estructurado de 12 meses que convierte la seguridad en un hábito organizacional permanente.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 18px;text-align:center;flex-shrink:0;">
+        <div style="font-size:11px;font-weight:700;color:#F59E0B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">La diferencia clave</div>
+        <div style="font-size:13px;color:#fff;font-style:italic;">"Un scanner sin metodología<br>solo genera <strong>ruido</strong>."</div>
+      </div>
+    </div>
+
+    <!-- 5-stage timeline -->
+    <div style="background:#fff;border-radius:14px;border:1px solid var(--slate-200);box-shadow:0 4px 20px rgba(15,42,66,.07);padding:28px 24px;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
+
+        <!-- Connector line -->
+        <div style="position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--navy-600),#ff4575);z-index:0;"></div>
+
+        <!-- Stage 1 -->
+        <div style="text-align:center;position:relative;z-index:1;padding:0 8px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-600);color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy-600);">1</div>
+          <div style="font-size:12px;font-weight:700;color:var(--navy-600);margin-bottom:4px;">Conocer</div>
+          <div style="font-size:10.5px;color:var(--slate-500);line-height:1.5;">Diagnóstico inicial. El riesgo existe hoy, aunque no se vea.</div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div style="text-align:center;position:relative;z-index:1;padding:0 8px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-600);color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy-600);">2</div>
+          <div style="font-size:12px;font-weight:700;color:var(--navy-600);margin-bottom:4px;">Fundamentar</div>
+          <div style="font-size:10.5px;color:var(--slate-500);line-height:1.5;">Formación OWASP Top 10 y bases de desarrollo seguro.</div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div style="text-align:center;position:relative;z-index:1;padding:0 8px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-600);color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy-600);">3</div>
+          <div style="font-size:12px;font-weight:700;color:var(--navy-600);margin-bottom:4px;">Habilitar</div>
+          <div style="font-size:10.5px;color:var(--slate-500);line-height:1.5;">Activación de scanners y primera remediación guiada.</div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div style="text-align:center;position:relative;z-index:1;padding:0 8px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-600);color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--navy-600);">4</div>
+          <div style="font-size:12px;font-weight:700;color:var(--navy-600);margin-bottom:4px;">Integrar</div>
+          <div style="font-size:10.5px;color:var(--slate-500);line-height:1.5;">DevSecOps embebido en CI/CD e ITSM del equipo.</div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div style="text-align:center;position:relative;z-index:1;padding:0 8px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green) 0%,#059669 100%);color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--green);">5</div>
+          <div style="font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:4px;">Operar</div>
+          <div style="font-size:10.5px;color:var(--slate-500);line-height:1.5;">Proceso listo para auditoría. El conocimiento queda en la empresa para siempre.</div>
+        </div>
+
+      </div>
+
+      <!-- Outcomes row -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--slate-100);">
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="font-size:20px;flex-shrink:0;">🎯</div>
+          <div><div style="font-size:11.5px;font-weight:700;color:var(--slate-800);margin-bottom:2px;">12 meses · proceso completo</div><div style="font-size:11px;color:var(--slate-500);">De cero a DevSecOps operacional en un año.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="font-size:20px;flex-shrink:0;">🏛️</div>
+          <div><div style="font-size:11.5px;font-weight:700;color:var(--slate-800);margin-bottom:2px;">Listo para auditoría al año</div><div style="font-size:11px;color:var(--slate-500);">ISO 27001, SOC 2, regulaciones sectoriales.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="font-size:20px;flex-shrink:0;">🧠</div>
+          <div><div style="font-size:11.5px;font-weight:700;color:var(--slate-800);margin-bottom:2px;">El conocimiento queda en la empresa</div><div style="font-size:11px;color:var(--slate-500);">No depende de que Innseal siga contratado para siempre.</div></div>
+        </div>
+      </div>
+
+      <!-- Competitor contrast -->
+      <div style="background:var(--slate-50);border-radius:10px;padding:14px 18px;margin-top:16px;font-size:12px;color:var(--slate-600);line-height:1.65;">
+        <strong style="color:var(--slate-800);">Los competidores venden herramientas. Innseal vende un resultado.</strong>
+        Snyk, Checkmarx y Veracode son plataformas que generan listas de vulnerabilidades. Sin metodología, sin experto y sin formación, esas listas se convierten en deuda técnica acumulada, no en seguridad real.
+        La M2DS es el proceso que convierte los hallazgos en remediación efectiva, incorpora SBOM + alcanzabilidad para priorizar lo que realmente importa, y entrega informes de compliance listos para auditoría. El equipo termina desarrollando seguro por hábito, no por obligación.
+      </div>
+    </div>
+  </div><!-- /m2ds -->
+
+  <!-- ══ VS FluidAttacks ══ -->
+  <div style="margin-bottom:36px;">
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate-400);margin-bottom:14px;">Comparativo directo — Innseal vs FluidAttacks</div>
+
+    <!-- Intro strip -->
+    <div style="background:#fff;border:1px solid var(--slate-200);border-radius:12px;padding:18px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(15,42,66,.05);">
+      <div style="font-size:15px;font-weight:700;color:var(--slate-900);margin-bottom:4px;">El dilema de los dos planes</div>
+      <div style="font-size:12.5px;color:var(--slate-600);">FluidAttacks obliga a elegir entre dos opciones incompletas. Innseal tiene un único plan con todo incluido desde el día 1.</div>
+    </div>
+
+    <!-- Three-column comparison -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px;">
+
+      <!-- Essential -->
+      <div style="background:#fff;border:2px solid var(--amber);border-radius:14px;padding:20px 18px;">
+        <div style="background:var(--amber-bg);border-radius:7px;padding:5px 11px;display:inline-block;margin-bottom:12px;">
+          <span style="font-size:10px;font-weight:700;color:#78350F;text-transform:uppercase;letter-spacing:.8px;">FluidAttacks Essential</span>
+        </div>
+        <div style="font-size:21px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--amber);margin-bottom:3px;">Desde $7 M<span style="font-size:12px;font-weight:500;color:var(--slate-500);">/mes</span></div>
+        <div style="font-size:10.5px;color:var(--slate-400);margin-bottom:14px;">por autor activo · precio escala con el equipo</div>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--slate-700);">
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>SAST · SCA · IaC · Secrets · DAST automatizado</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Sin experto de remediación</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Solo Jira — otros ITSM son desarrollo custom</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Requiere CLI/agente en el pipeline</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Precio sube con cada dev activo</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--amber);font-weight:700;flex-shrink:0;margin-top:1px;">~</span><span>Azure DevOps vía API — no nativo</span></div>
+        </div>
+      </div>
+
+      <!-- Advanced -->
+      <div style="background:#fff;border:2px solid var(--red);border-radius:14px;padding:20px 18px;">
+        <div style="background:var(--red-bg);border-radius:7px;padding:5px 11px;display:inline-block;margin-bottom:12px;">
+          <span style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.8px;">FluidAttacks Advanced</span>
+        </div>
+        <div style="font-size:21px;font-weight:800;font-family:'Montserrat',sans-serif;color:var(--red);margin-bottom:3px;">Precio oculto</div>
+        <div style="font-size:10.5px;color:var(--slate-400);margin-bottom:14px;">negociación sin referencia pública · est. $400 M+/año</div>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--slate-700);">
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>Todo lo de Essential + pentesters humanos reales</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">⚠</span><span style="color:#78350F;font-weight:600;">Sin precio publicado → negociación ciega</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Sigue siendo solo Jira como ITSM</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Sigue requiriendo CLI en el pipeline</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:1px;">✗</span><span>Sigue escalando por autor activo</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:var(--amber);font-weight:700;flex-shrink:0;margin-top:1px;">~</span><span>Azure DevOps vía API — no nativo</span></div>
+        </div>
+      </div>
+
+      <!-- Innseal -->
+      <div style="background:var(--navy-700);border:2px solid var(--navy-500);border-radius:14px;padding:20px 18px;color:#fff;">
+        <div style="background:rgba(255,255,255,.15);border-radius:7px;padding:5px 11px;display:inline-block;margin-bottom:12px;">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.8px;">✦ Innseal</span>
+        </div>
+        <div style="font-size:21px;font-weight:800;font-family:'Montserrat',sans-serif;color:#fff;margin-bottom:3px;">$Precio fijo</div>
+        <div style="font-size:10.5px;color:var(--navy-100);margin-bottom:14px;">un solo plan · todo incluido · precio público desde el día 1</div>
+        <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--navy-100);">
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>SAST · SCA · IaC · Secrets · DAST</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span><strong style="color:#fff;">Experto DevSecOps siempre incluido</strong></span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>Cualquier ITSM · nueva integración &lt; 2 semanas</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>Sin agentes — SSH + Webhook nativo</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span><strong style="color:#fff;">Devs y LOC ilimitados</strong></span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span>ADO nativo · GitHub · GitLab · Bitbucket</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:#6EE7B7;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span><strong style="color:#fff;">SBOM + alcanzabilidad · compliance PDF · licencias SPDX</strong></span></div>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+
+    <!-- Positioning note -->
+    <div style="background:#FEF9C3;border:1px solid #FDE68A;border-radius:12px;padding:16px 22px;display:flex;gap:14px;align-items:flex-start;">
+      <div style="font-size:22px;flex-shrink:0;line-height:1;">🎯</div>
+      <div style="font-size:13px;color:#78350F;line-height:1.75;">
+        <strong>Si necesitan pentesting manual</strong> (red team, pruebas de intrusión ofensivas), FluidAttacks Advanced es otra categoría — y tiene el precio de otra categoría.<br>
+        <strong>Si lo que necesitan es DevSecOps automatizado integrado en su flujo de desarrollo</strong>, Innseal hace más por menos: mismos scanners, experto incluido, cualquier ITSM, sin agentes en su infraestructura, precio fijo y público.
+      </div>
+    </div>
+
+  </div><!-- /vs-fluidattacks -->
+
+  <!-- ══ AI section ══ -->
+  <div class="ai-card">
+    <h3>🤖 ¿Es la IA un diferenciador real en 2026?</h3>
+    <div class="ai-grid">
+      <div class="ai-item">
+        <div class="ai-label">FluidAttacks</div>
+        <div class="ai-val"><span class="ai-badge ai-yes">GenAI</span> Sugerencias de fix incluidas. Sin adjunto automático a ITSM.</div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-label">Snyk</div>
+        <div class="ai-val"><span class="ai-badge ai-partial">Limitado</span> Fix suggestions de alcance reducido. Sin contexto de negocio.</div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-label">GitHub Copilot Autofix</div>
+        <div class="ai-val"><span class="ai-badge ai-yes">Bueno</span> 90% cobertura en JS/TS/Java/Python. Solo en GitHub.com.</div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-label">Checkmarx One Assist</div>
+        <div class="ai-val"><span class="ai-badge ai-yes">Bueno</span> Solo en IDE. No conecta con ticketing.</div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-label">Veracode Fix AI</div>
+        <div class="ai-val"><span class="ai-badge ai-yes">Bueno</span> Genera fixes en segundos. Sin ITSM nativo.</div>
+      </div>
+      <div class="ai-item" style="border:2px solid var(--navy-600);">
+        <div class="ai-label" style="color:var(--navy-600);">✦ Innseal</div>
+        <div class="ai-val"><span class="ai-badge ai-star">Único</span> IA + experto humano + sugerencia entregada automáticamente en el ticket ITSM del equipo (Jira, ServiceNow o cualquier plataforma). La solución llega donde el equipo ya trabaja.</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:12px;color:var(--slate-500);">
+      <strong>Conclusión:</strong> la IA de remediación ya la tienen todos los proveedores maduros — ya no es diferenciador por sí sola. El valor de Innseal está en la combinación: <strong>IA + validación de experto humano + entrega automática dentro del flujo ITSM + compliance PDF listo para auditoría</strong>, sin que el desarrollador ni el equipo de seguridad tengan que construir nada extra.
+    </p>
+  </div>
+
+  <!-- ══ Summary ══ -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <h3>🟢 Lo que solo Innseal incluye en el precio</h3>
+
+      <ul>
+        <li>
+          <span class="li-icon">🧑‍💻</span>
+          <span><strong>Experto DevSecOps dedicado</strong> — FluidAttacks lo ofrece solo en plan Advanced (mayor costo). Checkmarx y Veracode lo cobran como servicios profesionales externos. En Innseal siempre está incluido.</span>
+        </li>
+        <li>
+          <span class="li-icon">🎫</span>
+          <span><strong>ITSM automático — cualquier plataforma</strong> — los competidores limitan las integraciones ITSM a Enterprise o requieren desarrollo custom por cada herramienta. Innseal funciona con Jira, ServiceNow, Monday o cualquier ITSM desde el día 1, y puede sumar una nueva integración en menos de 2 semanas.</span>
+        </li>
+        <li>
+          <span class="li-icon">📦</span>
+          <span><strong>20+ analizadores en 6 categorías desde el día 1</strong> — mientras los competidores usan 5–8 motores propietarios (uno por categoría), Innseal orquesta 20+ analizadores especializadas, incluyendo también Supply Chain + IA. Más motores = menos falsos negativos.</span>
+        </li>
+        <li>
+          <span class="li-icon">🔗</span>
+          <span><strong>Sin agentes en la infraestructura del cliente — SSH + Webhook</strong> — Snyk, FluidAttacks, Checkmarx y Veracode requieren instalar CLI o agentes dentro del pipeline del cliente. Innseal se conecta vía SSH + Webhook: sin software adicional que gestionar, sin permisos de instalación en CI/CD, sin riesgo de versiones desincronizadas.</span>
+        </li>
+        <li>
+          <span class="li-icon">💰</span>
+          <span><strong>Precio que no crece con el equipo ni con el código</strong> — los competidores escalan por desarrollador, autor o líneas de código. FluidAttacks escala por autor activo. Checkmarx y Veracode pueden tener límites de LOC en el contrato. Innseal no tiene límite de devs ni de líneas de código: el precio es fijo sin importar cuánto crezca el equipo o el repositorio.</span>
+        </li>
+        <li>
+          <span class="li-icon">🔭</span>
+          <span><strong>Alcanzabilidad SCA (reachability)</strong> — determinar si una librería vulnerable es realmente ejecutable en el flujo de código reduce el ruido en hasta 70%. Ningún competidor en LATAM ofrece esto en el plan base; Snyk lo tiene solo en Enterprise y únicamente para JS/TS.</span>
+        </li>
+        <li>
+          <span class="li-icon">📋</span>
+          <span><strong>Informe de compliance PDF con 1 clic</strong> — dashboard OWASP Top 10, CWE Top 25, PCI-DSS v4.0 e ISO 27001:2022 listos para entregar al auditor. Checkmarx y Veracode cobran esto como add-on de pago. FluidAttacks y Snyk no lo incluyen.</span>
+        </li>
+        <li>
+          <span class="li-icon">⚖️</span>
+          <span><strong>Gestión de licencias SPDX con exportación CSV</strong> — detecta dependencias con licencias incompatibles, las categoriza automáticamente (50+ identificadores SPDX) y genera un inventario exportable. Ningún competidor en el segmento LATAM lo incluye en el plan base.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="summary-card">
+      <h3>🔵 FluidAttacks — el competidor más cercano en LATAM</h3>
+      <ul>
+        <li>
+          <span class="li-icon">✅</span>
+          <span><strong>Empresa colombiana con presencia LATAM</strong> — Origen Medellín, operaciones globales. CVE Numbering Authority desde 2021. Calificación 4,7/5 en Gartner Peer Insights (197 reseñas). Referente de madurez en la región.</span>
+        </li>
+        <li>
+          <span class="li-icon">⚠️</span>
+          <span><strong>Experto solo en plan Advanced</strong> — el plan Essential (automatizado, desde $7M COP/mes) no incluye pentesters ni guía de remediación personalizada. Para obtener el experto hay que pagar el plan Advanced, cuyo precio no es público.</span>
+        </li>
+        <li>
+          <span class="li-icon">⚠️</span>
+          <span><strong>ITSM limitado a Jira</strong> — FluidAttacks incluye Jira, pero otros ITSM requieren desarrollo custom adicional. Innseal integra cualquier plataforma ITSM sin costo extra, con nueva integración lista en menos de 2 semanas.</span>
+        </li>
+        <li>
+          <span class="li-icon">⚠️</span>
+          <span><strong>Precio escala por autores</strong> — equipos grandes de 50+ devs activos pagan significativamente más. El plan Essential crece con el equipo; el Advanced añade costo de pentesters. El costo real puede superar $249M COP/año.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ CTA ══ -->
+  <div class="cta-block">
+    <h2>Lleve seguridad de código de nivel enterprise a su equipo</h2>
+    <p>Innseal integra SAST, SCA, IaC, Secrets y DAST con experto DevSecOps incluido, ITSM automático y precio fijo. Conversemos sobre cómo implementarlo en su flujo de desarrollo.</p>
+    <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="cta-btn">Agendar una reunión</a>
+    <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="cta-btn outline">Hablar por WhatsApp →</a>
+  </div>
+
+  <div class="foot">
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;opacity:.55;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="72 452 930 148" style="height:20px;color:var(--slate-600);" role="img" aria-label="Innsyste">
+        <rect fill="#ff4575" x="90.13" y="468.98" width="28.49" height="28.99" transform="translate(587.84 379.1) rotate(90)"/>
+        <rect fill="currentColor" x="90.39" y="526.19" width="85.66" height="28.71" transform="translate(673.77 407.32) rotate(90)"/>
+        <path fill="currentColor" d="M155.57,469.23h-7.98v28.49h11.54c7.6,0,14.93,2.93,20.32,8.28.04.04.08.08.13.13,5.57,5.57,8.36,12.3,8.36,20.18v57.07h28.54v-57.07c0-7.58-1.45-14.86-4.35-21.85-2.9-6.98-7.02-13.15-12.37-18.5-5.35-5.35-11.52-9.47-18.5-12.37-4.48-1.86-8.25-2.76-10.33-3.19-.65-.13-2.86-.58-5.85-.89-3.83-.4-7.08-.39-9.5-.28Z"/>
+        <rect fill="currentColor" x="258.96" y="463.54" width="3.29" height="125.45"/>
+        <path fill="currentColor" d="M304.9,475.2c0-.88.27-1.65.81-2.28.54-.64,1.35-.96,2.43-.96h21.66c.74,0,1.52.29,2.36.88.83.59,1.25,1.38,1.25,2.36v102.93c0,2.16-1.2,3.24-3.61,3.24h-21.66c-2.16,0-3.24-1.08-3.24-3.24v-102.93Z"/>
+        <path fill="currentColor" d="M356.03,489.12c.64-.54,1.31-.88,2.03-1.03.71-.15,1.39-.22,2.03-.22h11.13c.88,0,1.65.16,2.28.48.64.32,1.18.75,1.62,1.29.44.54.8,1.15,1.07,1.84.27.69.53,1.39.77,2.13l1.55,6.47c.74-1.52,1.93-3.09,3.57-4.7,1.64-1.62,3.68-3.09,6.12-4.41,2.43-1.32,5.24-2.41,8.44-3.27,3.19-.86,6.75-1.29,10.68-1.29,5.6,0,10.6,1.08,14.99,3.23,4.4,2.15,8.13,5.09,11.2,8.82,3.07,3.72,5.4,8.07,7,13.05,1.6,4.98,2.39,10.29,2.39,15.94v48.26c0,1.87-.41,3.28-1.22,4.24-.81.96-2.1,1.44-3.87,1.44h-17.02c-2.11,0-3.56-.36-4.35-1.07-.79-.71-1.18-2.1-1.18-4.16v-47.97c0-2.11-.48-4.11-1.44-6-.96-1.89-2.22-3.56-3.79-5.01-1.57-1.45-3.35-2.59-5.34-3.43-1.99-.83-4.02-1.25-6.08-1.25-1.77,0-3.57.39-5.42,1.18-1.84.79-3.54,1.88-5.08,3.28-1.55,1.4-2.85,3.05-3.91,4.94-1.06,1.89-1.66,3.94-1.8,6.15v47.89c0,.84-.16,1.67-.48,2.5-.32.84-.8,1.47-1.44,1.92-.64.39-1.24.66-1.81.81-.56.15-1.22.22-1.95.22h-16.65c-2.11,0-3.64-.52-4.57-1.55-.93-1.03-1.4-2.41-1.4-4.13v-82.4c0-.93.21-1.79.63-2.57.42-.78.99-1.4,1.73-1.84l-.44.22Z"/>
+        <path fill="currentColor" d="M462.5,489.12c.64-.54,1.31-.88,2.03-1.03.71-.15,1.39-.22,2.03-.22h11.13c.88,0,1.65.16,2.28.48.64.32,1.18.75,1.62,1.29.44.54.8,1.15,1.07,1.84.27.69.53,1.39.77,2.13l1.55,6.47c.74-1.52,1.93-3.09,3.57-4.7,1.64-1.62,3.68-3.09,6.12-4.41,2.43-1.32,5.24-2.41,8.44-3.27,3.19-.86,6.75-1.29,10.68-1.29,5.6,0,10.6,1.08,14.99,3.23,4.4,2.15,8.13,5.09,11.2,8.82,3.07,3.72,5.4,8.07,7,13.05,1.6,4.98,2.39,10.29,2.39,15.94v48.26c0,1.87-.41,3.28-1.22,4.24-.81.96-2.1,1.44-3.87,1.44h-17.02c-2.11,0-3.56-.36-4.35-1.07-.79-.71-1.18-2.1-1.18-4.16v-47.97c0-2.11-.48-4.11-1.44-6-.96-1.89-2.22-3.56-3.79-5.01-1.57-1.45-3.35-2.59-5.34-3.43-1.99-.83-4.02-1.25-6.08-1.25-1.77,0-3.57.39-5.42,1.18-1.84.79-3.54,1.88-5.08,3.28-1.55,1.4-2.85,3.05-3.91,4.94-1.06,1.89-1.66,3.94-1.8,6.15v47.89c0,.84-.16,1.67-.48,2.5-.32.84-.8,1.47-1.44,1.92-.64.39-1.24.66-1.81.81-.56.15-1.22.22-1.95.22h-16.65c-2.11,0-3.64-.52-4.57-1.55-.93-1.03-1.4-2.41-1.4-4.13v-82.4c0-.93.21-1.79.63-2.57.42-.78.99-1.4,1.73-1.84l-.44.22Z"/>
+        <path fill="currentColor" d="M581.05,552.27c1.33,1.33,2.76,2.44,4.31,3.35,1.55.91,3.03,1.65,4.46,2.21,1.42.56,2.68.97,3.76,1.22,1.08.25,1.82.37,2.21.37.93,0,2.12-.04,3.57-.11,1.45-.07,2.84-.29,4.16-.66,1.33-.37,2.47-.97,3.43-1.81.96-.84,1.44-2.01,1.44-3.54,0-1.38-.27-2.47-.81-3.28-.54-.81-1.33-1.5-2.36-2.06-1.03-.56-2.3-1.07-3.79-1.51-1.5-.44-3.18-.96-5.05-1.55-5.89-1.57-10.76-3.46-14.59-5.67-3.83-2.21-6.87-4.68-9.1-7.4-2.24-2.73-3.79-5.66-4.68-8.8-.88-3.14-1.33-6.46-1.33-9.95,0-4.08.81-7.78,2.43-11.13,1.62-3.34,3.93-6.2,6.93-8.58,3-2.38,6.58-4.22,10.76-5.53,4.17-1.3,8.82-1.95,13.93-1.95,3.09,0,5.99.26,8.69.77,2.7.52,5.28,1.33,7.74,2.43,2.46,1.11,4.85,2.53,7.18,4.27,2.33,1.74,4.65,3.82,6.96,6.23.83.98,1.26,1.9,1.29,2.76.02.86-.53,1.78-1.66,2.76-1.92,1.57-3.75,3.12-5.49,4.64-1.74,1.52-3.55,3.22-5.42,5.08-.59.49-1.18.8-1.77.92-.59.12-1.15.11-1.69-.04-.54-.15-1.06-.39-1.55-.74-.49-.34-.93-.76-1.33-1.25-1.72-1.92-3.68-3.21-5.89-3.87-2.21-.66-4.27-.99-6.19-.99-2.41,0-4.32.42-5.75,1.25-1.43.84-2.09,2.11-1.99,3.83.1,1.28.58,2.27,1.44,2.98.86.71,1.92,1.29,3.17,1.73,1.25.44,2.58.8,3.98,1.07,1.4.27,2.69.58,3.87.92,4.42,1.43,8.47,2.97,12.16,4.64,3.68,1.67,6.88,3.72,9.58,6.15,2.7,2.43,4.8,5.34,6.3,8.73,1.5,3.39,2.25,7.52,2.25,12.38s-.97,9.21-2.91,13.04c-1.94,3.83-4.61,7.05-7.99,9.65-3.39,2.6-7.4,4.59-12.05,5.97-4.64,1.37-9.64,2.06-14.99,2.06-3.05,0-6.14-.27-9.28-.81-3.14-.54-6.19-1.41-9.14-2.62-2.95-1.2-5.75-2.75-8.4-4.64-2.65-1.89-5.01-4.19-7.07-6.89-.54-.69-.95-1.41-1.22-2.17-.27-.76-.39-1.51-.37-2.25.02-.74.17-1.41.44-2.03.27-.61.7-1.14,1.29-1.58l9.51-9.51c1.18-.98,2.22-1.33,3.13-1.03.91.3,2.07,1.13,3.5,2.51Z"/>
+        <path fill="currentColor" d="M645.15,494.87c-.79-1.96-.8-3.65-.04-5.05.76-1.4,2.44-2.1,5.05-2.1h18.2c1.23,0,2.23.38,3.02,1.14.79.76,1.37,1.71,1.77,2.84l20.85,59.31,20.41-59.31c.54-1.57,1.23-2.63,2.06-3.17.83-.54,1.99-.81,3.46-.81h18.94c1.37,0,2.46.18,3.24.55.79.37,1.34.86,1.66,1.47.32.61.43,1.3.33,2.06-.1.76-.29,1.51-.59,2.25-1.87,4.62-3.91,9.66-6.12,15.14-2.21,5.48-4.51,11.18-6.89,17.09-2.38,5.92-4.8,11.94-7.26,18.05-2.46,6.12-4.85,12.12-7.18,18.01-2.33,5.9-4.58,11.56-6.74,16.98-2.16,5.43-4.14,10.41-5.93,14.96-1.79,4.54-3.35,8.53-4.68,11.97-1.33,3.44-2.33,6.09-3.02,7.96l.22-.37c-.34,1.33-.96,2.39-1.84,3.21-.88.81-1.97,1.22-3.24,1.22h-17.02c-2.21,0-3.72-.43-4.53-1.29-.81-.86-1.22-2.12-1.22-3.79,0-.64.09-1.13.26-1.47.17-.34.31-.56.41-.66l11.57-30.06-35.15-86.13Z"/>
+        <path fill="currentColor" d="M769.38,552.27c1.33,1.33,2.76,2.44,4.31,3.35,1.55.91,3.03,1.65,4.46,2.21,1.42.56,2.68.97,3.76,1.22,1.08.25,1.82.37,2.21.37.93,0,2.12-.04,3.57-.11,1.45-.07,2.84-.29,4.16-.66,1.33-.37,2.47-.97,3.43-1.81.96-.84,1.44-2.01,1.44-3.54,0-1.38-.27-2.47-.81-3.28-.54-.81-1.33-1.5-2.36-2.06-1.03-.56-2.3-1.07-3.79-1.51-1.5-.44-3.18-.96-5.05-1.55-5.89-1.57-10.76-3.46-14.59-5.67-3.83-2.21-6.87-4.68-9.1-7.4-2.24-2.73-3.79-5.66-4.68-8.8-.88-3.14-1.33-6.46-1.33-9.95,0-4.08.81-7.78,2.43-11.13,1.62-3.34,3.93-6.2,6.93-8.58,3-2.38,6.58-4.22,10.76-5.53,4.17-1.3,8.82-1.95,13.93-1.95,3.09,0,5.99.26,8.69.77,2.7.52,5.28,1.33,7.74,2.43,2.46,1.11,4.85,2.53,7.18,4.27,2.33,1.74,4.65,3.82,6.96,6.23.83.98,1.26,1.9,1.29,2.76.02.86-.53,1.78-1.66,2.76-1.92,1.57-3.75,3.12-5.49,4.64-1.74,1.52-3.55,3.22-5.42,5.08-.59.49-1.18.8-1.77.92-.59.12-1.15.11-1.69-.04-.54-.15-1.06-.39-1.55-.74-.49-.34-.93-.76-1.33-1.25-1.72-1.92-3.68-3.21-5.89-3.87-2.21-.66-4.27-.99-6.19-.99-2.41,0-4.32.42-5.75,1.25-1.43.84-2.09,2.11-1.99,3.83.1,1.28.58,2.27,1.44,2.98.86.71,1.92,1.29,3.17,1.73,1.25.44,2.58.8,3.98,1.07,1.4.27,2.69.58,3.87.92,4.42,1.43,8.47,2.97,12.16,4.64,3.68,1.67,6.88,3.72,9.58,6.15,2.7,2.43,4.8,5.34,6.3,8.73,1.5,3.39,2.25,7.52,2.25,12.38s-.97,9.21-2.91,13.04c-1.94,3.83-4.61,7.05-7.99,9.65-3.39,2.6-7.4,4.59-12.05,5.97-4.64,1.37-9.64,2.06-14.99,2.06-3.05,0-6.14-.27-9.28-.81-3.14-.54-6.19-1.41-9.14-2.62-2.95-1.2-5.75-2.75-8.4-4.64-2.65-1.89-5.01-4.19-7.07-6.89-.54-.69-.95-1.41-1.22-2.17-.27-.76-.39-1.51-.37-2.25.02-.74.17-1.41.44-2.03.27-.61.7-1.14,1.29-1.58l9.51-9.51c1.18-.98,2.22-1.33,3.13-1.03.91.3,2.07,1.13,3.5,2.51Z"/>
+        <path fill="currentColor" d="M846.38,473.21c0-1.52.5-2.66,1.51-3.43,1.01-.76,2.44-1.49,4.31-2.17l16.73-5.82c.24-.05.48-.07.7-.07h.63c1.82,0,3.03.53,3.65,1.58.61,1.06.92,2.44.92,4.16l-.07,20.26h10.09c1.57,0,2.85.47,3.83,1.4.98.93,1.47,2.33,1.47,4.2v14.22c0,2.06-.49,3.57-1.47,4.53-.98.96-2.26,1.44-3.83,1.44h-10.09l.07,62.19c0,1.87-.54,3.28-1.62,4.24-1.08.96-2.58,1.44-4.49,1.44h-16.65c-3.78,0-5.67-1.89-5.67-5.67l-.07-62.19h-7.59c-3.78,0-5.67-1.99-5.67-5.97v-14.22c0-3.73,1.89-5.6,5.67-5.6h7.59l.07-14.52Z"/>
+        <path fill="currentColor" d="M979.59,570.17c-4.32,3.98-9.19,7.09-14.59,9.32-5.4,2.23-11.13,3.35-17.17,3.35-6.73,0-13.09-1.23-19.08-3.68-5.99-2.46-11.25-5.86-15.77-10.21-4.52-4.35-8.11-9.47-10.76-15.36-2.65-5.89-3.98-12.31-3.98-19.23,0-4.32.53-8.51,1.58-12.56,1.06-4.05,2.55-7.85,4.49-11.38,1.94-3.54,4.3-6.79,7.07-9.76,2.77-2.97,5.88-5.51,9.32-7.63,3.44-2.11,7.17-3.76,11.2-4.94,4.03-1.18,8.28-1.77,12.75-1.77,4.08,0,8.03.54,11.86,1.62,3.83,1.08,7.43,2.6,10.79,4.57,3.36,1.97,6.45,4.32,9.25,7.07,2.8,2.75,5.21,5.76,7.22,9.03,2.01,3.27,3.57,6.75,4.68,10.46,1.11,3.71,1.66,7.53,1.66,11.46,0,2.56-.04,4.64-.11,6.26-.07,1.62-.45,2.91-1.14,3.87-.69.96-1.83,1.62-3.43,1.99-1.6.37-3.94.55-7.04.55h-53.05c.49,3.14,1.49,5.77,2.98,7.88,1.5,2.11,3.23,3.79,5.19,5.05,1.96,1.25,4.05,2.15,6.26,2.69,2.21.54,4.3.81,6.26.81,1.77,0,3.58-.18,5.45-.55,1.87-.37,3.67-.86,5.42-1.47,1.74-.61,3.34-1.33,4.79-2.14,1.45-.81,2.62-1.66,3.5-2.54.79-.64,1.46-1.12,2.03-1.44.56-.32,1.17-.48,1.81-.48s1.29.22,1.95.66c.66.44,1.41,1.08,2.25,1.92l7.81,8.84c.54.64.88,1.22,1.03,1.73.15.52.22,1.04.22,1.59,0,.98-.27,1.83-.81,2.54-.54.71-1.18,1.34-1.92,1.88ZM944.15,508.8c-1.92,0-3.77.38-5.56,1.14-1.79.76-3.48,1.78-5.05,3.06-1.57,1.28-2.98,2.73-4.24,4.35-1.25,1.62-2.27,3.27-3.06,4.94h37.65c-1.03-1.92-2.15-3.68-3.35-5.31-1.2-1.62-2.58-3.04-4.13-4.27-1.55-1.23-3.32-2.19-5.3-2.87-1.99-.69-4.31-1.03-6.96-1.03Z"/>
+      </svg>
+    </div>
+    © <span id="year">2026</span> Innseal — un producto de INNSYSTE S.A.S. · <a href="https://www.innsyste.com" style="color:var(--navy-600);font-weight:600;text-decoration:none;">www.innsyste.com</a><br>
+    Snyk, GitHub, Checkmarx, Veracode y Fluid Attacks son marcas de sus respectivos titulares. Datos de fuentes públicas con fines comparativos.<br>
+  </div>
+
+</div>
+</body>
+</html>
