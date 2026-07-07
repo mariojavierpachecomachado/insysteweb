@@ -201,13 +201,14 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
 }
 .service ul { margin-top: 22px; }
 .service li {
-  font-size: 0.88rem; color: var(--ink-70);
+  font-size: 0.88rem; color: var(--ink-70); line-height: 24px;
   padding: 7px 0 7px 20px; position: relative; border-top: 1px solid var(--line-soft);
 }
 .service li::before {
-  /* guion de marca (como .kicker), centrado en la primera línea de texto */
-  content: ""; position: absolute; left: 0; top: 18px;
-  width: 12px; height: 2px; background: var(--accent);
+  /* cuadrado de marca, como .retos-list; forma sólida = grosor parejo a cualquier zoom */
+  content: ""; position: absolute; left: 1px; top: 16px;
+  width: 7px; height: 7px; border-radius: 1px;
+  background: linear-gradient(135deg, var(--ink), var(--accent));
 }
 .service-foot {
   margin-top: auto; padding-top: 22px;
