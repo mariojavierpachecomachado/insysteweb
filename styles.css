@@ -21,7 +21,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .service-foot span, .service-foot span::before,
+  .standards li, .standards li::before { transition: none; }
+}
 
 body {
   font-family: 'Montserrat', system-ui, sans-serif;
@@ -212,7 +216,16 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em;
   color: var(--ink-45); border: 1px solid var(--line); border-radius: 2px;
   padding: 3px 9px;
+  position: relative; transition: color 150ms ease, border-color 150ms ease;
 }
+.service-foot span::before {
+  content: ''; position: absolute; top: -1px; left: -1px; width: 9px; height: 9px;
+  border-top: 2px solid var(--accent); border-left: 2px solid var(--accent);
+  border-radius: 2px 0 0 0;
+  transition: width 150ms ease, height 150ms ease;
+}
+.service-foot span:hover { border-color: var(--ink-45); color: var(--ink); }
+.service-foot span:hover::before { width: 14px; height: 14px; }
 .extra { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
 .extra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 26px; }
 .extra-grid h4 { font-size: 0.98rem; font-weight: 700; }
@@ -223,7 +236,16 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
 .standards li {
   font-size: 0.8rem; font-weight: 600; color: var(--ink-70);
   border: 1px solid var(--line); border-radius: 2px; padding: 9px 18px;
+  position: relative; transition: color 150ms ease, border-color 150ms ease;
 }
+.standards li::before {
+  content: ''; position: absolute; top: -1px; left: -1px; width: 9px; height: 9px;
+  border-top: 2px solid var(--accent); border-left: 2px solid var(--accent);
+  border-radius: 2px 0 0 0;
+  transition: width 150ms ease, height 150ms ease;
+}
+.standards li:hover { border-color: var(--ink-45); color: var(--ink); }
+.standards li:hover::before { width: 14px; height: 14px; }
 
 /* ---------- Experiencia ---------- */
 .exp { display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center;
