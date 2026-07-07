@@ -70,6 +70,12 @@
       { rootMargin: '0px 0px -10% 0px', threshold: 0.05 }
     );
     revealTargets.forEach((el) => observer.observe(el));
+
+    // Fallback: nada debe quedar oculto indefinidamente (crawlers,
+    // navegadores sin scroll, observers que no disparan)
+    setTimeout(() => {
+      revealTargets.forEach((el) => el.classList.add('is-visible'));
+    }, 4000);
   } else {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }

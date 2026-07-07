@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /kas-telenet
+
+Sitemap: https://www.innsyste.com/sitemap.xml
