@@ -205,8 +205,9 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
   padding: 7px 0 7px 20px; position: relative; border-top: 1px solid var(--line-soft);
 }
 .service li::before {
-  content: ""; position: absolute; left: 1px; top: 15px;
-  width: 8px; height: 2px; background: var(--accent);
+  /* guion de marca (como .kicker), centrado en la primera línea de texto */
+  content: ""; position: absolute; left: 0; top: 18px;
+  width: 12px; height: 2px; background: var(--accent);
 }
 .service-foot {
   margin-top: auto; padding-top: 22px;
