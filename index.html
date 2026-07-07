@@ -44,7 +44,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://js.hsforms.net/forms/embed/7694768.js" defer></script>
   <script type="text/javascript">
@@ -58,14 +58,14 @@
 <body>
   <a href="#main" class="skip-link">Saltar al contenido</a>
 
-  <header class="site-header" id="siteHeader">
+  <header class="site-header">
     <div class="container nav-wrap">
       <a href="#top" class="brand" aria-label="Innsyste — Inicio">
-        <img src="assets/logo.svg" alt="Innsyste" class="brand-logo" width="160" height="40" />
+        <img src="assets/logo.svg" alt="Innsyste" width="160" height="40" />
       </a>
 
       <nav class="nav" aria-label="Principal">
-        <ul class="nav-list" id="navList">
+        <ul id="navList">
           <li><a href="#retos">Retos</a></li>
           <li><a href="#valor">Valor</a></li>
           <li><a href="#servicios">Servicios</a></li>
@@ -74,7 +74,7 @@
         </ul>
       </nav>
 
-      <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">Agendar reunión</a>
+      <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-solid nav-cta">Agendar reunión</a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navList">
         <span></span><span></span><span></span>
@@ -86,284 +86,201 @@
 
     <!-- HERO -->
     <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="grid-overlay"></div>
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-      </div>
-      <div class="container hero-inner">
-        <h1 class="hero-title">
-          Tecnología <span class="text-accent">bien pensada</span><br />
-          para organizaciones <em>exigentes</em>
-        </h1>
-        <p class="hero-lead">
-          Acompañamos a las compañías en la optimización, el gobierno y la eficiencia de sus operaciones,
-          cerrando la brecha entre las exigencias del mercado y los avances tecnológicos.
-        </p>
-        <div class="hero-actions">
-          <a href="#servicios" class="btn btn-primary">Conocer servicios</a>
-          <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Hablar con un experto →</a>
+      <canvas class="hero-waves" id="heroWaves" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="hero-inner">
+          <p class="kicker">Gobierno · Eficiencia · Continuidad</p>
+          <h1>Soluciones <span class="u">transversales</span><br />que potencian tu equipo de <span class="u">IT</span></h1>
+          <p class="hero-lead">
+            Somos el aliado que convierte la tecnología en resultados: decisiones informadas,
+            operación predecible y un negocio que avanza con confianza.
+          </p>
+          <div class="hero-actions">
+            <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Agendar reunión</a>
+            <a href="#servicios" class="btn btn-quiet">Conocer servicios</a>
+          </div>
         </div>
-
-        <dl class="hero-stats">
-          <div>
-            <dt>11+</dt>
-            <dd>Años aportando valor</dd>
-          </div>
-          <div>
-            <dt>4</dt>
-            <dd>Líneas de servicio</dd>
-          </div>
-          <div>
-            <dt>360°</dt>
-            <dd>Cobertura IT</dd>
-          </div>
+        <dl class="cred">
+          <div><dt class="text-grad">11+</dt><dd>Años aportando valor</dd></div>
+          <div><dt class="text-grad">4</dt><dd>Líneas de servicio</dd></div>
+          <div><dt class="text-grad">360°</dt><dd>Cobertura IT</dd></div>
+          <div><dt class="text-grad">13</dt><dd>Marcos y estándares adoptados</dd></div>
         </dl>
       </div>
     </section>
 
     <!-- RETOS -->
-    <section class="section section-retos" id="retos">
+    <section class="section" id="retos">
       <div class="container">
         <header class="section-head">
-          <h2>Retos que afrontan los equipos de IT</h2>
-          <p class="section-lead">
-            La complejidad tecnológica y el ruido operativo inciden directamente
-            en la capacidad de los líderes para priorizar, decidir y generar
-            impacto real en el negocio.
-          </p>
+          <p class="kicker">El contexto</p>
+          <div>
+            <h2>Retos que afrontan los equipos de IT</h2>
+            <p class="section-lead">
+              La complejidad tecnológica y el ruido operativo inciden directamente en la capacidad
+              de los líderes para priorizar, decidir y generar impacto real en el negocio.
+            </p>
+          </div>
         </header>
-
-        <ul class="chips" aria-label="Desafíos comunes">
-          <li>Exigencia ejecutiva</li>
-          <li>Presupuestos limitados</li>
-          <li>Múltiples frentes abiertos</li>
-          <li>Costos ocultos</li>
-          <li>Poca visibilidad</li>
-          <li>Presión permanente</li>
-          <li>Cargas operativas elevadas</li>
-          <li>Desarticulación interna</li>
-          <li>Complejidad tecnológica</li>
-          <li>Múltiples proveedores</li>
-          <li>Falta de tiempo para la estrategia</li>
-          <li>Operación reactiva</li>
-          <li>Interrupción del servicio</li>
-          <li>Ruido operativo</li>
-        </ul>
-
-        <div class="insights">
-          <article class="insight">
-            <div class="insight-num">87%</div>
-            <p class="insight-text">
-              de los líderes IT reconoce que sus modelos operativos están
-              <strong>sobrecargados</strong> o ya no soportan las metas estratégicas
-              actuales de la empresa.
-            </p>
-            <span class="insight-source">Fuente: Gartner</span>
-          </article>
-
-          <article class="insight">
-            <div class="insight-num">85%</div>
-            <p class="insight-text">
-              de los profesionales de IT se sienten <strong>abrumados</strong> por
-              sus responsabilidades. Muchos solo cubren cerca del 85 % de los
-              tickets que reciben a diario.
-            </p>
-            <span class="insight-source">Fuente: OnePoll</span>
-          </article>
-
-          <article class="insight">
-            <div class="insight-num">⚠</div>
-            <p class="insight-text">
-              Las inversiones en IT son acertadas, pero <strong>pierden valor</strong>
-              cuando no hay tiempo, herramientas o estructura para gobernarlas
-              correctamente en la operación diaria.
-            </p>
-            <span class="insight-source">Fuente: FinOps</span>
-          </article>
+        <div class="retos-grid">
+          <ul class="retos-list" aria-label="Desafíos comunes">
+            <li>Exigencia ejecutiva</li>
+            <li>Presupuestos limitados</li>
+            <li>Múltiples frentes abiertos</li>
+            <li>Costos ocultos</li>
+            <li>Poca visibilidad</li>
+            <li>Presión permanente</li>
+            <li>Cargas operativas elevadas</li>
+            <li>Desarticulación interna</li>
+            <li>Complejidad tecnológica</li>
+            <li>Múltiples proveedores</li>
+            <li>Falta de tiempo para la estrategia</li>
+            <li>Operación reactiva</li>
+            <li>Interrupción del servicio</li>
+            <li>Ruido operativo</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- VALOR -->
-    <section class="section section-valor" id="valor">
-      <div class="container valor-grid">
-        <div class="valor-text">
+    <section class="section" id="valor">
+      <div class="container">
+        <header class="section-head">
           <p class="kicker">Así agregamos valor</p>
-          <h2>Simplificar, ordenar y dar sentido a la tecnología</h2>
-          <p>
-            Trabajamos con decisiones informadas, reduciendo el ruido operativo
-            y gobernando la complejidad. Liberamos a los equipos del día a día
-            para que puedan <strong>planear, estabilizar, optimizar y anticiparse</strong>
-            a los riesgos.
-          </p>
-          <p>
-            Creemos en una tecnología bien pensada, que fortalece el control de
-            los líderes, aporta mayor previsibilidad a la operación y protege al
-            negocio para que avance con confianza y consistencia.
-          </p>
+          <div>
+            <h2>Simplificar, ordenar y dar sentido a la tecnología</h2>
+          </div>
+        </header>
+        <div class="valor-grid">
+          <div class="valor-text">
+            <p>
+              Trabajamos con decisiones informadas, reduciendo el ruido operativo y gobernando la complejidad.
+              Liberamos a los equipos del día a día para que puedan <strong>planear, estabilizar, optimizar
+              y anticiparse</strong> a los riesgos.
+            </p>
+            <p>
+              Creemos en una tecnología bien pensada, que fortalece el control de los líderes, aporta mayor
+              previsibilidad a la operación y protege al negocio para que avance con confianza y consistencia.
+            </p>
+          </div>
+          <ul class="pillars">
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+              <h3>Planear</h3><p>Visión estratégica con foco en KPIs del negocio.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v6"/></svg>
+              <h3>Estabilizar</h3><p>Operación predecible y servicios bajo control.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+              <h3>Optimizar</h3><p>Eficiencia de costos, procesos y plataformas.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/></svg>
+              <h3>Anticipar</h3><p>Riesgos identificados y resiliencia probada.</p>
+            </li>
+          </ul>
         </div>
-
-        <ul class="valor-pillars">
-          <li>
-            <span class="pillar-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-            </span>
-            <h3>Planear</h3>
-            <p>Visión estratégica con foco en KPIs del negocio.</p>
-          </li>
-          <li>
-            <span class="pillar-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v6"/></svg>
-            </span>
-            <h3>Estabilizar</h3>
-            <p>Operación predecible y servicios bajo control.</p>
-          </li>
-          <li>
-            <span class="pillar-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
-            </span>
-            <h3>Optimizar</h3>
-            <p>Eficiencia de costos, procesos y plataformas.</p>
-          </li>
-          <li>
-            <span class="pillar-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/></svg>
-            </span>
-            <h3>Anticipar</h3>
-            <p>Riesgos identificados y resiliencia probada.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section class="section section-servicios" id="servicios">
+    <section class="section" id="servicios">
       <div class="container">
         <header class="section-head">
           <p class="kicker">Líneas de negocio</p>
-          <h2>Cuatro líneas, un mismo estándar de excelencia</h2>
-          <p class="section-lead">
-            Cubrimos el ciclo completo: desde la ciberseguridad y la continuidad,
-            hasta los servicios gestionados y el cumplimiento normativo.
-          </p>
+          <div>
+            <h2>Cuatro líneas, un mismo estándar de excelencia</h2>
+            <p class="section-lead">
+              Cubrimos el ciclo completo: desde la ciberseguridad y la continuidad, hasta los servicios
+              gestionados y el cumplimiento normativo.
+            </p>
+          </div>
         </header>
-
         <div class="services-grid">
-
           <article class="service">
-            <header>
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
-              </span>
-              <h3>Confidencialidad, Integridad & Disponibilidad</h3>
+            <div class="service-head">
+              <h3>Confidencialidad, Integridad &amp; Disponibilidad</h3>
               <p class="service-tag">Ciberseguridad</p>
-            </header>
+            </div>
             <ul>
               <li>Implementación de SGSI · MSPI</li>
               <li>Gestión de riesgos y controles de ciberseguridad</li>
-              <li>Data Loss Prevention (DLP)</li>
-              <li>Modelo Zero Trust</li>
+              <li>Data Loss Prevention (DLP) y modelo Zero Trust</li>
               <li>Gestión de identidades y acceso (IAM/SSO/MFA · PAM)</li>
               <li>Protección para Endpoints (UEM/MDM)</li>
               <li>Seguridad Cloud y Aplicaciones (DevSecOps)</li>
-              <li>Postura de ciberseguridad</li>
               <li>Gestión de vulnerabilidades, pruebas y exposición</li>
               <li>Detección, respuesta e inteligencia (SOC/XDR/MDR/SOAR)</li>
             </ul>
-            <footer class="service-foot">
-              <span>SOC2</span><span>NIST CSF 2.0</span><span>ISO/IEC 27001:2022</span>
-            </footer>
+            <footer class="service-foot"><span>SOC 2</span><span>NIST CSF 2.0</span><span>ISO/IEC 27001:2022</span></footer>
           </article>
-
           <article class="service">
-            <header>
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
-              </span>
-              <h3>Resiliencia Operativa & Continuidad</h3>
-              <p class="service-tag">Continuidad de negocio</p>
-            </header>
+            <div class="service-head">
+              <h3>Resiliencia Operativa &amp; Continuidad</h3>
+              <p class="service-tag">Continuidad</p>
+            </div>
             <ul>
               <li>Disaster Recovery as a Service (DRaaS)</li>
               <li>BackUp as a Service (BaaS)</li>
               <li>Implementación de DRP / BCP</li>
-              <li>Contingencia de TI y recuperación</li>
-              <li>Contingencia de infraestructura, redes y conectividad</li>
-              <li>Alta Disponibilidad para Bases de Datos</li>
-              <li>Soluciones de replicación</li>
+              <li>Contingencia de TI, infraestructura, redes y conectividad</li>
+              <li>Alta disponibilidad para bases de datos y replicación</li>
               <li>UPS y Out-of-Band Management (OOB)</li>
               <li>Infraestructura de Datacenter</li>
               <li>Automatización de recuperación</li>
             </ul>
-            <footer class="service-foot">
-              <span>ISO 22301</span><span>NIST SP 800-34</span><span>TIA-942</span>
-            </footer>
+            <footer class="service-foot"><span>ISO 22301</span><span>NIST SP 800-34</span><span>TIA-942</span></footer>
           </article>
-
           <article class="service">
-            <header>
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
-              </span>
-              <h3>Servicios Gestionados & Soporte</h3>
-              <p class="service-tag">Operación tecnológica</p>
-            </header>
+            <div class="service-head">
+              <h3>Servicios Gestionados &amp; Soporte</h3>
+              <p class="service-tag">Operación</p>
+            </div>
             <ul>
-              <li>Device as a Service (DaaS)</li>
+              <li>Device as a Service (DaaS) · IT as a Service (ITaaS)</li>
               <li>HelpDesk L2 y L3 — operación y soporte</li>
               <li>CloudOps (IaaS / PaaS)</li>
-              <li>Service Desk & ITSM (aaS)</li>
-              <li>IT as a Service (ITaaS)</li>
+              <li>Service Desk &amp; ITSM (aaS)</li>
               <li>Outsourcing de talento TIC</li>
               <li>Gestión de configuración y activos (CMDB)</li>
-              <li>NOC / SOC & Observabilidad</li>
-              <li>Colaboración empresarial</li>
+              <li>NOC / SOC &amp; Observabilidad</li>
               <li>Despliegue, instalación y migración</li>
             </ul>
-            <footer class="service-foot">
-              <span>ITIL 4</span><span>COBIT</span>
-            </footer>
+            <footer class="service-foot"><span>ITIL 4</span><span>COBIT</span></footer>
           </article>
-
           <article class="service">
-            <header>
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 1 1 10 0v4"/></svg>
-              </span>
-              <h3>Privacidad, Cumplimiento & Gobierno de datos</h3>
-              <p class="service-tag">Datos & cumplimiento</p>
-            </header>
+            <div class="service-head">
+              <h3>Privacidad, Cumplimiento &amp; Gobierno de datos</h3>
+              <p class="service-tag">Cumplimiento</p>
+            </div>
             <ul>
               <li>Definición e implementación de políticas de privacidad</li>
               <li>Gestión de requerimientos de titulares de información</li>
               <li>Integración de privacidad en procesos y plataformas TI</li>
               <li>Apoyo en auditorías y revisiones de cumplimiento</li>
-              <li>Eliminación segura de datos en entornos activos y equipos usados</li>
-              <li>Mejora continua del modelo de privacidad y protección de datos</li>
+              <li>Eliminación segura de datos en entornos activos</li>
               <li>Programas de concientización</li>
               <li>Evaluación de madurez</li>
             </ul>
-            <footer class="service-foot">
-              <span>Ley 1581/2012</span><span>D.1377/2013</span><span>RNBD-SIC</span><span>PCI DSS v4.0</span><span>HCE Ley 2015/2020</span>
-            </footer>
+            <footer class="service-foot"><span>Ley 1581/2012</span><span>D.1377/2013</span><span>RNBD-SIC</span><span>PCI DSS v4.0</span></footer>
           </article>
-
         </div>
-
-        <div class="services-extra">
-          <h3>Capacidades transversales</h3>
+        <div class="extra">
+          <p class="kicker">Capacidades transversales</p>
           <div class="extra-grid">
             <div>
               <h4>Infraestructura tecnológica</h4>
-              <p>Diseño, implementación, optimización y modernización con KPIs de Disponibilidad, RTO/RPO, costo y riesgo operativo.</p>
+              <p>Diseño, implementación, optimización y modernización con KPIs de disponibilidad, RTO/RPO, costo y riesgo operativo.</p>
             </div>
             <div>
               <h4>Consultoría informática</h4>
               <p>BIA, evaluación de riesgos, Health Check, gestión de incidentes, problemas y cambios bajo ITIL 4.</p>
             </div>
             <div>
-              <h4>Operación & soporte</h4>
+              <h4>Operación &amp; soporte</h4>
               <p>Equipos especializados que mantienen la operación estable mientras tu equipo se enfoca en estrategia.</p>
             </div>
           </div>
@@ -372,98 +289,78 @@
     </section>
 
     <!-- ESTÁNDARES -->
-    <section class="section section-estandares" id="estandares">
+    <section class="section" id="estandares">
       <div class="container">
-        <header class="section-head section-head-center">
-          <p class="kicker">Marcos & estándares</p>
-          <h2>Trabajamos bajo referentes internacionales</h2>
-          <p class="section-lead">
-            Adoptamos marcos reconocidos para garantizar consistencia,
-            auditabilidad y resultados predecibles.
-          </p>
+        <header class="section-head">
+          <p class="kicker">Marcos y estándares</p>
+          <div>
+            <h2>Trabajamos bajo referentes internacionales</h2>
+            <p class="section-lead">
+              Adoptamos marcos reconocidos para garantizar consistencia, auditabilidad y resultados predecibles.
+            </p>
+          </div>
         </header>
-
         <ul class="standards">
-          <li><span>ISO/IEC 27001:2022</span></li>
-          <li><span>SOC 2</span></li>
-          <li><span>NIST CSF 2.0</span></li>
-          <li><span>ISO 22301</span></li>
-          <li><span>NIST SP 800-34</span></li>
-          <li><span>TIA-942</span></li>
-          <li><span>ITIL 4</span></li>
-          <li><span>COBIT</span></li>
-          <li><span>PCI DSS v4.0</span></li>
-          <li><span>Ley 1581 / 2012</span></li>
-          <li><span>D. 1377 / 2013</span></li>
-          <li><span>RNBD-SIC</span></li>
-          <li><span>HCE Ley 2015/2020</span></li>
+          <li>ISO/IEC 27001:2022</li><li>SOC 2</li><li>NIST CSF 2.0</li><li>ISO 22301</li>
+          <li>NIST SP 800-34</li><li>TIA-942</li><li>ITIL 4</li><li>COBIT</li><li>PCI DSS v4.0</li>
+          <li>Ley 1581 / 2012</li><li>D. 1377 / 2013</li><li>RNBD-SIC</li><li>HCE Ley 2015/2020</li>
         </ul>
       </div>
     </section>
 
     <!-- EXPERIENCIA -->
-    <section class="section section-experiencia">
-      <div class="container experiencia">
-        <div class="exp-num">11<span>años</span></div>
-        <div class="exp-text">
-          <h2>Aportando soluciones tecnológicas que generan <span class="text-accent">valor</span></h2>
-          <p>
-            Más de una década acompañando a líderes de IT en organizaciones
-            exigentes — con disciplina, criterio y resultados medibles.
-          </p>
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">Trayectoria</p>
+        </header>
+        <div class="exp">
+          <div class="exp-num"><span class="text-grad">11</span><small>años</small></div>
+          <div class="exp-text">
+            <h2>Aportando soluciones tecnológicas que generan valor</h2>
+            <p>Más de una década acompañando a líderes de IT en organizaciones exigentes —
+            con disciplina, criterio y resultados medibles.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="section section-contacto" id="contacto">
-      <div class="container contacto-grid">
-        <div class="contacto-text">
+    <section class="section" id="contacto">
+      <div class="container">
+        <header class="section-head">
           <p class="kicker">Hablemos</p>
-          <h2>Listos para fortalecer tu operación</h2>
-          <p>
-            Conversemos sobre tus prioridades. Te respondemos con un diagnóstico
-            inicial y una propuesta orientada a resultados.
-          </p>
-
-          <div class="contact-card">
-            <p class="contact-name">Mario Javier Pacheco Machado</p>
-            <p class="contact-role">Consultor de negocios</p>
-            <ul class="contact-list">
-              <li>
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72a2 2 0 0 1 1.72 2Z"/></svg>
-                <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer">+57 300 719 1116</a>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                <a href="mailto:mario@innsyste.com">mario@innsyste.com</a>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg>
-                <a href="https://www.innsyste.com" target="_blank" rel="noopener">www.innsyste.com</a>
-              </li>
-            </ul>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-text">
+            <h2>Listos para fortalecer tu operación</h2>
+            <p>Conversemos sobre tus prioridades. Te respondemos con un diagnóstico inicial
+            y una propuesta orientada a resultados.</p>
+            <div class="contact-card">
+              <p class="contact-name">Mario Javier Pacheco Machado</p>
+              <p class="contact-role">Consultor de negocios</p>
+              <ul class="contact-list">
+                <li><a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer">+57 300 719 1116</a></li>
+                <li><a href="mailto:mario@innsyste.com">mario@innsyste.com</a></li>
+                <li><a href="https://www.innsyste.com" target="_blank" rel="noopener">www.innsyste.com</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-form">
-          <h3>Cuéntanos tu reto</h3>
-          <div class="hs-form-frame" data-region="na1" data-form-id="1f3055b6-3fc6-4a96-9403-5a308a0a2181" data-portal-id="7694768"></div>
+          <div class="form-panel">
+            <h3>Cuéntanos tu reto</h3>
+            <div class="hs-form-frame" data-region="na1" data-form-id="1f3055b6-3fc6-4a96-9403-5a308a0a2181" data-portal-id="7694768"></div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <a href="#top" class="brand brand-light" aria-label="Innsyste — Inicio">
-          <img src="assets/logo-light.svg" alt="Innsyste" class="brand-logo" width="150" height="38" />
-        </a>
+      <div class="footer-brand">
+        <img src="assets/logo-light.svg" alt="Innsyste" width="150" height="38" />
       </div>
-
-      <nav aria-label="Pie de página">
+      <nav aria-label="Pie de página — compañía">
         <h4>Compañía</h4>
         <ul>
           <li><a href="#valor">Propuesta de valor</a></li>
@@ -472,17 +369,15 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-
       <div>
         <h4>Contacto</h4>
-        <ul class="footer-contact">
+        <ul>
           <li><a href="mailto:mario@innsyste.com">mario@innsyste.com</a></li>
           <li><a href="tel:+573007191116">+57 300 719 1116</a></li>
           <li><a href="https://www.innsyste.com" target="_blank" rel="noopener">www.innsyste.com</a></li>
         </ul>
       </div>
     </div>
-
     <div class="container footer-bottom">
       <p>© <span id="year"></span> INNSYSTE. Todos los derechos reservados.</p>
     </div>

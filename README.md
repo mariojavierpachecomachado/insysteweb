@@ -23,14 +23,17 @@ insysteweb/
 ├── innseal.html              # Innseal — análisis competitivo (auto-contenida)
 ├── kas-telenet.html          # Propuesta Kaspersky/TeleNet (confidencial, noindex)
 ├── sdm/index.html            # Landing SDM — Service Delivery Management (auto-contenida)
-├── styles.css                # Stylesheet compartido (index + inntime): tokens, header, footer
-├── script.js                 # JS compartido: nav móvil, dropdowns, scroll reveal, año
+├── styles.css                # Stylesheet del rediseño 2026 (hoy solo index): tokens, header, footer
+├── script.js                 # JS del rediseño: nav móvil, ondas del hero (canvas), año
+├── inntime-legacy.css        # Diseño anterior congelado — solo lo usa inntime.html
+├── inntime-legacy.js         # JS del diseño anterior — solo lo usa inntime.html
 ├── staticwebapp.config.json  # Routing de Azure (rutas limpias /inntime, /innseal, …)
 ├── sitemap.xml · robots.txt
 └── assets/                   # Logos, favicon, imagen OG
 ```
 
-`index.html` e `inntime.html` comparten `styles.css` + `script.js` (header y footer comunes).
+`index.html` usa `styles.css` + `script.js` (rediseño 2026). `inntime.html` conserva el diseño
+anterior con `inntime-legacy.css` + `inntime-legacy.js` hasta que migre al rediseño.
 `innseal.html`, `kas-telenet.html` y `sdm/index.html` son páginas auto-contenidas con su propio CSS embebido.
 
 ## Desarrollo local
@@ -60,12 +63,14 @@ Las rutas limpias (`/inntime`, `/innseal`, `/kas-telenet`) se definen en `static
 | Fondo | `#ffffff` |
 | Tipografía | Montserrat |
 
-Todos los tokens viven como custom properties en `:root` de `styles.css`.
+Rediseño 2026: fondo blanco, jerarquía por líneas finas, radios 2–4px, ondas animadas
+en el hero (`canvas#heroWaves`). Todos los tokens viven como custom properties en
+`:root` de `styles.css` (`--ink`, `--accent`, `--paper`, `--line`…).
 
 ## Responsive
 
-Breakpoints en `styles.css`: `≤1100px` (tablet landscape), `≤900px` (nav hamburguesa, grids 1 col),
-`≤700px` (móvil), `≤480px` (móvil pequeño).
+Breakpoints en `styles.css`: `≤980px` (nav hamburguesa, layouts a 1 columna) y `≤620px`
+(ajustes de móvil). Las páginas auto-contenidas e `inntime-legacy.css` definen los suyos.
 
 ## Accesibilidad
 

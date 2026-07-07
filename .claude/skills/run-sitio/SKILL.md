@@ -12,13 +12,17 @@ El sitio es estático puro — no hay build ni dependencias. Basta un servidor d
 Desde la raíz del repo:
 
 ```powershell
-python -m http.server 8080
+py -m http.server 8080
 ```
 
-(en segundo plano si se va a seguir trabajando). Si no hay Python, usar `npx serve -l 8080 .`.
+(en esta máquina `python` no está en el PATH — usar el launcher `py`; correr en segundo plano
+si se va a seguir trabajando). Como alternativa sin Python: `npx serve -l 8080 .`.
 
 Luego abrir/verificar `http://localhost:8080/` (index), y las demás páginas:
-`/rittal.html`, `/kas-telenet.html`, `/MonitorINN.html`, `/sdm/`.
+`/inntime.html`, `/innseal.html`, `/kas-telenet.html`, `/sdm/`.
+
+Para screenshots y revisión de consola automatizadas, usar la skill `webapp-testing`
+(Playwright ya está instalado para `py`: Chromium headless).
 
 ## Qué verificar tras un cambio
 

@@ -21,25 +21,30 @@ estático (HTML + CSS + JS vanilla, sin frameworks ni build step) y está en esp
 
 ## Tipografía
 
-- Única familia: **Montserrat** (Google Fonts), fallback `system-ui`.
-- Títulos: peso 700, `letter-spacing: -0.02em`, tamaños con `clamp()` fluido.
-- Cuerpo: 16px, `line-height: 1.65`.
+- Única familia: **Montserrat** (Google Fonts), fallback `system-ui`. Pesos cargados: 400/600/700/800.
+- Títulos: peso 800 (h1/h2) y 700 (h3/h4), `letter-spacing: -0.015em`, tamaños con `clamp()` fluido.
+- Cuerpo: 16px, `line-height: 1.7`.
 
 ## Layout y estilo
 
-- Contenedor máximo: `1200px`.
-- Radios: `14px` (normal) / `22px` (grande). Sombras suaves basadas en navy.
-- Transiciones: `200ms cubic-bezier(.4, 0, .2, 1)`.
-- Reutilizar las variables CSS de `:root` en `styles.css`; no hardcodear valores.
+- Contenedor máximo: `1180px` (`--container`).
+- Estética del rediseño 2026: fondo blanco, jerarquía por líneas finas (`--line`, `--line-soft`)
+  en lugar de sombras; radios pequeños (2–4px); kickers en mayúsculas con guion rosa;
+  ondas de marca en canvas en el hero (degradado navy→rosa, opacidad ≤ 0.12).
+- Transiciones: `150ms`.
+- Reutilizar las variables CSS de `:root` en `styles.css` (`--ink`, `--accent`, `--paper`, `--line`);
+  no hardcodear valores.
 
 ## Estructura del sitio
 
-- `index.html` — página principal.
-- `rittal.html`, `kas-telenet.html`, `MonitorINN.html` — páginas de productos/aliados.
+- `index.html` — página principal (rediseño 2026).
+- `inntime.html`, `innseal.html`, `kas-telenet.html` — landings de producto/propuestas.
 - `sdm/` — sección independiente.
 - `assets/` — logos (`logo.svg` navy, `logo-light.svg` para fondos oscuros), favicon, fotos.
-- `styles.css` y `script.js` compartidos por `index.html` e `inntime.html` (header/footer comunes);
-  `innseal.html`, `kas-telenet.html` y `sdm/index.html` son auto-contenidas con CSS propio embebido.
+- `styles.css` y `script.js` — archivos del rediseño; hoy los usa `index.html`, y las páginas que
+  se vayan migrando deben compartirlos. `inntime.html` usa `inntime-legacy.css`/`.js` (diseño
+  anterior congelado hasta su migración); `innseal.html`, `kas-telenet.html` y `sdm/index.html`
+  son auto-contenidas con CSS propio embebido.
 
 ## Reglas de trabajo
 
