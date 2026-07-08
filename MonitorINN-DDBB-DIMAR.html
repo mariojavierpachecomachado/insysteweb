@@ -54,13 +54,8 @@
       padding: 52px 48px 44px;
     }
     .header-inner { max-width: 960px; margin: 0 auto; }
-    .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
-    .brand-dot {
-      width: 40px; height: 40px; border-radius: 4px;
-      background: rgba(255,255,255,0.18);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 900; color: white;
-    }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .brand-logo { height: 32px; width: auto; display: block; }
     .brand-name { font-size: 22px; font-weight: 700; }
     .brand-sub  { font-size: 12px; opacity: 0.65; margin-top: 1px; }
     header h1   { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px; }
@@ -419,13 +414,13 @@
 <header>
   <div class="header-inner">
     <div class="brand">
-      <div class="brand-dot">M</div>
+      <img src="assets/logo-light.svg" alt="Innsyste" class="brand-logo" width="150" height="38" />
       <div>
-        <div class="brand-name">MonitorInn</div>
+        <div class="brand-name">MonitorInn [DDBB]</div>
         <div class="brand-sub">by Innsyste SAS</div>
       </div>
     </div>
-    <h1>Cumplimiento de requerimientos<br>de la Entidad</h1>
+    <h1>Cumplimiento de requerimientos<br>de la Entidad - Crear Imagen / DIMAR</h1>
     <p>Análisis detallado de cobertura de MonitorInn frente a las características mínimas y condiciones de implementación exigidas en el proceso de contratación.</p>
   </div>
 </header>
@@ -774,7 +769,7 @@
 
     <!-- PANTALLA 1: Dashboard -->
     <div class="screen-section">
-      <div class="screen-label">Pantalla 1 — Dashboard en tiempo real</div>
+      <div class="screen-label">Dashboard en tiempo real</div>
       <div class="app-shell">
         <div class="win-chrome">
           <div class="win-dot" style="background:#ff5f57"></div>
@@ -910,11 +905,11 @@
           <div class="caption-title">Dashboard — KPIs de CPU, memoria, I/O y bloqueos en tiempo real</div>
           <div class="caption-desc">Vista principal con los 6 indicadores críticos del motor SQL Server, resumen gráfico de alertas e instancias, y tabla de sesiones activas con tipo de espera y SQL en curso. Actualización automática cada 5 segundos.</div>
           <div class="req-tags">
-            <span class="req-tag">§3 · Monitoreo CPU</span>
-            <span class="req-tag">§3 · Monitoreo memoria</span>
-            <span class="req-tag">§3 · Monitoreo I/O</span>
-            <span class="req-tag">§3 · Bloqueos y sesiones</span>
-            <span class="req-tag">§3 · Alertas configurables</span>
+            <span class="req-tag">Monitoreo CPU</span>
+            <span class="req-tag">Monitoreo memoria</span>
+            <span class="req-tag">Monitoreo I/O</span>
+            <span class="req-tag">Bloqueos y sesiones</span>
+            <span class="req-tag">Alertas configurables</span>
           </div>
         </div>
       </div>
@@ -922,7 +917,7 @@
 
     <!-- PANTALLA 2: Top Queries -->
     <div class="screen-section">
-      <div class="screen-label">Pantalla 2 — Top Queries y plan de ejecución</div>
+      <div class="screen-label">Top Queries y plan de ejecución</div>
       <div class="app-shell">
         <div class="win-chrome">
           <div class="win-dot" style="background:#ff5f57"></div>
@@ -1016,9 +1011,9 @@
           <div class="caption-title">Top Queries — Consultas de alto consumo desde Query Store</div>
           <div class="caption-desc">Tabla de las queries más costosas ordenable por duración, CPU, lecturas o ejecuciones. El texto SQL se expande en línea con resaltado de sintaxis. El plan de ejecución XML se carga con un clic desde el mismo Query Store nativo de SQL Server.</div>
           <div class="req-tags">
-            <span class="req-tag">§3 · Top queries y alto consumo</span>
-            <span class="req-tag">§3 · Plan cache analysis</span>
-            <span class="req-tag">§3 · Monitoreo I/O</span>
+            <span class="req-tag">Top queries y alto consumo</span>
+            <span class="req-tag">Plan cache analysis</span>
+            <span class="req-tag">Monitoreo I/O</span>
           </div>
         </div>
       </div>
@@ -1026,7 +1021,7 @@
 
     <!-- PANTALLA 3: Alertas -->
     <div class="screen-section">
-      <div class="screen-label">Pantalla 3 — Centro de Alertas e historial</div>
+      <div class="screen-label">Centro de Alertas e historial</div>
       <div class="app-shell">
         <div class="win-chrome">
           <div class="win-dot" style="background:#ff5f57"></div>
@@ -1116,10 +1111,10 @@
           <div class="caption-title">Centro de Alertas — Historial con severidad, métrica y umbral cruzado</div>
           <div class="caption-desc">Historial completo de alertas disparadas con nivel de severidad (crítica/advertencia), métrica afectada, valor que cruzó el umbral, instancia y hora exacta. Cada alerta también genera un email automático al servidor SMTP interno de la Entidad.</div>
           <div class="req-tags">
-            <span class="req-tag">§3 · Alertas configurables</span>
-            <span class="req-tag">§3 · Histórico de alertas</span>
-            <span class="req-tag">§3 · Notificaciones por email</span>
-            <span class="req-tag">§3 · Eventos críticos del motor</span>
+            <span class="req-tag">Alertas configurables</span>
+            <span class="req-tag">Histórico de alertas</span>
+            <span class="req-tag">Notificaciones por email</span>
+            <span class="req-tag">Eventos críticos del motor</span>
           </div>
         </div>
       </div>
@@ -1127,7 +1122,7 @@
 
     <!-- PANTALLA 4: Config / Licencia -->
     <div class="screen-section">
-      <div class="screen-label">Pantalla 4 — Configuración, licencia e instancias</div>
+      <div class="screen-label">Configuración, licencia e instancias</div>
       <div class="app-shell">
         <div class="win-chrome">
           <div class="win-dot" style="background:#ff5f57"></div>
@@ -1199,9 +1194,9 @@
           <div class="caption-title">Config — Administración de licencia, instancias y umbrales</div>
           <div class="caption-desc">Panel de configuración con estado de licencia en tiempo real, fingerprint de VM para renovación, y gestión de instancias SQL Server (nombre, host, usuario de servicio). El tab "Alertas" permite ajustar los umbrales de warning y critical por métrica e instancia.</div>
           <div class="req-tags">
-            <span class="req-tag">§3 · Alertas configurables</span>
-            <span class="req-tag">§3 · Autenticación AD</span>
-            <span class="req-tag">§1 · Instalación y configuración</span>
+            <span class="req-tag">Alertas configurables</span>
+            <span class="req-tag">Autenticación AD</span>
+            <span class="req-tag">Instalación y configuración</span>
           </div>
         </div>
       </div>
