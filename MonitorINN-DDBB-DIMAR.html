@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>MonitorInn — Cumplimiento de Requerimientos | INNSYSTE</title>
+  <title>MonitorInn [DDBB] — Cumplimiento de Requerimientos | INNSYSTE</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -421,7 +421,7 @@
       </div>
     </div>
     <h1>Cumplimiento de requerimientos<br>de la Entidad - Crear Imagen / DIMAR</h1>
-    <p>Análisis detallado de cobertura de MonitorInn frente a las características mínimas y condiciones de implementación exigidas en el proceso de contratación.</p>
+    <p>Análisis detallado de cobertura de MonitorInn [DDBB] frente a las características mínimas y condiciones de implementación exigidas en el proceso de contratación.</p>
   </div>
 </header>
 
@@ -471,7 +471,7 @@
       <div class="req-row">
         <div class="req-label">Instalación en infraestructura del cliente</div>
         <div class="req-body">
-          <div class="req-how">MonitorInn se instala completamente en la infraestructura de la Entidad con un único comando. El instalador desatendido (<code>install.sh</code> / <code>install.ps1</code>) configura automáticamente todos los componentes incluyendo base de datos interna, certificado SSL y variables de entorno. No hay dependencias de nube.</div>
+          <div class="req-how">MonitorInn [DDBB] se instala completamente en la infraestructura de la Entidad con un único comando. El instalador desatendido (<code>install.sh</code> / <code>install.ps1</code>) configura automáticamente todos los componentes incluyendo base de datos interna, certificado SSL y variables de entorno. No hay dependencias de nube.</div>
           <div class="req-source">install.sh · install.ps1 · docker-compose.yml</div>
         </div>
         <div class="req-badge"><span class="badge cumple">✓ Cumple</span></div>
@@ -655,7 +655,7 @@
       <div class="req-row">
         <div class="req-label">Autenticación integrada con Active Directory</div>
         <div class="req-body">
-          <div class="req-how">Login con credenciales de dominio AD. MonitorInn verifica la pertenencia al grupo de seguridad <code>monitorinn</code> antes de validar la contraseña. Tokens JWT (15min) con refresh en cookie httpOnly (7 días). Ninguna contraseña se almacena en MonitorInn — toda la gestión de usuarios es responsabilidad del AD de la Entidad.</div>
+          <div class="req-how">Login con credenciales de dominio AD. MonitorInn [DDBB] verifica la pertenencia al grupo de seguridad <code>monitorinn</code> antes de validar la contraseña. Tokens JWT (15min) con refresh en cookie httpOnly (7 días). Ninguna contraseña se almacena en MonitorInn [DDBB] — toda la gestión de usuarios es responsabilidad del AD de la Entidad.</div>
           <div class="req-source">app/auth/ldap.py · app/auth/jwt.py · python-ldap</div>
         </div>
         <div class="req-badge"><span class="badge cumple">✓ Cumple</span></div>
@@ -692,7 +692,7 @@
       <div class="req-row">
         <div class="req-label">Dashboards personalizables</div>
         <div class="req-body">
-          <div class="req-how">MonitorInn incluye un Dashboard con los 6 KPIs estándar del motor SQL Server, gráficas de alertas e instancias, y tabla de sesiones activas. El selector de instancia y el período de análisis son configurables por el usuario. La personalización avanzada de layout por usuario (drag & drop de widgets) está en desarrollo.</div>
+          <div class="req-how">MonitorInn [DDBB] incluye un Dashboard con los 6 KPIs estándar del motor SQL Server, gráficas de alertas e instancias, y tabla de sesiones activas. El selector de instancia y el período de análisis son configurables por el usuario. La personalización avanzada de layout por usuario (drag & drop de widgets) está en desarrollo.</div>
           <div class="req-source">src/pages/Dashboard/index.tsx · src/components/MetricCard.tsx</div>
         </div>
         <div class="req-badge"><span class="badge parcial">~ Parcial</span></div>
@@ -701,7 +701,7 @@
       <div class="req-row">
         <div class="req-label">Análisis de tendencias de capacidad</div>
         <div class="req-body">
-          <div class="req-how">MonitorInn captura snapshots horarios de métricas clave y los visualiza como gráficas de tendencia histórica en la pantalla Reportes (PLE, Cache Hit Ratio, Batch Requests/sec). El análisis predictivo con proyecciones a 30/60/90 días y alertas anticipadas de saturación está en desarrollo.</div>
+          <div class="req-how">MonitorInn [DDBB] captura snapshots horarios de métricas clave y los visualiza como gráficas de tendencia histórica en la pantalla Reportes (PLE, Cache Hit Ratio, Batch Requests/sec). El análisis predictivo con proyecciones a 30/60/90 días y alertas anticipadas de saturación está en desarrollo.</div>
           <div class="req-source">metric_snapshots (PostgreSQL) · src/pages/Reports/index.tsx</div>
         </div>
         <div class="req-badge"><span class="badge parcial">~ Parcial</span></div>
@@ -1207,13 +1207,13 @@
   <!-- ── NOTA FINAL ── -->
   <div class="info-box blue">
     <span class="icon">ℹ️</span>
-    <div><strong>Sobre la arquitectura agentless:</strong> El 100% de las capacidades de MonitorInn — actuales y planificadas — se implementan sin instalar ningún componente en los servidores SQL Server monitoreados. Todas las fuentes de datos son DMVs, XEvents y vistas de sistema nativas de SQL Server 2022, consultadas de forma remota con una cuenta de solo lectura.</div>
+    <div><strong>Sobre la arquitectura agentless:</strong> El 100% de las capacidades de MonitorInn [DDBB] — actuales y planificadas — se implementan sin instalar ningún componente en los servidores SQL Server monitoreados. Todas las fuentes de datos son DMVs, XEvents y vistas de sistema nativas de SQL Server 2022, consultadas de forma remota con una cuenta de solo lectura.</div>
   </div>
 
 </main>
 
 <footer>
-  <p>MonitorInn — Cumplimiento de requerimientos · <strong>Innsyste SAS</strong> · Documento confidencial · © 2026 Innsyste SAS</p>
+  <p>MonitorInn [DDBB] — Cumplimiento de requerimientos · <strong>Innsyste SAS</strong> · Documento confidencial · © 2026 Innsyste SAS</p>
 </footer>
 
 </body>
