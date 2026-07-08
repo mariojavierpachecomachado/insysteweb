@@ -38,12 +38,21 @@ estático (HTML + CSS + JS vanilla, sin frameworks ni build step) y está en esp
 ## Estructura del sitio
 
 - `index.html`, `inntime.html` — páginas del rediseño 2026, comparten `styles.css` + `script.js`.
-- `innseal.html`, `kas-telenet.html` — landings de producto/propuestas, auto-contenidas.
+- `innseal.html`, `kas-telenet.html`, `MonitorINN-DDBB-DIMAR.html` — landings de producto/propuestas,
+  auto-contenidas. Las dos últimas son confidenciales (`noindex`, sin enlazar desde el sitio).
 - `sdm/` — sección independiente.
 - `assets/` — logos (`logo.svg` navy, `logo-light.svg` para fondos oscuros), favicon, fotos.
 - `styles.css` y `script.js` — archivos del rediseño; toda página nueva o migrada debe
-  compartirlos. `innseal.html`, `kas-telenet.html` y `sdm/index.html` son auto-contenidas
-  con CSS propio embebido.
+  compartirlos. `innseal.html`, `kas-telenet.html`, `MonitorINN-DDBB-DIMAR.html` y `sdm/index.html`
+  son auto-contenidas con CSS propio embebido.
+
+### Documentos con capturas/mockups de producto (p. ej. `MonitorINN-DDBB-DIMAR.html`)
+
+Cuando la página envuelve capturas o mockups reales de una interfaz de producto (paneles oscuros,
+tablas de datos, etc.), aplicar la marca solo al "chrome" del documento (header, badges, kickers,
+tarjetas, tablas) — nunca a las capturas mismas. Fijar `font-family` explícito en el contenedor de
+la captura para que no herede cambios de fuente del body, y no recolorear su paleta interna aunque
+no coincida con navy/rosa: esas pantallas son evidencia de producto, no piezas de marketing.
 
 ## Reglas de trabajo
 

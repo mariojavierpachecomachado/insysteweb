@@ -22,6 +22,7 @@ insysteweb/
 ├── inntime.html              # Landing INNTime — bolsas de horas TI (rediseño 2026)
 ├── innseal.html              # Innseal — análisis competitivo (auto-contenida)
 ├── kas-telenet.html          # Propuesta Kaspersky/TeleNet (confidencial, noindex)
+├── MonitorINN-DDBB-DIMAR.html # Landing MonitorInn — cumplimiento DIMAR (confidencial, noindex, sin enlazar)
 ├── sdm/index.html            # Landing SDM — Service Delivery Management (auto-contenida)
 ├── styles.css                # Stylesheet del rediseño 2026: tokens, header, footer, componentes
 ├── script.js                 # JS del rediseño: nav móvil, ondas del hero (canvas), año
@@ -31,7 +32,12 @@ insysteweb/
 ```
 
 `index.html` e `inntime.html` comparten `styles.css` + `script.js` (rediseño 2026).
-`innseal.html`, `kas-telenet.html` y `sdm/index.html` son páginas auto-contenidas con su propio CSS embebido.
+`innseal.html`, `kas-telenet.html`, `MonitorINN-DDBB-DIMAR.html` y `sdm/index.html` son páginas
+auto-contenidas con su propio CSS embebido. `MonitorINN-DDBB-DIMAR.html` es una landing de
+cumplimiento de requerimientos: recolorea su "chrome" (header, badges, tablas) a la paleta
+INNSYSTE, pero las 4 capturas de la app (mockups reales de producto, tema oscuro) no se tocan —
+conservan su tipografía y estilo originales. No está enlazada desde `index.html` ni en
+`staticwebapp.config.json`; se accede por su URL directa.
 
 ## Desarrollo local
 
@@ -80,7 +86,7 @@ Breakpoints en `styles.css`: `≤980px` (nav hamburguesa, layouts a 1 columna) y
 
 - Open Graph + Twitter cards + canonical en todas las páginas públicas
 - JSON-LD (Organization) en el index
-- `sitemap.xml` + `robots.txt` (kas-telenet excluido: contenido confidencial con `noindex`)
+- `sitemap.xml` + `robots.txt` (kas-telenet y MonitorINN-DDBB-DIMAR excluidos: contenido confidencial con `noindex`)
 
 ## Contacto comercial
 
