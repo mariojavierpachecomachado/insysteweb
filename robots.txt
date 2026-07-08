@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /kas-telenet
+Disallow: /MonitorINN-DDBB-DIMAR.html
 
 Sitemap: https://www.innsyste.com/sitemap.xml
