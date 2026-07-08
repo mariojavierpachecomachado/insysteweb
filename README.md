@@ -19,21 +19,18 @@ Sin build step, sin frameworks. Lo que está en el repo es lo que se sirve.
 ```
 insysteweb/
 ├── index.html                # Sitio principal (one-page)
-├── inntime.html              # Landing INNTime — bolsas de horas TI
+├── inntime.html              # Landing INNTime — bolsas de horas TI (rediseño 2026)
 ├── innseal.html              # Innseal — análisis competitivo (auto-contenida)
 ├── kas-telenet.html          # Propuesta Kaspersky/TeleNet (confidencial, noindex)
 ├── sdm/index.html            # Landing SDM — Service Delivery Management (auto-contenida)
-├── styles.css                # Stylesheet del rediseño 2026 (hoy solo index): tokens, header, footer
+├── styles.css                # Stylesheet del rediseño 2026: tokens, header, footer, componentes
 ├── script.js                 # JS del rediseño: nav móvil, ondas del hero (canvas), año
-├── inntime-legacy.css        # Diseño anterior congelado — solo lo usa inntime.html
-├── inntime-legacy.js         # JS del diseño anterior — solo lo usa inntime.html
 ├── staticwebapp.config.json  # Routing de Azure (rutas limpias /inntime, /innseal, …)
 ├── sitemap.xml · robots.txt
 └── assets/                   # Logos, favicon, imagen OG
 ```
 
-`index.html` usa `styles.css` + `script.js` (rediseño 2026). `inntime.html` conserva el diseño
-anterior con `inntime-legacy.css` + `inntime-legacy.js` hasta que migre al rediseño.
+`index.html` e `inntime.html` comparten `styles.css` + `script.js` (rediseño 2026).
 `innseal.html`, `kas-telenet.html` y `sdm/index.html` son páginas auto-contenidas con su propio CSS embebido.
 
 ## Desarrollo local

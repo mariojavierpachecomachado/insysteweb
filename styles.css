@@ -188,6 +188,7 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
 
 /* ---------- Servicios ---------- */
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+.services-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .service {
   border: 1px solid var(--line); border-radius: 4px; padding: 34px 34px 28px;
   display: flex; flex-direction: column;
@@ -296,6 +297,49 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
   padding: 22px 0; font-size: 0.78rem; color: rgba(255,255,255,.45);
 }
 
+/* ---------- INNTime: pasos ---------- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 56px; }
+.steps li { border-top: 1px solid var(--line); padding-top: 20px; }
+.steps .step-num { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; }
+.steps h3 { margin-top: 10px; font-size: 1rem; font-weight: 700; }
+.steps p { margin-top: 8px; font-size: 0.88rem; color: var(--ink-70); }
+
+/* ---------- INNTime: paquetes ---------- */
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+.tier { border: 1px solid var(--line); border-radius: 4px; padding: 34px 30px; display: flex; flex-direction: column; }
+.tier.featured { border-color: var(--accent); }
+.tier-flag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; height: 1em; }
+.tier-name { font-size: 1.05rem; font-weight: 700; }
+.tier-hours { margin-top: 14px; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.tier-hours-label { margin-top: 2px; font-size: 0.8rem; color: var(--ink-45); }
+.tier-features { margin-top: 24px; padding-top: 4px; border-top: 1px solid var(--line-soft); flex: 1; }
+.tier-features li {
+  font-size: 0.86rem; color: var(--ink-70); line-height: 22px;
+  padding: 9px 0 9px 20px; position: relative; border-top: 1px solid var(--line-soft);
+}
+.tier-features li:first-child { border-top: none; }
+.tier-features li::before {
+  content: ''; position: absolute; left: 1px; top: 18px;
+  width: 7px; height: 7px; border-radius: 1px;
+  background: linear-gradient(135deg, var(--ink), var(--accent));
+}
+.tier-cta { margin-top: 24px; width: 100%; }
+
+/* ---------- INNTime: cobertura tecnológica ---------- */
+.tech-list { columns: 2; gap: 48px; margin-top: 56px; }
+.tech-list li { break-inside: avoid; padding: 12px 0; border-bottom: 1px solid var(--line-soft); }
+.tech-name { font-size: 0.92rem; font-weight: 700; }
+.tech-desc { margin-top: 3px; font-size: 0.82rem; color: var(--ink-70); }
+
+/* ---------- INNTime: compromisos de servicio ---------- */
+.sla { margin-top: 56px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); }
+.sla > div { padding: 26px 28px 4px 0; }
+.sla > div + div { border-left: 1px solid var(--line-soft); padding-left: 28px; }
+.sla dt { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.sla dd { margin-top: 4px; font-size: 0.8rem; color: var(--ink-45); }
+
+.section-actions { margin-top: 40px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .nav {
@@ -315,10 +359,14 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
   .retos-list { columns: 2; }
   .cred { grid-template-columns: 1fr 1fr; }
   .cred > div { border-left: none !important; padding-left: 0 !important; }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid, .services-grid.cols-3 { grid-template-columns: 1fr; }
   .extra-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .exp { grid-template-columns: 1fr; gap: 24px; }
+  .steps { grid-template-columns: 1fr; gap: 28px; }
+  .tiers { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .sla { grid-template-columns: 1fr 1fr; }
+  .sla > div:nth-child(2n+1) { border-left: none; padding-left: 0; }
 }
 @media (max-width: 620px) {
   .retos-list { columns: 1; }
@@ -326,4 +374,7 @@ h1, h2, h3, h4 { line-height: 1.16; letter-spacing: -0.015em; text-wrap: balance
   .cred { grid-template-columns: 1fr; }
   .nav-cta { display: none; }
   .form-panel { padding: 28px 24px 30px; }
+  .tech-list { columns: 1; }
+  .sla { grid-template-columns: 1fr; }
+  .sla > div { border-left: none !important; padding-left: 0 !important; }
 }

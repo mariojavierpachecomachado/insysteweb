@@ -37,14 +37,13 @@ estático (HTML + CSS + JS vanilla, sin frameworks ni build step) y está en esp
 
 ## Estructura del sitio
 
-- `index.html` — página principal (rediseño 2026).
-- `inntime.html`, `innseal.html`, `kas-telenet.html` — landings de producto/propuestas.
+- `index.html`, `inntime.html` — páginas del rediseño 2026, comparten `styles.css` + `script.js`.
+- `innseal.html`, `kas-telenet.html` — landings de producto/propuestas, auto-contenidas.
 - `sdm/` — sección independiente.
 - `assets/` — logos (`logo.svg` navy, `logo-light.svg` para fondos oscuros), favicon, fotos.
-- `styles.css` y `script.js` — archivos del rediseño; hoy los usa `index.html`, y las páginas que
-  se vayan migrando deben compartirlos. `inntime.html` usa `inntime-legacy.css`/`.js` (diseño
-  anterior congelado hasta su migración); `innseal.html`, `kas-telenet.html` y `sdm/index.html`
-  son auto-contenidas con CSS propio embebido.
+- `styles.css` y `script.js` — archivos del rediseño; toda página nueva o migrada debe
+  compartirlos. `innseal.html`, `kas-telenet.html` y `sdm/index.html` son auto-contenidas
+  con CSS propio embebido.
 
 ## Reglas de trabajo
 

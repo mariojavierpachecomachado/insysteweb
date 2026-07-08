@@ -27,11 +27,10 @@ El remoto de producción es `github.com/mariojavierpachecomachado/insysteweb`. E
 ## Arquitectura
 
 - `index.html` — sitio principal one-page (rediseño 2026: hero con ondas en canvas `#heroWaves`, retos, valor, servicios, estándares, experiencia, contacto). Usa `styles.css` + `script.js`.
-- `inntime.html` — landing INNTime; usa `inntime-legacy.css` e `inntime-legacy.js` (diseño anterior congelado, header/footer incluidos), más CSS propio embebido con prefijo `it-*` y un carrusel inline. Pendiente de migrar al rediseño.
+- `inntime.html` — landing INNTime (migrada al rediseño 2026): hero con ondas, pasos, paquetes, categorías de servicio, cobertura tecnológica, diferenciadores, cumplimiento, SLA y contacto. Comparte `styles.css` + `script.js` con el index; componentes propios (`.tiers`, `.steps`, `.tech-list`, `.sla`) viven al final de `styles.css`.
 - `innseal.html`, `kas-telenet.html`, `sdm/index.html` — páginas **auto-contenidas** con su propio CSS embebido; NO cargan `styles.css` (sus clases chocan, p. ej. `.nav` en SDM). `kas-telenet.html` es una propuesta confidencial: tiene `noindex` y está excluida de sitemap/robots.
-- `styles.css` — stylesheet del rediseño 2026 (fondo blanco, jerarquía por líneas finas, radios 2–4px). Hoy solo lo usa el index; las páginas que se vayan migrando deben compartirlo. Tokens en `:root` (`--ink`, `--accent`, `--paper`, `--line`…); usar las variables, no hardcodear valores.
+- `styles.css` — stylesheet del rediseño 2026 (fondo blanco, jerarquía por líneas finas, radios 2–4px). Lo usan `index.html` e `inntime.html`; toda página que se migre debe compartirlo. Tokens en `:root` (`--ink`, `--accent`, `--paper`, `--line`…); usar las variables, no hardcodear valores.
 - `script.js` — IIFE única del rediseño: nav móvil, año del footer y ondas del hero. Todos los bloques tienen guards: no lanza errores si faltan elementos.
-- `inntime-legacy.css` / `inntime-legacy.js` — copia congelada del diseño anterior, solo para `inntime.html`; eliminar cuando INNTime migre al rediseño.
 - `assets/` — `logo.svg` (navy, fondos claros) y `logo-light.svg` (fondos oscuros), favicons, imágenes.
 
 ## Reglas del proyecto

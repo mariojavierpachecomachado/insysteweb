@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="INNTime — Bolsas de horas TI prepagadas con profesionales expertos de INNSYSTE. Diseño, implementación y soporte para cualquier tecnología empresarial." />
   <meta name="theme-color" content="#112e50" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <title>INNTime — Tu equipo TI cuando lo necesitas | INNSYSTE</title>
   <link rel="canonical" href="https://www.innsyste.com/inntime" />
@@ -23,8 +24,8 @@
   <meta name="twitter:image" content="https://www.innsyste.com/assets/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="inntime-legacy.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -32,421 +33,19 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wooktj3dts");
   </script>
-  <style>
-    /* ── INNTime design tokens ── */
-    :root {
-      --it-navy:    #112e50;
-      --it-pink:    #ff4575;
-      --it-white:   #ffffff;
-      --it-bg:      #f7f8fa;
-      --it-border:  rgba(17,46,80,.10);
-      --it-text:    #112e50;
-      --it-soft:    rgba(17,46,80,.60);
-      --it-grad:    linear-gradient(135deg, #112e50 0%, #1a4070 100%);
-      --it-grad-pk: linear-gradient(135deg, #ff4575 0%, #ff6b8a 100%);
-    }
-
-    /* ── HERO ── */
-    .it-hero {
-      background: var(--it-grad);
-      padding: 80px 0 72px;
-      position: relative;
-      overflow: hidden;
-    }
-    .it-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 75% 50%, rgba(255,69,117,.15) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .it-hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: stretch;
-      position: relative; z-index: 1;
-    }
-    .it-hero-inner {
-      display: flex; flex-direction: column; justify-content: center;
-    }
-
-    /* ── HERO CAROUSEL ── */
-    .it-hero-carousel {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,.35);
-      min-height: 460px;
-      height: 100%;
-    }
-    .it-hc-track {
-      display: flex;
-      height: 100%;
-      transition: transform .65s cubic-bezier(.4,0,.2,1);
-    }
-    .it-hc-slide {
-      flex: 0 0 100%;
-      position: relative;
-      height: 100%;
-    }
-    .it-hc-slide img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      position: absolute; inset: 0;
-    }
-    .it-hc-slide::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(17,46,80,.55) 0%, transparent 50%);
-    }
-    .it-hc-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 18px 22px; z-index: 2;
-      font-size: .8rem; font-weight: 600;
-      color: rgba(255,255,255,.85);
-    }
-    /* arrows */
-    .it-hc-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,.15); backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50%; color: #fff;
-      display: grid; place-items: center;
-      cursor: pointer; z-index: 3;
-      transition: background .2s;
-    }
-    .it-hc-arrow:hover { background: var(--it-pink); }
-    .it-hc-prev { left: 12px; }
-    .it-hc-next { right: 12px; }
-    /* dots */
-    .it-hc-dots {
-      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 6px; z-index: 3;
-    }
-    .it-hc-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: rgba(255,255,255,.4); border: none; cursor: pointer;
-      padding: 0; transition: background .2s, transform .2s;
-    }
-    .it-hc-dot.active { background: var(--it-pink); transform: scale(1.3); }
-
-    @media (max-width: 900px) {
-      .it-hero-layout { grid-template-columns: 1fr; }
-      .it-hero-carousel { max-width: 520px; margin: 0 auto; }
-    }
-    .it-eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-      color: rgba(255,255,255,.65); margin-bottom: 22px;
-    }
-    .it-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--it-pink); flex-shrink: 0; }
-    .it-hero h1 {
-      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
-      font-weight: 900; line-height: 1.08; color: #fff;
-      margin-bottom: 22px; letter-spacing: -.02em;
-    }
-    .it-hero h1 em { font-style: normal; color: var(--it-pink); }
-    .it-hero-lead {
-      font-size: 1.1rem; line-height: 1.75;
-      color: rgba(255,255,255,.78); max-width: 580px; margin-bottom: 40px;
-    }
-    .it-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-it-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--it-pink); color: #fff;
-      font-weight: 700; font-size: .92rem;
-      padding: 15px 30px; border-radius: 7px;
-      text-decoration: none; transition: background .2s, transform .15s;
-    }
-    .btn-it-primary:hover { background: #d63560; transform: translateY(-1px); }
-    .btn-it-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: #fff;
-      font-weight: 600; font-size: .92rem;
-      padding: 15px 30px; border-radius: 7px;
-      border: 2px solid rgba(255,255,255,.30);
-      text-decoration: none; transition: border-color .2s;
-    }
-    .btn-it-ghost:hover { border-color: rgba(255,255,255,.7); }
-
-    /* ── HERO STATS ── */
-    .it-hero-stats {
-      display: flex; gap: 0;
-      margin-top: 56px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 32px;
-    }
-    .it-stat { flex: 1; padding-right: 32px; }
-    .it-stat + .it-stat { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.12); }
-    .it-stat-num { font-size: 2.4rem; font-weight: 900; color: var(--it-pink); line-height: 1; }
-    .it-stat-label { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 4px; }
-
-    /* ── TRUST STRIP ── */
-    .it-trust {
-      background: var(--it-white);
-      border-bottom: 1px solid var(--it-border);
-      padding: 22px 0;
-    }
-    .it-trust-inner {
-      display: flex; align-items: center; gap: 0;
-      flex-wrap: wrap;
-    }
-    .it-trust-label {
-      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--it-soft);
-      margin-right: 28px; white-space: nowrap;
-    }
-    .it-trust-badges { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-    .it-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: .75rem; font-weight: 700;
-      color: var(--it-navy);
-      background: var(--it-bg);
-      border: 1px solid var(--it-border);
-      padding: 5px 12px; border-radius: 20px;
-    }
-    .it-badge svg { color: var(--it-pink); }
-
-    /* ── SECTION ── */
-    .it-section { padding: 88px 0; }
-    .it-section-alt { background: var(--it-bg); }
-    .it-section-dark { background: var(--it-grad); color: #fff; }
-    .it-section-head { text-align: center; margin-bottom: 60px; }
-    .it-kicker {
-      display: inline-block;
-      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--it-pink);
-      margin-bottom: 12px;
-    }
-    .it-section-head h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800; color: var(--it-navy); line-height: 1.15; margin-bottom: 16px;
-    }
-    .it-section-dark .it-section-head h2 { color: #fff; }
-    .it-section-head p {
-      font-size: 1rem; color: var(--it-soft);
-      max-width: 580px; margin: 0 auto; line-height: 1.75;
-    }
-    .it-section-dark .it-section-head p { color: rgba(255,255,255,.7); }
-
-    /* ── HOW IT WORKS ── */
-    .it-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .it-step { text-align: center; padding: 36px 28px; }
-    .it-step-num {
-      width: 56px; height: 56px;
-      background: var(--it-grad-pk);
-      border-radius: 14px;
-      display: grid; place-items: center;
-      margin: 0 auto 20px;
-      font-size: 1.3rem; font-weight: 900; color: #fff;
-    }
-    .it-step h3 { font-size: 1.05rem; font-weight: 700; color: var(--it-navy); margin-bottom: 10px; }
-    .it-step p { font-size: .9rem; color: var(--it-soft); line-height: 1.65; }
-
-    /* ── TIERS ── */
-    .it-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .it-tier {
-      background: var(--it-white);
-      border: 1.5px solid var(--it-border);
-      border-radius: 14px; padding: 36px 28px;
-      position: relative;
-      transition: box-shadow .2s, transform .2s, border-color .2s;
-    }
-    .it-tier:hover { box-shadow: 0 16px 48px rgba(17,46,80,.12); transform: translateY(-4px); }
-    .it-tier.featured {
-      border-color: var(--it-pink);
-      box-shadow: 0 12px 40px rgba(255,69,117,.15);
-    }
-    .it-tier-badge {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: var(--it-pink); color: #fff;
-      font-size: .68rem; font-weight: 800; letter-spacing: .1em;
-      text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
-      white-space: nowrap;
-    }
-    .it-tier-name { font-size: 1.25rem; font-weight: 800; color: var(--it-navy); margin-bottom: 4px; }
-    .it-tier-hours {
-      font-size: 2.6rem; font-weight: 900; color: var(--it-pink);
-      line-height: 1; margin: 18px 0 4px;
-    }
-    .it-tier-hours-label { font-size: .8rem; color: var(--it-soft); margin-bottom: 24px; }
-    .it-tier-divider { height: 1px; background: var(--it-border); margin: 20px 0; }
-    .it-tier-features { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 11px; }
-    .it-tier-features li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: .88rem; color: var(--it-soft); line-height: 1.5;
-    }
-    .it-tier-features li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 9px; height: 5.5px;
-      border-left: 2px solid var(--it-pink);
-      border-bottom: 2px solid var(--it-pink);
-      transform: rotate(-45deg) translateY(4px);
-    }
-    .it-tier-cta {
-      display: block; text-align: center;
-      padding: 13px 20px; border-radius: 7px;
-      font-weight: 700; font-size: .9rem;
-      text-decoration: none; transition: all .2s;
-    }
-    .it-tier-cta.primary { background: var(--it-pink); color: #fff; }
-    .it-tier-cta.primary:hover { background: #d63560; }
-    .it-tier-cta.secondary {
-      background: transparent; color: var(--it-navy);
-      border: 1.5px solid var(--it-border);
-    }
-    .it-tier-cta.secondary:hover { border-color: var(--it-navy); }
-
-    /* ── TECH GRID ── */
-    .it-tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-    .it-tech-card {
-      background: var(--it-white); border: 1px solid var(--it-border);
-      border-radius: 10px; padding: 22px 18px;
-      display: flex; align-items: flex-start; gap: 14px;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .it-tech-card:hover { border-color: var(--it-pink); box-shadow: 0 4px 18px rgba(255,69,117,.08); }
-    .it-tech-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background: var(--it-navy); border-radius: 9px;
-      display: grid; place-items: center; color: #fff;
-    }
-    .it-tech-name { font-size: .92rem; font-weight: 700; color: var(--it-navy); margin-bottom: 3px; }
-    .it-tech-desc { font-size: .78rem; color: var(--it-soft); line-height: 1.5; }
-
-    /* ── DIFFERENTIATORS ── */
-    .it-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .it-diff-text h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 800; color: var(--it-navy); line-height: 1.15; margin-bottom: 20px; }
-    .it-diff-text p { font-size: .98rem; color: var(--it-soft); line-height: 1.78; margin-bottom: 16px; }
-    .it-diff-list { list-style: none; padding: 0; margin: 28px 0; display: flex; flex-direction: column; gap: 16px; }
-    .it-diff-list li { display: flex; align-items: flex-start; gap: 14px; }
-    .it-diff-list-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(255,69,117,.1); border-radius: 8px;
-      display: grid; place-items: center; color: var(--it-pink);
-    }
-    .it-diff-list-text { flex: 1; }
-    .it-diff-list-title { font-size: .92rem; font-weight: 700; color: var(--it-navy); margin-bottom: 2px; }
-    .it-diff-list-desc { font-size: .83rem; color: var(--it-soft); line-height: 1.55; }
-    .it-diff-visual {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-    }
-    .it-diff-metric {
-      background: var(--it-bg); border: 1px solid var(--it-border);
-      border-radius: 12px; padding: 24px 20px; text-align: center;
-    }
-    .it-diff-metric-num { font-size: 2rem; font-weight: 900; color: var(--it-pink); line-height: 1; margin-bottom: 6px; }
-    .it-diff-metric-label { font-size: .8rem; color: var(--it-soft); line-height: 1.4; }
-
-    /* ── SERVICE CATEGORIES ── */
-    .it-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .it-cat {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 14px; padding: 32px 26px;
-      transition: background .2s, border-color .2s;
-    }
-    .it-cat:hover { background: rgba(255,255,255,.1); border-color: rgba(255,69,117,.4); }
-    .it-cat-icon {
-      width: 52px; height: 52px;
-      background: var(--it-pink); border-radius: 12px;
-      display: grid; place-items: center; color: #fff;
-      margin-bottom: 20px;
-    }
-    .it-cat-num { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,69,117,.8); margin-bottom: 6px; }
-    .it-cat h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-    .it-cat p { font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 20px; }
-    .it-cat-items { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-    .it-cat-items li { font-size: .82rem; color: rgba(255,255,255,.55); padding-left: 14px; position: relative; }
-    .it-cat-items li::before { content: '→'; position: absolute; left: 0; color: var(--it-pink); font-size: .78rem; }
-
-    /* ── COMPLIANCE ── */
-    .it-compliance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .it-compliance-card {
-      background: var(--it-white); border: 1px solid var(--it-border);
-      border-radius: 12px; padding: 24px 20px;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .it-compliance-card:hover { border-color: var(--it-pink); box-shadow: 0 4px 18px rgba(255,69,117,.07); }
-    .it-compliance-icon {
-      width: 44px; height: 44px;
-      background: var(--it-navy); border-radius: 10px;
-      display: grid; place-items: center; color: #fff;
-      margin-bottom: 14px;
-    }
-    .it-compliance-name { font-size: .95rem; font-weight: 800; color: var(--it-navy); margin-bottom: 4px; }
-    .it-compliance-desc { font-size: .82rem; color: var(--it-soft); line-height: 1.55; }
-
-    /* ── SLA STRIP ── */
-    .it-sla-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-    .it-sla-item {
-      background: rgba(255,255,255,.05);
-      padding: 28px 24px; text-align: center;
-      border-radius: 0;
-    }
-    .it-sla-item:first-child { border-radius: 12px 0 0 12px; }
-    .it-sla-item:last-child { border-radius: 0 12px 12px 0; }
-    .it-sla-num { font-size: 2rem; font-weight: 900; color: var(--it-pink); line-height: 1; margin-bottom: 6px; }
-    .it-sla-label { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.4; }
-
-    /* ── CTA BANNER ── */
-    .it-cta {
-      background: var(--it-pink); padding: 88px 0; text-align: center;
-    }
-    .it-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
-    .it-cta p { font-size: 1.05rem; color: rgba(255,255,255,.82); margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-    .it-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-it-white {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #fff; color: var(--it-pink);
-      font-weight: 800; font-size: .95rem;
-      padding: 15px 32px; border-radius: 7px;
-      text-decoration: none; transition: background .2s, color .2s;
-    }
-    .btn-it-white:hover { background: var(--it-navy); color: #fff; }
-    .btn-it-outline-white {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: #fff;
-      font-weight: 600; font-size: .95rem;
-      padding: 15px 32px; border-radius: 7px;
-      border: 2px solid rgba(255,255,255,.45);
-      text-decoration: none; transition: border-color .2s;
-    }
-    .btn-it-outline-white:hover { border-color: #fff; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .it-tiers { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-      .it-diff-grid { grid-template-columns: 1fr; }
-      .it-cats { grid-template-columns: 1fr; }
-      .it-sla-grid { grid-template-columns: 1fr 1fr; }
-      .it-sla-item:first-child { border-radius: 12px 0 0 0; }
-      .it-sla-item:last-child { border-radius: 0 0 12px 12px; }
-    }
-    @media (max-width: 640px) {
-      .it-steps { grid-template-columns: 1fr; }
-      .it-hero-stats { flex-direction: column; gap: 24px; }
-      .it-stat + .it-stat { border-left: none; border-top: 1px solid rgba(255,255,255,.12); padding-left: 0; padding-top: 24px; }
-      .it-trust-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .it-diff-visual { grid-template-columns: 1fr 1fr; }
-      .it-sla-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
 </head>
 <body>
 
   <a href="#main" class="skip-link">Saltar al contenido</a>
 
-  <!-- HEADER -->
-  <header class="site-header" id="siteHeader">
+  <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="Innsyste — Inicio">
-        <img src="assets/logo.svg" alt="Innsyste" class="brand-logo" width="160" height="40" />
+        <img src="assets/logo.svg" alt="Innsyste" width="160" height="40" />
       </a>
+
       <nav class="nav" aria-label="Principal">
-        <ul class="nav-list" id="navList">
+        <ul id="navList">
           <li><a href="index.html#retos">Retos</a></li>
           <li><a href="index.html#valor">Valor</a></li>
           <li><a href="index.html#servicios">Servicios</a></li>
@@ -454,7 +53,9 @@
           <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">Agendar reunión</a>
+
+      <a href="https://outlook.office.com/book/ComercialINNSYSTE@innsyste.com/s/Wo3P_wGOIUyr8xiB90dKmg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-solid nav-cta">Agendar reunión</a>
+
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navList">
         <span></span><span></span><span></span>
       </button>
@@ -464,156 +65,85 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="it-hero">
+    <section class="hero" id="top">
+      <canvas class="hero-waves" id="heroWaves" aria-hidden="true"></canvas>
       <div class="container">
-        <div class="it-hero-layout">
+        <div class="hero-inner">
+          <p class="kicker">INNSYSTE · Servicio de horas TI</p>
+          <h1>Tu equipo TI experto, <span class="u">cuando lo necesitas</span></h1>
+          <p class="hero-lead">
+            INNTime es el servicio de bolsas de horas TI prepagadas de INNSYSTE. Acceso inmediato a
+            profesionales empleados directos — expertos en diseño, implementación y soporte para
+            cualquier tecnología de tu organización.
+          </p>
+          <div class="hero-actions">
+            <a href="#paquetes" class="btn btn-solid">Ver paquetes</a>
+            <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="btn btn-quiet">Hablar con un experto</a>
+          </div>
+        </div>
+        <dl class="cred">
+          <div><dt class="text-grad">3</dt><dd>Categorías de servicio: diseño, implementación y soporte</dd></div>
+          <div><dt class="text-grad">11</dt><dd>Dominios tecnológicos en un solo contrato</dd></div>
+          <div><dt class="text-grad">6</dt><dd>Frameworks de compliance integrados</dd></div>
+          <div><dt class="text-grad">99.5%</dt><dd>Disponibilidad comprometida del servicio</dd></div>
+        </dl>
+      </div>
+    </section>
 
-          <!-- TEXT -->
-          <div class="it-hero-inner">
-            <p class="it-eyebrow"><span class="it-dot"></span>INNSYSTE · Servicio de Horas TI</p>
-            <h1>Tu equipo TI experto,<br /><em>cuando lo necesitas.</em></h1>
-            <p class="it-hero-lead">
-              INNTime es el servicio de bolsas de horas TI prepagadas de INNSYSTE. Acceso inmediato a profesionales empleados directos — expertos en diseño, implementación y soporte para cualquier tecnología de tu organización.
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">¿Cómo funciona?</p>
+          <div>
+            <h2>Expertos TI disponibles en horas, no en proyectos eternos</h2>
+            <p class="section-lead">
+              INNTime simplifica el acceso a talento especializado. Sin procesos de contratación
+              largos, sin contratos rígidos — solo expertos disponibles cuando los necesitas.
             </p>
-            <div class="it-hero-actions">
-              <a href="index.html#contacto" class="btn-it-primary">Cotizar mi paquete</a>
-              <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="btn-it-ghost">Hablar con un experto →</a>
-            </div>
-            <div class="it-hero-stats">
-              <div class="it-stat">
-                <div class="it-stat-num">3</div>
-                <div class="it-stat-label">Categorías de servicio:<br/>Diseño · Implementación · Soporte</div>
-              </div>
-              <div class="it-stat">
-                <div class="it-stat-num">11</div>
-                <div class="it-stat-label">Dominios tecnológicos<br/>cubiertos en un solo contrato</div>
-              </div>
-              <div class="it-stat">
-                <div class="it-stat-num">6</div>
-                <div class="it-stat-label">Frameworks de compliance<br/>integrados al servicio</div>
-              </div>
-            </div>
           </div>
-
-          <!-- CAROUSEL -->
-          <div class="it-hero-carousel" aria-label="Equipo INNTime en acción">
-            <div class="it-hc-track" id="hcTrack">
-
-              <div class="it-hc-slide">
-                <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=720&h=540&fit=crop&q=80" alt="Profesional TI brindando soporte técnico remoto" loading="eager" />
-                <div class="it-hc-caption">Soporte técnico remoto especializado</div>
-              </div>
-
-              <div class="it-hc-slide">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=720&h=540&fit=crop&q=80" alt="Equipo de ingenieros TI colaborando en proyecto" loading="lazy" />
-                <div class="it-hc-caption">Equipo de ingenieros certificados</div>
-              </div>
-
-              <div class="it-hc-slide">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=720&h=540&fit=crop&q=80" alt="Técnico configurando infraestructura de red" loading="lazy" />
-                <div class="it-hc-caption">Implementación y configuración on-site</div>
-              </div>
-
-              <div class="it-hc-slide">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=720&h=540&fit=crop&q=80" alt="Profesionales TI trabajando en sala de operaciones" loading="lazy" />
-                <div class="it-hc-caption">Operación y monitoreo proactivo</div>
-              </div>
-
-            </div>
-
-            <button class="it-hc-arrow it-hc-prev" id="hcPrev" aria-label="Anterior">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <button class="it-hc-arrow it-hc-next" id="hcNext" aria-label="Siguiente">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-            <div class="it-hc-dots" id="hcDots"></div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <section class="it-trust">
-      <div class="container">
-        <div class="it-trust-inner">
-          <span class="it-trust-label">Alineado con</span>
-          <div class="it-trust-badges">
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              ITIL 4
-            </span>
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              ISO/IEC 20000-1
-            </span>
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              ISO 27001:2022
-            </span>
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              NIST CSF 2.0
-            </span>
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              CIS Controls v8.1
-            </span>
-            <span class="it-badge">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z"/></svg>
-              SOC 2
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="it-section" id="como-funciona">
-      <div class="container">
-        <div class="it-section-head">
-          <p class="it-kicker">¿Cómo funciona?</p>
-          <h2>Expertos TI disponibles en horas, no en proyectos eternos</h2>
-          <p>INNTime simplifica el acceso a talento especializado. Sin procesos de contratación largos, sin contratos rígidos — solo expertos disponibles cuando los necesitas.</p>
-        </div>
-        <div class="it-steps">
-          <div class="it-step">
-            <div class="it-step-num">1</div>
+        </header>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
             <h3>Elige tu paquete</h3>
-            <p>Selecciona el volumen de horas que mejor se adapta a las necesidades de tu organización. Starter, Business o Enterprise — con diferentes niveles de SLA y cobertura.</p>
-          </div>
-          <div class="it-step">
-            <div class="it-step-num">2</div>
+            <p>Selecciona el volumen de horas que mejor se adapta a tu organización — Starter, Business o Enterprise, con distintos niveles de SLA y cobertura.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
             <h3>Activa tu bolsa</h3>
-            <p>Un coordinador de servicio dedicado activa tu bolsa de horas y te conecta con el equipo técnico. Desde el primer día tienes acceso a los canales de atención de tu paquete.</p>
-          </div>
-          <div class="it-step">
-            <div class="it-step-num">3</div>
+            <p>Un coordinador de servicio dedicado activa tu bolsa de horas y te conecta con el equipo técnico desde el primer día.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
             <h3>Consume a demanda</h3>
-            <p>Registra tus solicitudes y profesionales certificados de INNSYSTE las atienden dentro de los tiempos comprometidos. Cada hora consumida queda documentada y reportada.</p>
-          </div>
-        </div>
+            <p>Profesionales certificados atienden tus solicitudes dentro de los tiempos comprometidos. Cada hora consumida queda documentada y reportada.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- TIERS -->
-    <section class="it-section it-section-alt" id="paquetes">
+    <!-- PAQUETES -->
+    <section class="section" id="paquetes">
       <div class="container">
-        <div class="it-section-head">
-          <p class="it-kicker">Paquetes INNTime</p>
-          <h2>El nivel correcto para cada organización</h2>
-          <p>Tres paquetes diseñados para adaptarse al tamaño, madurez tecnológica y exigencias de compliance de tu empresa.</p>
-        </div>
-        <div class="it-tiers">
+        <header class="section-head">
+          <p class="kicker">Paquetes INNTime</p>
+          <div>
+            <h2>El nivel correcto para cada organización</h2>
+            <p class="section-lead">
+              Tres paquetes diseñados para adaptarse al tamaño, madurez tecnológica y exigencias
+              de compliance de tu empresa.
+            </p>
+          </div>
+        </header>
+        <div class="tiers">
 
-          <!-- STARTER -->
-          <div class="it-tier">
-            <div class="it-tier-name">Starter</div>
-            <div class="it-tier-hours">20</div>
-            <div class="it-tier-hours-label">horas / mes · Modalidad remota</div>
-            <div class="it-tier-divider"></div>
-            <ul class="it-tier-features">
+          <article class="tier">
+            <p class="tier-flag"></p>
+            <p class="tier-name">Starter</p>
+            <p class="tier-hours">20</p>
+            <p class="tier-hours-label">horas / mes · Modalidad remota</p>
+            <ul class="tier-features">
               <li>Atención remota exclusivamente</li>
               <li>Respuesta críticos: 4 h hábiles</li>
               <li>Horario L-V 8 am – 6 pm</li>
@@ -621,17 +151,15 @@
               <li>Hasta 10 h de rollover al mes siguiente</li>
               <li>Canal: correo + plataforma de tickets</li>
             </ul>
-            <a href="index.html#contacto" class="it-tier-cta secondary">Solicitar cotización</a>
-          </div>
+            <a href="#contacto" class="btn btn-quiet tier-cta">Solicitar cotización</a>
+          </article>
 
-          <!-- BUSINESS -->
-          <div class="it-tier featured">
-            <div class="it-tier-badge">Más popular</div>
-            <div class="it-tier-name">Business</div>
-            <div class="it-tier-hours">50</div>
-            <div class="it-tier-hours-label">horas / mes · Remoto + On-site</div>
-            <div class="it-tier-divider"></div>
-            <ul class="it-tier-features">
+          <article class="tier featured">
+            <p class="tier-flag">Más popular</p>
+            <p class="tier-name">Business</p>
+            <p class="tier-hours">50</p>
+            <p class="tier-hours-label">horas / mes · Remoto + on-site</p>
+            <ul class="tier-features">
               <li>8 h on-site incluidas por mes</li>
               <li>Respuesta críticos: 2 h hábiles</li>
               <li>Horario L-S 7 am – 8 pm</li>
@@ -641,16 +169,15 @@
               <li>Hasta 20 h de rollover (2 meses)</li>
               <li>WhatsApp Business directo</li>
             </ul>
-            <a href="index.html#contacto" class="it-tier-cta primary">Solicitar cotización</a>
-          </div>
+            <a href="#contacto" class="btn btn-solid tier-cta">Solicitar cotización</a>
+          </article>
 
-          <!-- ENTERPRISE -->
-          <div class="it-tier">
-            <div class="it-tier-name">Enterprise</div>
-            <div class="it-tier-hours">100+</div>
-            <div class="it-tier-hours-label">horas / mes · 24/7 críticos</div>
-            <div class="it-tier-divider"></div>
-            <ul class="it-tier-features">
+          <article class="tier">
+            <p class="tier-flag"></p>
+            <p class="tier-name">Enterprise</p>
+            <p class="tier-hours">100+</p>
+            <p class="tier-hours-label">horas / mes · 24/7 críticos</p>
+            <ul class="tier-features">
               <li>On-site ilimitado</li>
               <li>Respuesta críticos: 1 h (24/7/365)</li>
               <li>Gerente de cuenta senior</li>
@@ -660,370 +187,219 @@
               <li>Hasta 40 h de rollover negociable</li>
               <li>Banco de horas anual disponible</li>
             </ul>
-            <a href="index.html#contacto" class="it-tier-cta secondary">Hablar con ventas</a>
-          </div>
+            <a href="#contacto" class="btn btn-quiet tier-cta">Hablar con ventas</a>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- SERVICE CATEGORIES -->
-    <section class="it-section it-section-dark" id="servicios">
+    <!-- CATEGORÍAS DE SERVICIO -->
+    <section class="section" id="servicios">
       <div class="container">
-        <div class="it-section-head">
-          <p class="it-kicker">Categorías de servicio</p>
-          <h2>El ciclo de vida TI completo en una sola bolsa</h2>
-          <p>INNTime cubre las tres fases críticas de tu operación tecnológica — sin necesidad de contratar múltiples proveedores.</p>
-        </div>
-        <div class="it-cats">
-
-          <div class="it-cat">
-            <div class="it-cat-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <header class="section-head">
+          <p class="kicker">Categorías de servicio</p>
+          <div>
+            <h2>El ciclo de vida TI completo en una sola bolsa</h2>
+            <p class="section-lead">
+              INNTime cubre las tres fases críticas de tu operación tecnológica — sin necesidad
+              de contratar múltiples proveedores.
+            </p>
+          </div>
+        </header>
+        <div class="services-grid cols-3">
+          <article class="service">
+            <div class="service-head">
+              <h3>Planificación y arquitectura</h3>
+              <p class="service-tag">01 · Diseño</p>
             </div>
-            <p class="it-cat-num">01 · Diseño TI</p>
-            <h3>Planificación y arquitectura</h3>
-            <p>Decisiones técnicas informadas antes de invertir. Arquitectura, análisis de riesgos y definición de la solución óptima para tu entorno.</p>
-            <ul class="it-cat-items">
+            <ul>
               <li>Consultoría de arquitectura TI</li>
               <li>Diseño de infraestructura</li>
               <li>Diseño de soluciones de seguridad</li>
               <li>Evaluación y selección tecnológica</li>
               <li>Diseño de plan de continuidad TI</li>
             </ul>
-          </div>
-
-          <div class="it-cat">
-            <div class="it-cat-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </article>
+          <article class="service">
+            <div class="service-head">
+              <h3>Ejecución técnica experta</h3>
+              <p class="service-tag">02 · Implementación</p>
             </div>
-            <p class="it-cat-num">02 · Implementación TI</p>
-            <h3>Ejecución técnica experta</h3>
-            <p>Del diseño a la operación con cero fricciones. Despliegue, migración y configuración ejecutados con metodología probada y evidencia documentada.</p>
-            <ul class="it-cat-items">
+            <ul>
               <li>Implementación de infraestructura</li>
               <li>Migración a la nube (AWS / Azure / GCP)</li>
               <li>Implementación de soluciones de seguridad</li>
               <li>Configuración de redes y SD-WAN</li>
               <li>Hardening de sistemas (CIS Benchmarks)</li>
             </ul>
-          </div>
-
-          <div class="it-cat">
-            <div class="it-cat-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </article>
+          <article class="service">
+            <div class="service-head">
+              <h3>Operación estable y proactiva</h3>
+              <p class="service-tag">03 · Soporte</p>
             </div>
-            <p class="it-cat-num">03 · Soporte TI</p>
-            <h3>Operación estable y proactiva</h3>
-            <p>Tu tecnología en manos expertas día a día. Desde la resolución de incidentes críticos hasta el mantenimiento preventivo y el soporte en auditorías de compliance.</p>
-            <ul class="it-cat-items">
+            <ul>
               <li>Soporte técnico reactivo (Severity 1–4)</li>
               <li>Monitoreo y mantenimiento proactivo</li>
               <li>Administración de sistemas y nube</li>
               <li>Respuesta a incidentes de seguridad</li>
               <li>Acompañamiento en auditorías compliance</li>
             </ul>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- TECH COVERAGE -->
-    <section class="it-section" id="tecnologias">
+    <!-- COBERTURA TECNOLÓGICA -->
+    <section class="section" id="tecnologias">
       <div class="container">
-        <div class="it-section-head">
-          <p class="it-kicker">Cobertura tecnológica</p>
-          <h2>Un contrato. Once dominios cubiertos.</h2>
-          <p>INNTime-ALL elimina la necesidad de gestionar múltiples proveedores especializados. Todo el stack tecnológico de tu empresa en una sola bolsa de horas.</p>
-        </div>
-        <div class="it-tech-grid">
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Sistemas Operativos</div>
-              <div class="it-tech-desc">Windows Server · Linux (RHEL, Ubuntu) · macOS Server</div>
-            </div>
+        <header class="section-head">
+          <p class="kicker">Cobertura tecnológica</p>
+          <div>
+            <h2>Un contrato. Once dominios cubiertos.</h2>
+            <p class="section-lead">
+              INNTime-ALL elimina la necesidad de gestionar múltiples proveedores especializados.
+              Todo el stack tecnológico de tu empresa en una sola bolsa de horas.
+            </p>
           </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Redes y Conectividad</div>
-              <div class="it-tech-desc">LAN/WAN · SD-WAN · VPN · Cisco · Fortinet · Palo Alto</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Nube — AWS / Azure / GCP</div>
-              <div class="it-tech-desc">Compute · Storage · Seguridad · Kubernetes · FinOps</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Ciberseguridad</div>
-              <div class="it-tech-desc">EDR/XDR · SIEM · MFA · IAM · Pentest · Vulnerabilidades</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Virtualización</div>
-              <div class="it-tech-desc">VMware vSphere · Hyper-V · Proxmox · Docker · Kubernetes</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Bases de Datos</div>
-              <div class="it-tech-desc">SQL Server · MySQL · PostgreSQL · Oracle · MongoDB</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Software Empresarial</div>
-              <div class="it-tech-desc">Microsoft 365 · Google Workspace · ERP · CRM · SAP</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Hardware y Datacenter</div>
-              <div class="it-tech-desc">Servidores · PCs · Dispositivos · UPS · Infraestructura física</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.12 3.38 2 2 0 0 1 3.09 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">Comunicaciones Unificadas</div>
-              <div class="it-tech-desc">VoIP · Teams · Webex · PBX · Videoconferencia</div>
-            </div>
-          </div>
-          <div class="it-tech-card">
-            <div class="it-tech-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <div class="it-tech-name">INNTime — Variantes</div>
-              <div class="it-tech-desc">Especialización por tecnología: Cloud · Ciberseguridad · Redes · y más</div>
-            </div>
-          </div>
-        </div>
+        </header>
+        <ul class="tech-list">
+          <li><p class="tech-name">Sistemas operativos</p><p class="tech-desc">Windows Server · Linux (RHEL, Ubuntu) · macOS Server</p></li>
+          <li><p class="tech-name">Redes y conectividad</p><p class="tech-desc">LAN/WAN · SD-WAN · VPN · Cisco · Fortinet · Palo Alto</p></li>
+          <li><p class="tech-name">Nube — AWS / Azure / GCP</p><p class="tech-desc">Compute · Storage · Seguridad · Kubernetes · FinOps</p></li>
+          <li><p class="tech-name">Ciberseguridad</p><p class="tech-desc">EDR/XDR · SIEM · MFA · IAM · Pentest · Vulnerabilidades</p></li>
+          <li><p class="tech-name">Virtualización</p><p class="tech-desc">VMware vSphere · Hyper-V · Proxmox · Docker · Kubernetes</p></li>
+          <li><p class="tech-name">Bases de datos</p><p class="tech-desc">SQL Server · MySQL · PostgreSQL · Oracle · MongoDB</p></li>
+          <li><p class="tech-name">Software empresarial</p><p class="tech-desc">Microsoft 365 · Google Workspace · ERP · CRM · SAP</p></li>
+          <li><p class="tech-name">Hardware y datacenter</p><p class="tech-desc">Servidores · PCs · Dispositivos · UPS · Infraestructura física</p></li>
+          <li><p class="tech-name">Comunicaciones unificadas</p><p class="tech-desc">VoIP · Teams · Webex · PBX · Videoconferencia</p></li>
+          <li><p class="tech-name">INNTime — Variantes</p><p class="tech-desc">Especialización por tecnología: Cloud · Ciberseguridad · Redes · y más</p></li>
+        </ul>
       </div>
     </section>
 
-    <!-- DIFFERENTIATORS -->
-    <section class="it-section it-section-alt">
+    <!-- DIFERENCIADORES -->
+    <section class="section" id="diferenciadores">
       <div class="container">
-        <div class="it-diff-grid">
-          <div class="it-diff-text">
-            <p class="it-kicker">¿Por qué INNTime?</p>
+        <header class="section-head">
+          <p class="kicker">¿Por qué INNTime?</p>
+          <div>
             <h2>No contratas horas. Contratas certeza.</h2>
-            <p>El mercado está lleno de opciones. INNTime se diferencia por lo que hay detrás de cada hora: profesionales empleados directos de INNSYSTE, con controles de calidad, confidencialidad y compliance integrados desde el primer día.</p>
-            <ul class="it-diff-list">
-              <li>
-                <div class="it-diff-list-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div class="it-diff-list-text">
-                  <div class="it-diff-list-title">Empleados directos, no freelancers</div>
-                  <div class="it-diff-list-desc">Cada profesional es empleado de planta de INNSYSTE. Confidencialidad garantizada por contrato laboral, no por acuerdo informal.</div>
-                </div>
-              </li>
-              <li>
-                <div class="it-diff-list-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
-                <div class="it-diff-list-text">
-                  <div class="it-diff-list-title">SLAs medibles y reportados</div>
-                  <div class="it-diff-list-desc">Tiempos de respuesta definidos por severidad, KPIs de cumplimiento ≥ 95% y reportes periódicos de consumo. Nada se deja al azar.</div>
-                </div>
-              </li>
-              <li>
-                <div class="it-diff-list-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="it-diff-list-text">
-                  <div class="it-diff-list-title">Compliance integrado</div>
-                  <div class="it-diff-list-desc">Diseñado bajo ISO 27001, ISO 20000-1, CIS v8.1 y NIST CSF. Requisito obligatorio para sectores financiero y salud en Colombia.</div>
-                </div>
-              </li>
-              <li>
-                <div class="it-diff-list-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                </div>
-                <div class="it-diff-list-text">
-                  <div class="it-diff-list-title">Un contrato. Todo el stack.</div>
-                  <div class="it-diff-list-desc">Diseño, implementación y soporte para OS, redes, nube, seguridad, bases de datos y más. Sin gestionar múltiples proveedores.</div>
-                </div>
-              </li>
-            </ul>
           </div>
-          <div class="it-diff-visual">
-            <div class="it-diff-metric">
-              <div class="it-diff-metric-num">≥95%</div>
-              <div class="it-diff-metric-label">Cumplimiento de tiempos de respuesta</div>
-            </div>
-            <div class="it-diff-metric">
-              <div class="it-diff-metric-num">≥4.2</div>
-              <div class="it-diff-metric-label">Satisfacción cliente promedio (escala 5.0)</div>
-            </div>
-            <div class="it-diff-metric">
-              <div class="it-diff-metric-num">≤5%</div>
-              <div class="it-diff-metric-label">Tasa máxima de reincidencia de incidentes</div>
-            </div>
-            <div class="it-diff-metric">
-              <div class="it-diff-metric-num">99.5%</div>
-              <div class="it-diff-metric-label">Disponibilidad comprometida del servicio</div>
-            </div>
+        </header>
+        <div class="valor-grid">
+          <div class="valor-text">
+            <p>
+              El mercado está lleno de opciones. INNTime se diferencia por lo que hay detrás de
+              cada hora: profesionales <strong>empleados directos</strong> de INNSYSTE, con
+              controles de calidad, confidencialidad y compliance integrados desde el primer día.
+            </p>
           </div>
+          <ul class="pillars">
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <h3>Empleados directos, no freelancers</h3><p>Confidencialidad garantizada por contrato laboral, no por acuerdo informal.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <h3>SLAs medibles y reportados</h3><p>Tiempos de respuesta por severidad, KPIs de cumplimiento ≥ 95% y reportes periódicos.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>Compliance integrado</h3><p>Diseñado bajo ISO 27001, ISO 20000-1, CIS v8.1 y NIST CSF desde el diseño del servicio.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <h3>Un contrato. Todo el stack.</h3><p>Diseño, implementación y soporte para OS, redes, nube, seguridad y más, sin múltiples proveedores.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- COMPLIANCE -->
-    <section class="it-section" id="compliance">
+    <!-- CUMPLIMIENTO -->
+    <section class="section" id="cumplimiento">
       <div class="container">
-        <div class="it-section-head">
-          <p class="it-kicker">Frameworks de referencia</p>
-          <h2>El estándar que exigen los sectores más regulados</h2>
-          <p>INNTime está diseñado para cumplir los requisitos de gestión de servicios TI y seguridad de la información que exigen la banca, el sector salud y las empresas de alto cumplimiento en Colombia.</p>
-        </div>
-        <div class="it-compliance-grid">
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="it-compliance-name">ITIL 4</div>
-            <div class="it-compliance-desc">Marco de gestión de servicios TI. Define el ciclo de vida de incidentes, solicitudes y cambios en INNTime.</div>
+        <header class="section-head">
+          <p class="kicker">Frameworks de referencia</p>
+          <div>
+            <h2>El estándar que exigen los sectores más regulados</h2>
+            <p class="section-lead">
+              INNTime está diseñado para cumplir los requisitos de gestión de servicios TI y
+              seguridad de la información que exigen la banca, el sector salud y las empresas de
+              alto cumplimiento en Colombia.
+            </p>
           </div>
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <div class="it-compliance-name">ISO/IEC 20000-1</div>
-            <div class="it-compliance-desc">Norma internacional para gestión de servicios TI. Mandatoria para proveedores del sector salud en Colombia.</div>
-          </div>
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <div class="it-compliance-name">ISO/IEC 27001:2022</div>
-            <div class="it-compliance-desc">Sistema de gestión de seguridad de la información. Controla el acceso, confidencialidad y trazabilidad en cada intervención.</div>
-          </div>
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="it-compliance-name">NIST CSF 2.0</div>
-            <div class="it-compliance-desc">Marco de ciberseguridad que cubre las 6 funciones: Govern, Identify, Protect, Detect, Respond y Recover.</div>
-          </div>
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <div class="it-compliance-name">CIS Controls v8.1</div>
-            <div class="it-compliance-desc">Controles técnicos priorizados. Referencia para hardening, gestión de accesos, vulnerabilidades y defensa de red.</div>
-          </div>
-          <div class="it-compliance-card">
-            <div class="it-compliance-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="it-compliance-name">SOC 2</div>
-            <div class="it-compliance-desc">Meta de auditoría sobre controles de seguridad, disponibilidad y confidencialidad del servicio INNSYSTE.</div>
-          </div>
-        </div>
+        </header>
+        <ul class="standards">
+          <li>ITIL 4</li><li>ISO/IEC 20000-1</li><li>ISO/IEC 27001:2022</li>
+          <li>NIST CSF 2.0</li><li>CIS Controls v8.1</li><li>SOC 2</li>
+        </ul>
       </div>
     </section>
 
-    <!-- SLA STRIP -->
-    <section class="it-section it-section-dark" style="padding: 64px 0;">
+    <!-- COMPROMISOS DE SERVICIO -->
+    <section class="section" id="sla">
       <div class="container">
-        <div class="it-section-head" style="margin-bottom: 40px;">
-          <p class="it-kicker" style="color:rgba(255,69,117,.9)">Compromisos de nivel de servicio</p>
-          <h2>SLAs que se miden, se reportan y se cumplen</h2>
-        </div>
-        <div class="it-sla-grid">
-          <div class="it-sla-item">
-            <div class="it-sla-num">1 h</div>
-            <div class="it-sla-label">Respuesta a incidentes críticos Enterprise (24/7)</div>
+        <header class="section-head">
+          <p class="kicker">Compromisos de nivel de servicio</p>
+          <div>
+            <h2>SLAs que se miden, se reportan y se cumplen</h2>
           </div>
-          <div class="it-sla-item">
-            <div class="it-sla-num">≥95%</div>
-            <div class="it-sla-label">Cumplimiento de tiempos de respuesta comprometidos</div>
-          </div>
-          <div class="it-sla-item">
-            <div class="it-sla-num">99.5%</div>
-            <div class="it-sla-label">Disponibilidad del servicio de atención INNTime</div>
-          </div>
-          <div class="it-sla-item">
-            <div class="it-sla-num">≥4.2</div>
-            <div class="it-sla-label">Calificación CSAT promedio por ticket cerrado (sobre 5)</div>
-          </div>
-        </div>
+        </header>
+        <dl class="sla">
+          <div><dt class="text-grad">1 h</dt><dd>Respuesta a incidentes críticos Enterprise (24/7)</dd></div>
+          <div><dt class="text-grad">≥95%</dt><dd>Cumplimiento de tiempos de respuesta comprometidos</dd></div>
+          <div><dt class="text-grad">99.5%</dt><dd>Disponibilidad del servicio de atención INNTime</dd></div>
+          <div><dt class="text-grad">≥4.2</dt><dd>Calificación CSAT promedio por ticket cerrado (sobre 5)</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="it-cta">
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
       <div class="container">
-        <h2>¿Listo para tener expertos TI a demanda?</h2>
-        <p>Cuéntanos el tamaño de tu operación y el tipo de necesidades que tienes. En menos de 24 horas te proponemos el paquete ideal con su estructura de horas y condiciones de servicio.</p>
-        <div class="it-cta-actions">
-          <a href="index.html#contacto" class="btn-it-white">Solicitar propuesta</a>
-          <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="btn-it-outline-white">WhatsApp →</a>
+        <header class="section-head">
+          <p class="kicker">Hablemos</p>
+          <div>
+            <h2>¿Listo para tener expertos TI a demanda?</h2>
+            <p class="section-lead">
+              Cuéntanos el tamaño de tu operación y el tipo de necesidades que tienes. En menos
+              de 24 horas te proponemos el paquete ideal con su estructura de horas y condiciones
+              de servicio.
+            </p>
+          </div>
+        </header>
+        <div class="hero-actions section-actions">
+          <a href="index.html#contacto" class="btn btn-solid">Solicitar propuesta</a>
+          <a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer" class="btn btn-quiet">WhatsApp</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand brand-light" aria-label="Innsyste — Inicio">
-          <img src="assets/logo-light.svg" alt="Innsyste" class="brand-logo" width="150" height="38" />
-        </a>
-        <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:12px;line-height:1.65;">
-          Tecnología bien pensada<br/>para organizaciones exigentes.
-        </p>
+      <div class="footer-brand">
+        <img src="assets/logo-light.svg" alt="Innsyste" width="150" height="38" />
       </div>
-      <div>
-        <h4 class="footer-heading">INNTime</h4>
-        <ul class="footer-links">
+      <nav aria-label="Pie de página — INNTime">
+        <h4>INNTime</h4>
+        <ul>
           <li><a href="#como-funciona">¿Cómo funciona?</a></li>
           <li><a href="#paquetes">Paquetes</a></li>
           <li><a href="#servicios">Categorías de servicio</a></li>
           <li><a href="#tecnologias">Cobertura tecnológica</a></li>
-          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#cumplimiento">Compliance</a></li>
         </ul>
-      </div>
+      </nav>
       <div>
-        <h4 class="footer-heading">Contacto</h4>
-        <ul class="footer-contact">
+        <h4>Contacto</h4>
+        <ul>
           <li><a href="mailto:mario@innsyste.com">mario@innsyste.com</a></li>
-          <li><a href="https://wa.me/573007191116" target="_blank" rel="noopener noreferrer">+57 300 719 1116</a></li>
+          <li><a href="tel:+573007191116">+57 300 719 1116</a></li>
           <li><a href="https://www.innsyste.com" target="_blank" rel="noopener">www.innsyste.com</a></li>
         </ul>
       </div>
@@ -1033,45 +409,6 @@
     </div>
   </footer>
 
-  <script src="inntime-legacy.js" defer></script>
-  <script>
-    (function () {
-      'use strict';
-      /* ── Hero carousel (específico de INNTime; lo común vive en inntime-legacy.js) ── */
-      const hcTrack = document.getElementById('hcTrack');
-      const hcDots  = document.getElementById('hcDots');
-      if (hcTrack) {
-        const slides = hcTrack.querySelectorAll('.it-hc-slide');
-        const total  = slides.length;
-        let cur = 0, timer;
-        // build dots
-        slides.forEach((_, i) => {
-          const d = document.createElement('button');
-          d.className = 'it-hc-dot' + (i === 0 ? ' active' : '');
-          d.setAttribute('aria-label', 'Imagen ' + (i + 1));
-          d.addEventListener('click', () => { stop(); go(i); start(); });
-          hcDots.appendChild(d);
-        });
-        function go(idx) {
-          cur = (idx + total) % total;
-          hcTrack.style.transform = 'translateX(-' + (cur * 100) + '%)';
-          hcDots.querySelectorAll('.it-hc-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
-        }
-        function start() { timer = setInterval(() => go(cur + 1), 4500); }
-        function stop()  { clearInterval(timer); }
-        document.getElementById('hcPrev').addEventListener('click', () => { stop(); go(cur - 1); start(); });
-        document.getElementById('hcNext').addEventListener('click', () => { stop(); go(cur + 1); start(); });
-        // touch swipe
-        let tx = 0;
-        hcTrack.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-        hcTrack.addEventListener('touchend',   e => {
-          const d = tx - e.changedTouches[0].clientX;
-          if (Math.abs(d) > 40) { stop(); go(cur + (d > 0 ? 1 : -1)); start(); }
-        });
-        start();
-      }
-    })();
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
